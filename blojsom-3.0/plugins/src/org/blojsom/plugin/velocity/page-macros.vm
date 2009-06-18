@@ -596,6 +596,8 @@ $BLOJSOM_PLUGIN_STRING_UTILITIES.escapeString($technoratiTag)
   #set ( $pageNum = $BLOJSOM_CURRENT_PAGE )
   #set ( $pageSize = $BLOJSOM_BLOG.getBlogDisplayEntries() )
 
+  ## quoteString stays here until Velocity supports quote escape characters (https://issues.apache.org/jira/browse/VELOCITY-555)
+  #set ( $quoteString = '"' )
 
   #######################################################
   ## determine index boundaries
@@ -617,9 +619,9 @@ $BLOJSOM_PLUGIN_STRING_UTILITIES.escapeString($technoratiTag)
   ## Setup first and prev links
 
   #if ($pageNum > 1)
-    #set ( $textFirst = "<a href=#BlogURL()/skip/1/>$first</a>" )
+    #set ( $textFirst = "<a href=$quoteString#BlogURL()/skip/1/$quoteString>$first</a>" )
     #set ( $prevParam = $pageNum - 1 )
-    #set ( $textPrev = "<a href=#BlogURL()/skip/$prevParam/>$prev</a>" )
+    #set ( $textPrev = "<a href=$quoteString#BlogURL()/skip/$prevParam/$quoteString>$prev</a>" )
   #else
     #set ( $textFirst = $first )
     #set ( $textPrev = $prev )
@@ -630,7 +632,7 @@ $BLOJSOM_PLUGIN_STRING_UTILITIES.escapeString($technoratiTag)
   #set ( $textLinks = "" )
   #foreach( $i in $indices )
     #if ( $i != $pageNum )
-      #set ( $textLinks = "$textLinks <a href=#BlogURL()/skip/$i/>$i</a>" )
+      #set ( $textLinks = "$textLinks <a href=$quoteString#BlogURL()/skip/$i/$quoteString>$i</a>" )
     #else
       #set ( $textLinks = "$textLinks $i" )
     #end
@@ -642,8 +644,8 @@ $BLOJSOM_PLUGIN_STRING_UTILITIES.escapeString($technoratiTag)
 
   #if ( $pageNum < $maxIndex )
     #set ( $nextParam = $pageNum + 1 )
-    #set ( $textNext = "<a href=#BlogURL()/skip/$nextParam/>$next</a>" )
-    #set ( $textLast = "<a href=#BlogURL()/skip/$maxIndex/>$last</a>" )
+    #set ( $textNext = "<a href=$quoteString#BlogURL()/skip/$nextParam/$quoteString>$next</a>" )
+    #set ( $textLast = "<a href=$quoteString#BlogURL()/skip/$maxIndex/$quoteString>$last</a>" )
   #else
     #set ( $textNext = $next )
     #set ( $textLast = $last )
