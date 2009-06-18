@@ -35,8 +35,13 @@
 <div>
   <h3>Search:</h3>
   <form id="searchForm" method="post" action="#BlogURL()/">
-    <input id="searchfield" type="text" size="10" name="query" value="" />
-    <a href="javascript: void(0);" onclick="document.getElementById('searchForm').submit()"><strong>Go</strong></a>
+    <div>
+      <input id="searchfield" type="text" size="10" name="query" value="" />
+      ## TODO: fix for "unobtrusive scripting"; the use of the pseudo-protocol
+      ## 'javascript' prevents the form from being submitted by clients not
+      ## capable of JavaScript.
+      <a href="javascript: void(0);" onclick="document.getElementById('searchForm').submit()"><strong>Go</strong></a>
+    </div>
   </form>
 </div>
 <div>
