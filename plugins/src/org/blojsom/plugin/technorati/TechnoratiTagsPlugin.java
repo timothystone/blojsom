@@ -116,9 +116,8 @@ public class TechnoratiTagsPlugin extends StandaloneVelocityPlugin implements Li
                     String tagLinkTemplate = mergeTemplate(TECHNORATI_TAG_LINK_TEMPLATE, blog, new HashMap());
                     for (int j = 0; j < tags.length; j++) {
                         String tag = tags[j].trim();
-                        tag = BlojsomUtils.escapeStringSimple(tag);
 
-                        tagLinks.add(MessageFormat.format(tagLinkTemplate, new String[]{tag}));
+                        tagLinks.add(MessageFormat.format(tagLinkTemplate, new Object[]{BlojsomUtils.urlEncode(tag),BlojsomUtils.escapeString(tag)}));
                     }
 
                     entryMetaData.put(TECHNORATI_TAG_LINKS, tagLinks.toArray(new String[tagLinks.size()]));
