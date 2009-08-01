@@ -416,7 +416,7 @@
         <jar jarfile="${war.file}" basedir="${war.dir}">
             <exclude name="**/quickrstart"/>
         </jar>
-        
+
         <delete dir="${war.dir}/WEB-INF/default/templates"/>
         <delete dir="${war.dir}/themes"/>
     </target>
