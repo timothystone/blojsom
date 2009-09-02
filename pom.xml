@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.blojsom</groupId>
+    <version>3.5-SNAPSHOT</version>
+    <artifactId>app</artifactId>
+    <packaging>pom</packaging>
+    <name>blojsom-maven</name>
+    <modules>
+        <module>blojsom</module>
+        <module>blojsom-plugins</module>
+        <module>blojsom-core</module>
+        <!--
+        <module>blojsom-addons</module>
+        <module>blojsom-extensions</module>
+        <module>blojsom-plugins-templates</module>
+        <module>blojsom-resources</module>
+        -->
+    </modules>
+</project>
+
