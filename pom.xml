@@ -12,8 +12,9 @@
         <module>blojsom</module>
         <module>blojsom-plugins</module>
         <module>blojsom-core</module>
+        <module>blojsom-addon-core</module>
+        <module>blojsom-addon-plugins</module>
         <!--
-        <module>blojsom-addons</module>
         <module>blojsom-extensions</module>
         <module>blojsom-plugins-templates</module>
         <module>blojsom-resources</module>
