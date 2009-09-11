@@ -1,3 +1,4 @@
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -8,6 +9,55 @@
     <artifactId>app</artifactId>
     <packaging>pom</packaging>
     <name>blojsom-maven</name>
+    <licenses>
+        <license>
+            <name>Berkeley Software Distribution (BSD) License</name>
+            <url>http://www.opensource.org/licenses/bsd-license.php</url>
+            <distribution>repo</distribution> 
+            <comments>
+                The BSD License is considered the most liberal OSS license.
+            </comments>
+        </license> 
+    </licenses>
+    <organization> 
+        <name>blojsom</name> 
+        <url>http://blojsom.sf.net/</url>
+    </organization>
+    <developers> 
+        <developer>
+            <id>david</id>
+            <name>David A. Czarnecki</name>
+            <email>czarneckid@users.sourceforge.net</email>
+            <url>http://www.blojsom.com/</url>
+            <organization>blojsom</organization>
+            <organizationUrl>http://www.blojsom.com/</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+        <developer>
+            <id>mark</id>
+            <name>Mark Lussier</name>
+            <organization>blojsom</organization>
+            <organizationUrl>http://www.blojsom.com/</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>timothy</id>
+            <name>Timothy Stone</name>
+            <email>tstone@code-henge.com</email>
+            <url>http://www.code-henge.com/</url>
+            <organization>codehenge</organization>
+            <organizationUrl>http://www.code-henge.com/</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+    </developers>
     <modules>
         <module>blojsom</module>
         <module>blojsom-plugins</module>
