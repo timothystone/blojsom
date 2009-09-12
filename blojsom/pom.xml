@@ -8,7 +8,7 @@
   <name>blojsom</name>
   <url>http://blojsom.sf.net</url>
   <parent>
-      <artifactId>app</artifactId>
+      <artifactId>blojsom-maven</artifactId>
       <version>
           3.5-SNAPSHOT
       </version>

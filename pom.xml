@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.blojsom</groupId>
     <version>3.5-SNAPSHOT</version>
-    <artifactId>app</artifactId>
+    <artifactId>blojsom-maven</artifactId>
     <packaging>pom</packaging>
     <name>blojsom-maven</name>
     <licenses>

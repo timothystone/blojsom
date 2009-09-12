@@ -10,7 +10,7 @@
   <parent>
     <groupId>org.blojsom</groupId>
     <artifactId>
-        app
+        blojsom-maven
     </artifactId>
     <version>
         3.5-SNAPSHOT
