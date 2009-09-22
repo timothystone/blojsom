@@ -6,7 +6,11 @@ blojsom acknowledges the contributions of the following developers.
 
 blojsom contains a number of third-party software components.
 
-blojsom uses Maven for its build management. Some dependencies are stored on a dedicated maven repository at www.anothercaffeinatedday.com. The repositiory uses HTTPS. This will cause problems in your IDE. The HTTPS certificate must be added to your `cacerts'.
+blojsom uses Maven for its build management. Some dependencies are stored on a
+dedicated maven repository at www.anothercaffeinatedday.com.
+
+The repositiory uses HTTPS. This will cause problems in your IDE.
+The HTTPS certificate must be added to your `cacerts'.
 
 There are two recommended ways to do this:
 1. Use Andreas Sterbenz's InstallCert.
@@ -15,13 +19,23 @@ There are two recommended ways to do this:
 2. Add the cert on the commandline:
    % keytool -import -alias www.anothercaffeinatedday.com \
    > -keystore $JAVA_HOME/jre/lib/security/cacerts \
-   > -file www.anothercaffeinatedday.com-expires-2009-09-17.cer
+   > -file www.anothercaffeinatedday.com-expires-2010-03-20.cer
+
+   NB: You may be required to `sudo' to update the keystore. The command on
+       Snow Leopard (Mac OS X 10.6.x) differs slightly where there is no "JRE":
+
+       % keytool -import -alias www.anothercaffeinatedday.com \
+       > -keystore /Library/Java/Home/lib/security/cacerts \
+       > -file www.anothercaffeinatedday.com-expires-2010-03-20.cer
+
+       /Library/Java/Home is a symlink to the current, OS default, JDK.
+
+       Snow Leopard ships with Java 1.6.0.
 
    The default keystore password is "changeit".
 
-   The certificate is issued by cacert.org and is routinely expired and updated. You will have to perform this task periodically.
-
-
+   The certificate is issued by cacert.org and is routinely expired and updated.
+   You will have to perform this task periodically.
 
    * blojsom includes software developed by the Apache Software Foundation
      Copyright (c) 2003 The Apache Software Foundation.
