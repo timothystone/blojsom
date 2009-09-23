@@ -1,5 +1,6 @@
 CREDITS AND COPYRIGHT NOTICES
 
+
 blojsom acknowledges the contributions of the following developers.
 
    * Mark Lussier: various plugins, initial XML-RPC APIs, and Atom API support
@@ -10,29 +11,53 @@ blojsom uses Maven for its build management. Some dependencies are stored on a
 dedicated maven repository at www.anothercaffeinatedday.com.
 
 The repositiory uses HTTPS. This will cause problems in your IDE.
-The HTTPS certificate must be added to your `cacerts'.
+The HTTPS certificate issuer must be added to your JDK keystore.
 
-There are two recommended ways to do this:
-1. Use Andreas Sterbenz's InstallCert.
-   http://blogs.sun.com/andreas/entry/no_more_unable_to_find
+This is the recommended way to do this:
+1. Add cacert.org to the cacerts trust database.
+   Download the following certificates from cacert.org. Here's some simple 
+   command lines to fetch. ALWAYS VALIDATE THE DOWNLOADS.
 
-2. Add the cert on the commandline:
-   % keytool -import -alias www.anothercaffeinatedday.com \
+   % curl -k -o "cacert-root.crt" "https://www.cacert.org/certs/root.crt"
+   % curl -k -o "cacert-class3.crt" "https://www.cacert.org/certs/class3.crt"
+
+   VALIDATE THE CERTIFICATES!
+
+   MD5 and SHA1 hashes are available here:
+   https://www.cacert.org/index.php?id=3
+
+   `keytool' provides a view mode:
+
+   % keytool -printcert -file /path/to/crtfile | grep -A5 "Valid from"
+
+   Now, add the certificates to the cacerts trust database:
+
+   % keytool -import -alias cacert.org-root \
    > -keystore $JAVA_HOME/jre/lib/security/cacerts \
+   > -file /path/to/cacert-root.crt
+
+   % keytool -import -alias cacert.org-class3 \
+   > -keystore $JAVA_HOME/jre/lib/security/cacerts \
+   > -file /path/to/cacert-class3.crt
+
+2. Add the HTTPS server public key to your personal keystore:
+   % keytool -import -alias www.anothercaffeinatedday.com 
    > -file www.anothercaffeinatedday.com-expires-2010-03-20.cer
 
    NB: You may be required to `sudo' to update the keystore. The command on
        Snow Leopard (Mac OS X 10.6.x) differs slightly where there is no "JRE":
 
-       % keytool -import -alias www.anothercaffeinatedday.com \
+       % keytool -import -alias cacert.org-root \
        > -keystore /Library/Java/Home/lib/security/cacerts \
-       > -file www.anothercaffeinatedday.com-expires-2010-03-20.cer
+       > -file /path/to/cacert-root.crt
 
        /Library/Java/Home is a symlink to the current, OS default, JDK.
 
        Snow Leopard ships with Java 1.6.0.
 
    The default keystore password is "changeit".
+
+   The cacerts keystore is defined by the
 
    The certificate is issued by cacert.org and is routinely expired and updated.
    You will have to perform this task periodically.
