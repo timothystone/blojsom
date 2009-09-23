@@ -10,18 +10,21 @@ blojsom contains a number of third-party software components.
 blojsom uses Maven for its build management. Some dependencies are stored on a
 dedicated maven repository at www.anothercaffeinatedday.com.
 
-The repositiory uses HTTPS. This will cause problems in your IDE.
-The HTTPS certificate issuer must be added to your JDK keystore.
+The repository uses HTTPS. This will cause problems in your IDE and makes users
+the repository "dedicated users"; for only a dedicated user would bother with
+managing the certificates in the JDK keystore.
 
-This is the recommended way to do this:
-1. Add cacert.org to the cacerts trust database.
-   Download the following certificates from cacert.org. Here's some simple 
-   command lines to fetch. ALWAYS VALIDATE THE DOWNLOADS.
+The following is the recommended way preparing the maven build:
+
+1. The HTTPS certificate issuer, cacert.org, should (and must) be added to your 
+   JDK cacerts trust database.
+
+   Download the cacert certificates from cacert.org:
 
    % curl -k -o "cacert-root.crt" "https://www.cacert.org/certs/root.crt"
    % curl -k -o "cacert-class3.crt" "https://www.cacert.org/certs/class3.crt"
 
-   VALIDATE THE CERTIFICATES!
+   VALIDATE EACH CERTIFICATE!
 
    MD5 and SHA1 hashes are available here:
    https://www.cacert.org/index.php?id=3
@@ -41,6 +44,7 @@ This is the recommended way to do this:
    > -file /path/to/cacert-class3.crt
 
 2. Add the HTTPS server public key to your personal keystore:
+
    % keytool -import -alias www.anothercaffeinatedday.com 
    > -file www.anothercaffeinatedday.com-expires-2010-03-20.cer
 
@@ -56,8 +60,6 @@ This is the recommended way to do this:
        Snow Leopard ships with Java 1.6.0.
 
    The default keystore password is "changeit".
-
-   The cacerts keystore is defined by the
 
    The certificate is issued by cacert.org and is routinely expired and updated.
    You will have to perform this task periodically.
@@ -131,4 +133,5 @@ This is the recommended way to do this:
    * blojsom includes the JavaScript Quicktags
      Copyright (c) 2002-2004 Alex King - http://www.alexking.org/
 
-   * This product includes software developed by Justin Wells at Semiotek Inc. and others in the WebMacro community (http://www.webmacro.org).
+   * This product includes software developed by Justin Wells at Semiotek Inc.
+     and others in the WebMacro community (http://www.webmacro.org).
