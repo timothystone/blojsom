@@ -62,8 +62,8 @@
         <module>blojsom-addon-core</module>
         <module>blojsom</module>
         <module>blojsom-extensions</module>
-        <!--
         <module>blojsom-plugins-templates</module>
+        <!--
         <module>blojsom-resources</module>
         -->
   </modules>
