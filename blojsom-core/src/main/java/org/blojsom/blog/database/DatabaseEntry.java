@@ -30,12 +30,23 @@
  */
 package org.blojsom.blog.database;
 
-import org.blojsom.blog.*;
 import org.blojsom.util.BlojsomUtils;
 
 import java.io.Serializable;
-import java.util.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import org.blojsom.blog.Category;
+import org.blojsom.blog.Comment;
+import org.blojsom.blog.Entry;
+import org.blojsom.blog.Pingback;
+import org.blojsom.blog.Response;
+import org.blojsom.blog.Trackback;
 
 /**
  * DatabaseEntry

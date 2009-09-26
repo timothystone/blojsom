@@ -35,7 +35,6 @@ import org.blojsom.util.BlojsomConstants;
 import org.blojsom.util.BlojsomUtils;
 
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.Locale;
 import java.util.Map;
 import java.security.MessageDigest;
