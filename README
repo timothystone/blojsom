@@ -35,6 +35,21 @@ The following is the recommended way preparing the maven build:
 
    Now, add the certificates to the cacerts trust database:
 
+   NB: You may be required to `sudo' to update the keystore.
+
+   NB: The command on Snow Leopard (Mac OS X 10.6.x) differs slightly where
+       there is no "JRE":
+
+       % keytool -import -alias cacert.org-root \
+       > -keystore /Library/Java/Home/lib/security/cacerts \
+       > -file /path/to/cacert-root.crt
+
+       /Library/Java/Home is a symlink to the current, OS default, JDK.
+
+       Snow Leopard ships with Java 1.6.0.
+
+   NB: The default keystore password is "changeit".
+
    % keytool -import -alias cacert.org-root \
    > -keystore $JAVA_HOME/jre/lib/security/cacerts \
    > -file /path/to/cacert-root.crt
@@ -47,19 +62,6 @@ The following is the recommended way preparing the maven build:
 
    % keytool -import -alias www.anothercaffeinatedday.com 
    > -file www.anothercaffeinatedday.com-expires-2010-03-20.cer
-
-   NB: You may be required to `sudo' to update the keystore. The command on
-       Snow Leopard (Mac OS X 10.6.x) differs slightly where there is no "JRE":
-
-       % keytool -import -alias cacert.org-root \
-       > -keystore /Library/Java/Home/lib/security/cacerts \
-       > -file /path/to/cacert-root.crt
-
-       /Library/Java/Home is a symlink to the current, OS default, JDK.
-
-       Snow Leopard ships with Java 1.6.0.
-
-   The default keystore password is "changeit".
 
    The certificate is issued by cacert.org and is routinely expired and updated.
    You will have to perform this task periodically.
