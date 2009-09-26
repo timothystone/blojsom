@@ -47,7 +47,6 @@
       <artifactId>blojsom-extensions</artifactId>
       <version>3.5-SNAPSHOT</version>
     </dependency>
-<!--
     <dependency>
       <groupId>org.blojsom</groupId>
       <artifactId>blojsom-plugins-templates</artifactId>
@@ -59,7 +58,6 @@
       <artifactId>blojsom-resources</artifactId>
       <version>3.5-SNAPSHOT</version>
     </dependency>
--->
     <!-- test -->
     <dependency>
       <groupId>junit</groupId>
