@@ -58,7 +58,16 @@
             <ref bean="servletConfigFactoryBean"/>
         </property>
         <property name="detectBlojsomSQL">
+        <!-- MySQL -->
             <value>show tables;</value>
+        <!-- PostgreSQL -->
+<!--
+            <value>select relname from pg_stat_user_tables where relname = 'blog';</value>
+-->
+        <!-- hsqldb -->
+<!--
+            <value>select table_name from information_schema.system_tables where table_name = 'BLOG';</value>
+-->
         </property>
     </bean>
     <!-- END: Helper beans -->
