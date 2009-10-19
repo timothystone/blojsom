@@ -1,145 +1,214 @@
 /* ----------------------------------------------------------------- */
-/* CSS AND DESIGN BY smallTransport.com */
+/* CSS AND DESIGN BY smallTransport.com                              */
+/* v3.5 by anothercaffeinatedday.com                                 */
 /* ----------------------------------------------------------------- */
-body {
-padding: 8px 0 20px 0;
-margin:0;
-font:1.1em/1.6em  "Lucida Grande", "Trebuchet MS", Verdana, Arial, sans-serif;
-background: url(images/blojsom-bg.gif) repeat-x #F8FBFC;
-min-width: 800px;
- }
 
-a:link { color:#D41B2A; text-decoration:none; }
-a:hover { text-decoration: underline; }
-br {clear:both;}
+/* -- v3.5 -- */
+
+html {
+    background-color: #F8FBFC;
+}
+
+#doc3 {
+    position: relative;
+    margin-left: 0;
+    margin-right: 0;
+    font-family: "Lucida Grande", "Trebuchet MS", Verdana;
+}
+
+div#status {
+    position: absolute;
+    top: 119px;
+    width: 100%;
+    height: 0px;
+    overflow: hidden;
+    margin-top: -1px;
+    border-bottom: 1px #92a9ba solid;
+    background: #f8fbfc;
+}
+
+div#status p {
+    margin: 0;
+    padding: .5em 1em .5em 32px;
+    background: #f8fbfc;
+    color: #000000;
+}
+
+div#hd {
+    height: 111px;
+    padding-top: 8px;
+}
+
+div.login {
+    width: 22.25em;
+    margin: 4em auto 0;
+    border: 3px double #92a9ba;
+    background: #fff;
+    padding: 2em;
+}
+
+div.login div { margin-left: 6em; }
+
+div.login ul {
+    margin: 1em 0;
+}
+
+div.login li {
+    position: relative;
+    margin: 1em 0;
+    list-style-type: none;
+}
+
+div.login label {
+    position:absolute;
+    width: 6em;
+    left: -7em;
+    padding-top: 3px;
+    text-align: right;
+}
+
+div.login input {
+}
+
+.metalink {
+    display: inline-block;
+    min-height: 2em;
+    line-height: 2;
+    vertical-align: text-bottom;
+    padding: 1px 0;
+    font-size: 85%;
+}
+
+div#navmenu {
+    margin: .3em 0 0 1.5em;
+}
+
+/* -- legacy -- */
+body {
+    margin: 0;
+    background: url(images/blojsom-bg.gif) repeat-x #F8FBFC;
+}
+
+a:link {
+    color:#D41B2A;
+    text-decoration:none;
+}
+
+a:hover { 
+    text-decoration: underline;
+}
+
+br {
+    clear:both;
+}
 
 h1 {
-width:224px;
-height:79px;
-padding:0;
-margin:0;
-background: url(images/blojsom-logo.gif) no-repeat;
-text-indent: -3000px;
- }
- /* not applied by IE PC */
-head+body h1 { height:82px; }
- /* not applied by IE Mac or PC \*/
-html>body h1 { height:82px; }
-/* End hack */
+    width:224px;
+    height:0;
+    overflow: hidden;
+    margin:0;
+    padding-top: 79px;
+    background: url(images/blojsom-logo.gif) no-repeat top left;
+}
+
 
 h2 {
-clear: left;
-font:2em  "Lucida Grande", "Trebuchet MS", Verdana, Arial, sans-serif;
-font-weight: normal;
-margin:0; 
-padding:20px 0 0 0; }
+    clear: left;
+    font-size:200%;
+    font-weight: normal;
+}
 
 h3 {
-font-size: 1.3em;
-font-weight: normal;
-color:#3C657B;
-margin:0 0 10px 0;
-padding:0 0 10px 0;
-border-bottom: 1px dashed #A4AEB2;
- }
-h4 {
-font-size: 1.1em;
-font-weight: normal;
-color:#584E37;
-margin:0 0 10px 0;
-padding:0; 
+    margin:0 0 10px 0;
+    border-bottom: 1px dashed #A4AEB2;
+    padding:0 0 10px 0;
+    color:#3C657B;
+    font-size: 131%;
+    font-weight: normal;
 }
-p { margin:10px 0 10px 0; color:333;}
 
-/* ----------------------------------------------------------------- */
-/* NAV AREA */
-/* ----------------------------------------------------------------- */
+h4 {
+    margin:0 0 10px 0;
+    padding:0;
+    font-size: 108%;
+    font-weight: normal;
+    color:#584E37;
+}
 
-ul#nav { height:28px; margin:0; padding:0; }
-ul#nav { list-style: none; padding: 0 0 0 15px; margin: 0; font: 16px "Lucida Grande", "Trebuchet MS", Verdana, Arial, sans-serif; }
-#nav li { float: left; position: relative; height:28px; text-align: left; width: 120px;  }
-/* not applied by IE Mac or PC \*/
-html>body #nav li { width:auto; }
-/* End hack */
-#nav a { display: block; height:28px; padding:0 15px; line-height:28px; color: #2D5879; text-decoration: none; border-bottom:none; border-right:1px solid #B9C3C8; }
-#nav li a:hover { background-color:2D5879; color:#fff; }
-#nav li ul { display: none; width:120px; list-style: none; position: absolute; top: 100%; left:0; font-weight: normal; background-color:#fff; border:1px solid #B9C3C8; border-bottom:none; padding:0; margin:0;}
-#nav li>ul { top: auto; left: auto; }
-#nav li li { display: block; width:120px; text-align: left; float: none; height: auto; line-height:1.6em; background-color: transparent; border-bottom:1px solid #B9C3C8; }
-#nav li li a { display: block; width:120px; padding:4px 10px; font-weight: normal; color: #2D5879; line-height:20px; height: auto;}
-/* not applied by IE Mac or PC \*/
-html>body #nav li li a { width:100px; }
-/* End hack */
-#nav li li a:hover { background-color:#2D5879; background-image:none; color:#fff; }
-#nav li:hover ul, #nav li.over ul { display: block; }
+p {
+    margin:10px 0;
+    color:#333;
+}
+
 
 /* ----------------------------------------------------------------- */
 /* LOGIN BOX */
 /* ----------------------------------------------------------------- */
 
 div#login {
-	position: absolute;
-	top: 13px;
-	right: 20px;
-	padding:0 10px;
-	width:25%;
-	background-color: #fff;
-	border: 1px solid #C9D6D6;
-	color:#fff;
+    position: absolute;
+    top: 1em;
+    right: .85em;
+    width: 25%;
+    padding:0 10px;
+    border: 1px solid #C9D6D6;
+    background-color: #fff;
+    color:#fff;
 }
 
 /* ----------------------------------------------------------------- */
 /* MAIN CONTENT AREAS */
 /* ----------------------------------------------------------------- */
-
-div#wrap { width:100%; }
-
 div#main {
-	margin: 30px 20px;
+    margin: 30px 20px;
 }
 
 div#header {
-	margin:0 20px;
+    margin:0 20px;
 }
 
 div#contents {
-	float: left;
-	width:65%;
+    float: left;
+    width:65%;
 }
-div.desc {
-	margin:0 0 20px 0;
-}
-div.mainClm {
-	padding: 10px;
-	margin: 0 0 10px 0;
-	border: double #A4AEB2;
-	background-color: #fff;
 
+div.desc {
+    margin:0 0 20px 0;
+}
+
+div.mainClm {
+    margin: 0 0 10px 0;
+    border: double #A4AEB2;
+    padding: 10px;
+    background-color: #fff;
 }
 table td {
-	font:1.1em/1.6em  "Lucida Grande", "Trebuchet MS", Verdana, Arial, sans-serif;
-	padding:2px 5px;
-	}
+    padding:2px 5px;
+    font-size:1.1em;
+    line-height:1.6;
+}
 
-table th{
-	font:.8em  "Lucida Grande", "Trebuchet MS", Verdana, Arial, sans-serif;
-	color:#fff;
-	background-color: #ADAE8C;
-	font-weight: bold;
-	text-align: left;
-	padding:5px 0 5px 5px;
-	}
-form input.small { width:100px; }
+table th {
+    font-size: 85%;
+    color:#fff;
+    background-color: #ADAE8C;
+    font-weight: bold;
+    text-align: left;
+    padding:5px 0 5px 5px;
+}
+
+form input.small {
+    width:100px;
+}
 
 /* ----------------------------------------------------------------- */
 /* SIDEBAR */
 /* ----------------------------------------------------------------- */
 
 #sidebar {
-	float: right;
-	margin-left: 0;
-	padding: 10px;
-    width: 25%;
+    width: 84.3%;
+    margin: 2em 0 0 5px;
+    border: 1px solid #ADAE8C;
     background-color: #F5F9DE;
-	border: 1px solid #ADAE8C;
+    padding: 10px;
 }
