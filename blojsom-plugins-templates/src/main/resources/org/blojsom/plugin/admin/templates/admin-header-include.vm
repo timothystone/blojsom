@@ -1,10 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
 <html>
     <head>
         <title>#BlogName() - $page</title>
-        <!-- CSS -->
-        <link rel="SHORTCUT ICON" href="#BlogBaseAdminURL()/favicon.ico" />
-        <link rel="stylesheet" media="screen" type="text/css" href="#BlogBaseAdminURL()/administration/blojsom-administration.css"  />
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/blojsom-menu.js"></script>
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/prototype.js"></script>
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/scriptaculous.js"></script>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <link rel="SHORTCUT ICON" href="#BlogBaseAdminURL()/favicon.ico">
+        <link rel="stylesheet" media="screen" type="text/css" href="#BlogBaseAdminURL()/administration/javascript/yui/reset-fonts-grids/reset-fonts-grids.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="#BlogBaseAdminURL()/administration/javascript/yui/base/base-min.css">
+        <link rel="stylesheet" type="text/css" href="#BlogBaseAdminURL()/administration/javascript/yui/button/assets/skins/sam/button.css">
+        <link rel="stylesheet" type="text/css" href="#BlogBaseAdminURL()/administration/javascript/yui/container/assets/skins/sam/container.css">
+        <link rel="stylesheet" media="screen" type="text/css" href="#BlogBaseAdminURL()/administration/blojsom-administration.css">
+        <link rel="stylesheet" type="text/css" href="#BlogBaseAdminURL()/administration/javascript/yui/menu/assets/skins/sam/menu.css">
+        <style type="text/css">
+            /* inline overrides */
+            div.admin {
+                padding: 0 2.3em;
+            }
+
+            .yui-skin-sam .yuimenubar {
+                border: none;
+                background: none;
+                font-size: 100%;
+            }
+
+            .yui-skin-sam .yuimenubaritemlabel {
+                border: none;
+            }
+
+            .yui-skin-sam .yuimenubarnav .yuimenubaritem {
+                height: 28px;
+            }
+
+
+        </style>
+        <!-- Individual YUI JS files -->
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/yahoo-dom-event/yahoo-dom-event.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/animation/animation-min.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/element/element-min.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/button/button-min.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/container/container-min.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/cookie/cookie-min.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/menu/menu-min.js"></script>
+        <script type="text/javascript">
+            var Y = YAHOO, E = YAHOO.util.Event, Dom = YAHOO.util.Dom, Button = YAHOO.widget.Button;
+            Y.namespace("blojsom");
+            Y.blojsom.init = function() {
+                var blojsom_login = new Button("submit-login");
+                var navmenu = new Y.widget.MenuBar("navmenu", { autosubmenudisplay: true, shadow:false });
+                navmenu.render();
+            };
+            E.onDOMReady(Y.blojsom.init);
+        </script>
     </head>

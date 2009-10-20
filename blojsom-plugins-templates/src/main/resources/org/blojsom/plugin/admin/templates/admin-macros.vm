@@ -63,9 +63,15 @@
 
 #macro(showErrorMessage)
     #if ($BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT)
-        <p class="note" id="operation_result"><a href="#">Status</a>: $BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT</p>
+        <p id="operation_result">$BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT</p>
         <script type="text/javascript">
-            new Effect.Highlight('operation_result', {duration:3});
+            var status = Dom.get("status");
+            new Y.util.Anim('status', {height:{to:status.scrollHeight}}, .5).animate();
+            var stat = new Y.util.ColorAnim('operation_result', {backgroundColor:{from: '#ff0', to: '#f8fbfc'}},3);
+            stat.animate();
+            stat.onComplete.subscribe( function() {
+                    window.setTimeout('new Y.util.Anim(status, {height:{to:0}}, 1).animate()','4000');
+                });
         </script>
     #end
 #end

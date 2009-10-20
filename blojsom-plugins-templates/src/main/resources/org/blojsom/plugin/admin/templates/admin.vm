@@ -1,37 +1,71 @@
 #AdminPageTitle('console.header' '')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
 
-<body>
-    <div id="wrap">
-
-        <h1>Blojsom Administration Interface</h1>
-
-        #parse("org/blojsom/plugin/admin/templates/admin-login-include.vm")
-
-        #parse("org/blojsom/plugin/admin/templates/admin-navigation-include.vm")
-
-        <div id="header">
-            <h2>Welcome to the <a href="http://blojsom.sourceforge.net">blojsom</a> administration console.</h2>
+<body class="yui-skin-sam">
+    <div id="doc3" class="yui-t6">
+        <div id="hd">
+            <h1>Blojsom Administration Interface</h1>
+            #parse("org/blojsom/plugin/admin/templates/admin-login-include.vm")
+            #parse("org/blojsom/plugin/admin/templates/admin-navigation-include.vm")
+        </div>
+        <div id="status">
+            #showErrorMessage()
         </div>
 
-        <div id="main">
-            <div id="contents">
-                #showErrorMessage()
-
-                <div class="mainClm">
-                    #adminResource('administration.welcome.message' '')
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b admin">
+                    <div class="yui-g">
+                        <h2>Welcome to the <a href="http://blojsom.sourceforge.net">blojsom</a> administration console.</h2>
+                    </div>
+                    <div class="yui-gb">
+                        <div class="yui-u first">
+                            <h3>New Entry</h3>
+                            <p>Add a new entry in:</p>
+                            <ul>
+                                <li>Cat 1</li>
+                                <li>Cat 2</li>
+                                <li>Cat 3</li>
+                                <li>More&#8230;</li>
+                            </ul>
+                        </div>
+                        <div class="yui-u">
+                            <h3>Manage Responses</h3>
+                            <p>There are n new responses:</p>
+                            <ul>
+                                <li>Res 1</li>
+                                <li>Res 2</li>
+                                <li>Res 3</li>
+                                <li>More&#8230;</li>
+                            </ul>
+                        </div>
+                        <div class="yui-u">
+                            <h3>Manage Entries</h3>
+                            <p>Recent entries include:</p>
+                            <ul>
+                                <li>Entry 1</li>
+                                <li>Entry 2</li>
+                                <li>Entry 3</li>
+                                <li>More&#8230;</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div id="sidebar">
+            <div class="yui-b">
+                <div id="sidebar">
                 <h4>#adminResource('support.text' '')</h4>
-
                 <p>#adminResource('blojsom.users.help.text' '')</p>
                 <p>#adminResource('blojsom.developers.help.text' '')</p>
                 <p>#adminResource('jira.help.text' '')</p>
+                </div>
             </div>
+
         </div>
-    </div>
-</body>
+
+        <div id="ft">
+
+        </div>
 
 #parse("org/blojsom/plugin/admin/templates/admin-footer-include.vm")
