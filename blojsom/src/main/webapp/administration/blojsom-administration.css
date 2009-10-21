@@ -18,11 +18,10 @@ html {
 
 div#status {
     position: absolute;
-    top: 119px;
+    top: 118px;
     width: 100%;
     height: 0px;
     overflow: hidden;
-    margin-top: -1px;
     border-bottom: 1px #92a9ba solid;
     background: #f8fbfc;
 }
@@ -30,7 +29,7 @@ div#status {
 div#status p {
     margin: 0;
     padding: .5em 1em .5em 32px;
-    background: #f8fbfc;
+    background: url(images/statusBg.gif) repeat-x top #f8fbfc;
     color: #000000;
 }
 
@@ -80,7 +79,10 @@ div.login input {
 }
 
 div#navmenu {
-    margin: .3em 0 0 1.5em;
+    position:absolute;
+    top: 90px;
+    height: 28px;
+    margin: 0 0 0 1.5em;
 }
 
 /* -- legacy -- */

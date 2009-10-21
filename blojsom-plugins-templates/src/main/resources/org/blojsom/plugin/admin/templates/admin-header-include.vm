@@ -20,16 +20,31 @@
             .yui-skin-sam .yuimenubar {
                 border: none;
                 background: none;
-                font-size: 100%;
+                font-size: 85%;
+                line-height: 2.7;
             }
 
             .yui-skin-sam .yuimenubaritemlabel {
                 border: none;
             }
 
+            .yui-skin-sam .yuimenubaritemlabel-selected {
+                border: none;
+                color: #ffffff;
+            }
+
+             .yui-skin-sam .yuimenubaritem-selected {
+                background: #2d5879;
+            }
+
             .yui-skin-sam .yuimenubarnav .yuimenubaritem {
                 height: 28px;
             }
+
+            .yui-skin-sam .yuimenubarnav .yuimenubaritemlabel-selected {
+                margin-left: 0;
+            }
+
 
 
         </style>
@@ -46,7 +61,7 @@
             Y.namespace("blojsom");
             Y.blojsom.init = function() {
                 var blojsom_login = new Button("submit-login");
-                var navmenu = new Y.widget.MenuBar("navmenu", { autosubmenudisplay: true, shadow:false });
+                var navmenu = new Y.widget.MenuBar("navmenu", {position: "dynamic", visible: true, autosubmenudisplay: true, shadow:false });
                 navmenu.render();
             };
             E.onDOMReady(Y.blojsom.init);
