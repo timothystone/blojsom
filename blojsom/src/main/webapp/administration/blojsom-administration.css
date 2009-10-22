@@ -150,9 +150,9 @@ p {
 div#login {
     position: absolute;
     top: 1em;
-    right: .85em;
-    width: 25%;
-    padding:0 10px;
+    right: 1.05em;
+    width: 250px;
+    padding: 0 10px;
     border: 1px solid #C9D6D6;
     background-color: #fff;
     color:#fff;
@@ -209,7 +209,7 @@ form input.small {
 
 #sidebar {
     width: 84.3%;
-    margin: 2em 0 0 5px;
+    margin: 2em auto;
     border: 1px solid #ADAE8C;
     background-color: #F5F9DE;
     padding: 10px;

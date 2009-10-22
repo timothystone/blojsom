@@ -24,6 +24,11 @@
                 line-height: 2.7;
             }
 
+            .yui-skin-sam .yuimenuitem {
+                height: 28px;
+                line-height: 2.5;
+            }
+
             .yui-skin-sam .yuimenubaritemlabel {
                 border: none;
             }
@@ -33,7 +38,7 @@
                 color: #ffffff;
             }
 
-             .yui-skin-sam .yuimenubaritem-selected {
+            .yui-skin-sam .yuimenubaritem-selected {
                 background: #2d5879;
             }
 
