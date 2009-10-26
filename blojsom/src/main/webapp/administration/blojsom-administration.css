@@ -11,12 +11,11 @@ html {
 
 #doc3 {
     position: relative;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0 auto;
     font-family: "Lucida Grande", "Trebuchet MS", Verdana;
 }
 
-div#status {
+div#errStatus {
     position: absolute;
     top: 118px;
     width: 100%;
@@ -26,7 +25,7 @@ div#status {
     background: #f8fbfc;
 }
 
-div#status p {
+div#errStatus p {
     margin: 0;
     padding: .5em 1em .5em 32px;
     background: url(images/statusBg.gif) repeat-x top #f8fbfc;
@@ -34,13 +33,18 @@ div#status p {
 }
 
 div#hd {
+    position: relative;
     height: 111px;
     padding-top: 8px;
 }
 
+#doc3 div#bd {
+    margin: 4em 2em auto;
+}
+
 div.login {
     width: 22.25em;
-    margin: 4em auto 0;
+    margin: 0 auto;
     border: 3px double #92a9ba;
     background: #fff;
     padding: 2em;
@@ -108,7 +112,7 @@ h1 {
     width:224px;
     height:0;
     overflow: hidden;
-    margin:0;
+    margin:0 0 4px 0;
     padding-top: 79px;
     background: url(images/blojsom-logo.gif) no-repeat top left;
 }
@@ -184,11 +188,6 @@ div.mainClm {
     padding: 10px;
     background-color: #fff;
 }
-table td {
-    padding:2px 5px;
-    font-size:1.1em;
-    line-height:1.6;
-}
 
 table th {
     font-size: 85%;
@@ -198,6 +197,8 @@ table th {
     text-align: left;
     padding:5px 0 5px 5px;
 }
+
+th, td { border: none; }
 
 form input.small {
     width:100px;
