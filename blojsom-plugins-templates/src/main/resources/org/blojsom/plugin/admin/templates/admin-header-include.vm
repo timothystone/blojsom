@@ -65,9 +65,11 @@
             var Y = YAHOO, E = YAHOO.util.Event, Dom = YAHOO.util.Dom, Button = YAHOO.widget.Button;
             Y.namespace("blojsom");
             Y.blojsom.init = function() {
-                var blojsom_login = new Button("submit-login");
-                var navmenu = new Y.widget.MenuBar("navmenu", {position: "dynamic", visible: true, autosubmenudisplay: true, shadow:false });
+                var navmenu = new Y.widget.MenuBar("navmenu", { autosubmenudisplay: true, shadow:false });
                 navmenu.render();
+                var login = new Button("submit-login");
+                var editEntriesInCategory = new Button("editEntriesInCategory");
+                var addEntryToCategory = new Button("addEntryToCategory");
             };
             E.onDOMReady(Y.blojsom.init);
         </script>

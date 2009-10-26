@@ -8,7 +8,7 @@
             #parse("org/blojsom/plugin/admin/templates/admin-login-include.vm")
             #parse("org/blojsom/plugin/admin/templates/admin-navigation-include.vm")
         </div>
-        <div id="status">
+        <div id="errStatus">
             #showErrorMessage()
         </div>
 
@@ -23,9 +23,9 @@
                             <h3>New Entry</h3>
                             <p>Add a new entry in:</p>
                             <ul>
-                                <li>Cat 1</li>
-                                <li>Cat 2</li>
-                                <li>Cat 3</li>
+                                <li><a href="?action=new-blog-entry&amp;flavor=admin&amp;plugins=edit-blog-entries&blog-category-id=1">Uncategorized</a></li>
+                                <li><a href="?action=new-blog-entry&amp;flavor=admin&amp;plugins=edit-blog-entries&blog-category-id=2">test</a></li>
+                                <li><a href="?action=new-blog-entry&amp;flavor=admin&amp;plugins=edit-blog-entries&blog-category-id=3">nerdery</a></li>
                                 <li>More&#8230;</li>
                             </ul>
                         </div>

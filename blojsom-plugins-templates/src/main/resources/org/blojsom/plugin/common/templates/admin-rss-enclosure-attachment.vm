@@ -1,4 +1,6 @@
-                    <th colspan="2">#adminResource('rss.enclosure.text' '')</th>
+                    <tr>
+                        <th colspan="2">#adminResource('rss.enclosure.text' '')</th>
+                    </tr>
                     <tr>
                         <td>#adminResource('rss.enclosure.text' '')</td>
                         <td><select name="rss-enclosure"><option value="">#adminResource('enclosure.selection.text' '')</option>
@@ -12,13 +14,13 @@
                     </tr>
                     <tr>
                         <td>#adminResource('url.to.enclosure.text' '')</td>
-                        <td><input type="text" name="rss-enclosure-url" value="$!RSS_ENCLOSURE_URL_ITEM" size="60" /></td>
+                        <td><input type="text" name="rss-enclosure-url" value="$!RSS_ENCLOSURE_URL_ITEM" size="60"></td>
                     </tr>
                     <tr>
                         <td>#adminResource('length.of.enclosure.text' '')</td>
-                        <td><input type="text" name="rss-enclosure-length" value="$!RSS_ENCLOSURE_LENGTH_ITEM" size="15" /></td>
+                        <td><input type="text" name="rss-enclosure-length" value="$!RSS_ENCLOSURE_LENGTH_ITEM" size="15"></td>
                     </tr>
                     <tr>
                         <td>#adminResource('mime.type.enclosure.text' '')</td>
-                        <td><input type="text" name="rss-enclosure-type" value="$!RSS_ENCLOSURE_TYPE_ITEM" size="15" /></td>
+                        <td><input type="text" name="rss-enclosure-type" value="$!RSS_ENCLOSURE_TYPE_ITEM" size="15"></td>
                     </tr>

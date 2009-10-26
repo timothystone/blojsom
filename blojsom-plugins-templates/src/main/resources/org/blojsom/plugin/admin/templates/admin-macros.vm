@@ -65,12 +65,13 @@
     #if ($BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT)
         <p id="operation_result">$BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT</p>
         <script type="text/javascript">
-            var status = Dom.get("status");
-            new Y.util.Anim('status', {height:{to:status.scrollHeight}}, .5).animate();
+            var errStatus = Dom.get("errStatus");
+            var showStat = new Y.util.Anim('errStatus', {height:{to:errStatus.scrollHeight}}, .5);
             var stat = new Y.util.ColorAnim('operation_result', {backgroundColor:{from: '#ff0', to: '#f8fbfc'}},3);
+            showStat.animate();
             stat.animate();
             stat.onComplete.subscribe( function() {
-                    window.setTimeout('new Y.util.Anim(status, {height:{to:0}}, 1).animate()','4000');
+                    window.setTimeout('new Y.util.Anim(errStatus, {height:{to:0}}, 1).animate()','4000');
                 });
         </script>
     #end
@@ -127,19 +128,16 @@ $BLOJSOM_RENDER_TOOL.evaluate($templateAddition)
 #end
 
 #macro(DeleteConfirmationPrompt $specific $confirmationText)
-    <script LANGUAGE="JavaScript">
-    <!--
-    function confirm${specific}Delete()
-    {
-    var shouldDelete = confirm("$confirmationText");
-    if (shouldDelete)
-        return true;
-    else
-        return false;
-    }
-    -->
+    <script type="text/javascript">
+        function confirm${specific}Delete(f) {
+        var shouldDelete = confirm("$confirmationText");
+        if (shouldDelete) {
+            return true;
+        } else {
+            return false;
+        }
     </script>
 #end
 
-#macro(OnClickDeletePrompt $specific)onClick="return confirm${specific}Delete()"#end
+#macro(OnSubmitDeletePrompt $specific)onsubmit="return confirm${specific}Delete(this)"#end
 
