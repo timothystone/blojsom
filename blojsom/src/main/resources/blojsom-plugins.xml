@@ -38,6 +38,7 @@
             <ref bean="fetcher"/>
         </property>
     </bean>
+    <bean id="extended-list-tool" class="org.blojsom.plugin.tools.ExtendedListToolPlugin" init-method="init" destroy-method="destroy"/>
     <bean id="chrono" class="org.blojsom.plugin.chrono.ChronoPlugin" init-method="init" destroy-method="destroy"/>
     <bean id="collection-utilities" class="org.blojsom.plugin.common.CollectionUtilitiesPlugin" init-method="init"
           destroy-method="destroy"/>

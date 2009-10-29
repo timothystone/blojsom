@@ -58,6 +58,17 @@
       <artifactId>blojsom-resources</artifactId>
       <version>3.5-SNAPSHOT</version>
     </dependency>
+    <dependency>
+      <groupId>org.blojsom</groupId>
+      <artifactId>blojsom-addon-plugins</artifactId>
+      <version>3.5-SNAPSHOT</version>
+      <exclusions>
+        <exclusion>
+          <artifactId>servlet-api</artifactId>
+          <groupId>javax.servlet</groupId>
+        </exclusion>
+      </exclusions>
+    </dependency>
     <!-- test -->
     <dependency>
       <groupId>junit</groupId>
@@ -73,4 +84,5 @@
         <netbeans.hint.deploy.server>Tomcat60</netbeans.hint.deploy.server>
     </properties>
 </project>
+
 

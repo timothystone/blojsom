@@ -62,7 +62,7 @@
                                     <select name="blog-category-id">
                                     #foreach ($blogCategory in $BLOJSOM_ALL_CATEGORIES)
                                         #set ($category = "$blogCategory.getId()")
-                                        <option value="$blogCategory.getId()" #if ($category.equals($!BLOJSOM_BLOG.getProperty("default-post-category")))selected#end>#CategoryDescription($blogCategory)</option>
+                                        <option value="$blogCategory.getId()" #if ($category.equals($!params.blog-category-id.get(0)))selected#else($category.equals($!BLOJSOM_BLOG.getProperty("default-post-category")))selected#end>#CategoryDescription($blogCategory)</option>
                                     #end
                                     </select>
                                 </td>

@@ -78,6 +78,7 @@
                                 <tr>
                                     <td>#adminResource('category.text' 'Category')</td>
                                     <td>
+<strong>$params.get("blog-category-id")[0]</strong>
                                         <select name="blog-category-id">
                                         #foreach ($blogCategory in $BLOJSOM_ALL_CATEGORIES)
                                             <option value="$blogCategory.getId()" #if ($blogCategory.getId().equals($BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.getBlogCategoryId())) selected #end>#CategoryDescription($blogCategory)</option>

@@ -133,6 +133,8 @@ public class VelocityDispatcher implements Dispatcher {
             context.put(key, value);
         }
 
+        context.put("params", httpServletRequest.getParameterMap());
+
         HttpSession httpSession = httpServletRequest.getSession(false);
         if (httpSession != null) {
             iterator = new EnumerationIterator(httpSession.getAttributeNames());

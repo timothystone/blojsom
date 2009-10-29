@@ -39,6 +39,7 @@
       <groupId>org.blojsom</groupId>
       <artifactId>blojsom-core</artifactId>
       <version>3.5-SNAPSHOT</version>
+      <scope>provided</scope>
     </dependency>
     <dependency>
       <groupId>netscape-ldapjdk</groupId>
