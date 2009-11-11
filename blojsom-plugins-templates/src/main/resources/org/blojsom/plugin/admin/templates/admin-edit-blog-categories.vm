@@ -1,26 +1,27 @@
-#AdminPageTitle('edit.blog.categories.page.header' 'Categories')
+#AdminPageTitle('console.header' '')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
 
-<body>
-    <div id="wrap">
+<body class="yui-skin-sam">
+    <div id="doc3" class="yui-t6">
+        <div id="hd">
+            <h1>Blojsom Administration Interface</h1>
+            #parse("org/blojsom/plugin/admin/templates/admin-login-include.vm")
+            #parse("org/blojsom/plugin/admin/templates/admin-navigation-include.vm")
+        </div>
+        <div id="errStatus">
+            #showErrorMessage()
+        </div>
 
-        <h1>Blojsom Administration Interface</h1>
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
 
-        #parse("org/blojsom/plugin/admin/templates/admin-login-include.vm")
+                    #set($confirmationText = "#adminResource('delete.category.confirmation.text' '')")
+                    #set($specificType = 'Category')
+                    #DeleteConfirmationPrompt($specificType $confirmationText)
 
-        #parse("org/blojsom/plugin/admin/templates/admin-navigation-include.vm")
-
-        <div id="main">
-            <div id="contents">
-                #showErrorMessage()
-
-                #set($confirmationText = "#adminResource('delete.category.confirmation.text' '')")
-                #set($specificType = 'Category')
-                #DeleteConfirmationPrompt($specificType $confirmationText)
-
-                <div class="mainClm">
                     <h3>#adminResource('categories.text' 'Categories') (<a href="#addblogcategory">#adminResource('add.blog.category.text' 'Add a new blog category')</a>)</h3>
-                    <table border=".5">
+                    <table width="100%">
                         <tr>
                             <th>#adminResource('id.text' '')</th> <th>#adminResource('name.text' '')</th> <th>#adminResource('description.text' '')</th> <th>#adminResource('parent.text' '')</th> <th colspan="2">#adminResource('actions.text' '')</th>
                         </tr>
@@ -30,30 +31,27 @@
                             <td>#CategoryName($blogCategory)</td>
                             <td>#CategoryDescription($blogCategory)</td>
                             <td>#if ($blogCategory.getParentCategory())#CategoryDescription($blogCategory.getParentCategory()) #else &nbsp; #end</td>
-                            <td><a href="#BlogAdminURL()/?flavor=admin&plugins=edit-blog-categories&action=edit-blog-category&blog-category-id=$blogCategory.getId()">#adminResource('edit.text' '')</a></td>
-                            <td><a href="#BlogAdminURL()/?flavor=admin&plugins=edit-blog-categories&action=delete-blog-category&blog-category-id=$blogCategory.getId()" onclick="return confirmCategoryDelete()">#adminResource('delete.text' '')</a></td>
+                            <td><a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-categories&amp;action=edit-blog-category&amp;blog-category-id=$blogCategory.getId()">#adminResource('edit.text' '')</a></td>
+                            <td><a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-categories&amp;action=delete-blog-category&amp;blog-category-id=$blogCategory.getId()" onclick="return confirmCategoryDelete()">#adminResource('delete.text' '')</a></td>
                         </tr>
                         #end
                     </table>
-                </div>
 
-                <!-- Add blog category form -->
-                <a name="addblogcategory"/>
-                <div class="mainClm">
-
-                    <h3>#adminResource('add.blog.category.text' 'Add a new blog category')</h3>
-                    <table>
-                        <form name="add-blog-category" action="." method="post" accept-charset="UTF-8">
-                            <input type="hidden" name="action" value="add-blog-category"/>
-                            <input type="hidden" name="flavor" value="admin"/>
-                            <input type="hidden" name="plugins" value="edit-blog-categories"/>
+                    <h3 id="addblogcategory">#adminResource('add.blog.category.text' 'Add a new blog category')</h3>
+                    <form name="add-blog-category" action="." method="post" accept-charset="UTF-8">
+                        <div style="display:none">
+                            <input type="hidden" name="action" value="add-blog-category">
+                            <input type="hidden" name="flavor" value="admin">
+                            <input type="hidden" name="plugins" value="edit-blog-categories">
+                        </div>
+                        <table>
                             <tr>
                                 <td>#adminResource('category.name.text' 'Category name')</td>
-                                <td><input type="text" size="50" name="blog-category-name"/></td>
+                                <td><input type="text" size="50" name="blog-category-name"></td>
                             </tr>
                             <tr>
                                 <td>#adminResource('category.description.text' 'Category description')</td>
-                                <td><input type="text" size="50" name="blog-category-description"/></td>
+                                <td><input type="text" size="50" name="blog-category-description"></td>
                             </tr>
                             <tr>
                                 <td>#adminResource('category.metadata.text' 'Category meta-data')</td>
@@ -73,16 +71,16 @@
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
-                                    <input type="submit" name="submit" value="#adminResource('add.category.text' 'Reset')"/>
-                                    <input type="reset" name="reset" value="#adminResource('reset.text' 'Reset')"/>
+                                    <input type="submit" name="submitcategory" value="#adminResource('add.category.text' 'Add Category')">
+                                    <input type="reset" name="reset" value="#adminResource('reset.text' 'Reset')">
                                 </td>
                             </tr>
-                        </form>
-                    </table>
+                        </table>
+                    </form>
                 </div>
             </div>
+            <div class="yui-b"></div>
         </div>
     </div>
-</body>
 
 #parse("org/blojsom/plugin/admin/templates/admin-footer-include.vm")
