@@ -141,4 +141,5 @@ $BLOJSOM_RENDER_TOOL.evaluate($templateAddition)
 #end
 
 #macro(OnSubmitDeletePrompt $specific)onsubmit="return confirm${specific}Delete(this)"#end
+#macro(OnClickDeletePrompt $specific)onclick="return confirm${specific}Delete(this)"#end
 

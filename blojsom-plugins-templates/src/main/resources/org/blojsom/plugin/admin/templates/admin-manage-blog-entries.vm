@@ -1,4 +1,3 @@
-
 #AdminPageTitle('manage.entries.header' 'Manage Entries')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
 
@@ -55,10 +54,14 @@
             </div>
             <div class="yui-b">
                 <form name="search-blog-entries" action="." method="post" accept-charset="UTF-8">
-                    <input type="hidden" name="flavor" value="admin">
-                    <input type="hidden" name="action" value="edit-entries-list">
-                    <input type="hidden" name="plugins" value="edit-blog-entries">
-                    <input type="text" name="query" id="searchquery" #if ($query) value="$query" #else #adminResource('search.posts.text' '') #end size="20"> <input type="submit" name="submitsearch" value="#adminResource('submit.text' '')" >
+                    <div style="display:none">
+                        <input type="hidden" name="flavor" value="admin">
+                        <input type="hidden" name="action" value="edit-entries-list">
+                        <input type="hidden" name="plugins" value="edit-blog-entries">
+                    </div>
+                    <div>
+                        <input type="text" name="query" id="searchquery"  value="#if ($query) $query #else #adminResource('search.posts.text' '')&#8230;" #end size="20"> <input type="submit" name="submitsearch" value="#adminResource('submit.text' '')" >
+                    </div>
                 </form>
             </div>
         </div>
@@ -66,4 +69,5 @@
     <script type="text/javascript">
         Y.blojsom.query = Dom.get("searchquery");
         E.on(Y.blojsom.query, "focus", function() { Y.blojsom.query.value = ""; });
+    </script>
 #parse("org/blojsom/plugin/admin/templates/admin-footer-include.vm")
