@@ -89,6 +89,10 @@ div#navmenu {
     margin: 0 0 0 1.5em;
 }
 
+fieldset h1, fieldset h2, fieldset h3, fieldset h4 {
+    border: none;
+}
+
 /* -- legacy -- */
 body {
     margin: 0;
@@ -112,7 +116,7 @@ h1 {
     width:224px;
     height:0;
     overflow: hidden;
-    margin:0 0 4px 0;
+    margin:0 0 3px;
     padding-top: 79px;
     background: url(images/blojsom-logo.gif) no-repeat top left;
 }

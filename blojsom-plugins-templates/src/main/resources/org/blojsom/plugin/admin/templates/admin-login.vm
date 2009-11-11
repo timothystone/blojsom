@@ -32,4 +32,12 @@
         <div id="ft">
         </div>
     </div>
+    <script type="text/javascript">
+        (function() {
+            Y.blojsom.un = Dom.get("username") || null;
+            if(Y.blojsom.un !== null) {
+                Y.blojsom.un.focus();
+            }
+        })();
+    </script>
 #parse("org/blojsom/plugin/admin/templates/admin-footer-include.vm")

@@ -30,32 +30,13 @@
                             </tr>
                             <tr>
                                 <td>#adminResource('blog.entry.text.text' 'Blog entry text')</td>
-                                #if (!$useRichtextEditor)
-                                <td><textarea rows="10" cols="80" name="blog-entry-description" id="blog-entry-description" onkeyup="reloadPreviewDiv();"></textarea></td>
-                                #else
                                 <td><textarea cols="80" name="blog-entry-description" id="blog-entry-description"></textarea></td>
-                                #end
-                            </tr>
-                            #if (!$useRichtextEditor)
-                            <tr>
-                                <td></td>
-                                <td>
-                                    <div id="quicktags">
-                                    Quicktags: <script src="#BlogBaseAdminURL()/quicktags.js" type="text/javascript"></script>
-                                    <script type="text/javascript">edToolbar();</script>
-                                    </div>
-                                </td>
                             </tr>
                             <tr>
-                                <td colspan="2"><h4>Preview</h4></td>
+                                <td>#adminResource('blog.entry.text.meta' 'Blog entry metatags')</td>
+                                <td><textarea cols="80" name="blog-entry-metadata" id="blog-entry-metadata"></textarea></td>
                             </tr>
-                            <tr>
-                                <td colspan="2">
-                                    <div id="blog-entry-preview">
-                                    </div>
-                                </td>
-                            </tr>
-                            #end
+
                             <tr>
                                 <td>#adminResource('category.text' 'Category')</td>
                                 <td>
@@ -71,26 +52,20 @@
                                 <td>#adminResource('blog.entry.trackbackURLs.text' 'Blog trackback URLs')</td>
                                 <td><textarea rows="3" cols="70" name="blog-trackback-urls"></textarea></td>
                             </tr>
+                            <div id="entry-options">
                             <tr>
                                 <td>#adminResource('blog.entry.pingURLs.text' 'Ping blog notification URLs?')</td>
-                                <td><input type="checkbox" name="ping-blog-urls"></td>
+                                <td><input type="checkbox" name="ping-blog-urls" id="ping-blog-urls"></td>
                             </tr>
                             <tr>
                                 <td>#adminResource('blog.entry.send.pingbacks.text' 'Send pingbacks to URLs?')</td>
-                                <td><input type="checkbox" name="send-pingbacks"></td>
+                                <td><input type="checkbox" name="send-pingbacks" id="send-pingbacks"></td>
                             </tr>
                             <tr>
-                                <td>#adminResource('blog.disable.comments.text' 'Disable comments?')</td>
-                                <td><input type="checkbox" name="blog-entry-comments-disabled" value="y"></td>
+                                <td>&nbsp;</td>
+                                <td><input type="checkbox" name="blog-entry-comments-disabled" id="blog-entry-comments-disabled" value="y">&nbsp;<input type="checkbox" name="blog-entry-trackbacks-disabled" id="blog-entry-trackbacks-disabled" value="y">&nbsp;<input type="checkbox" name="blog-entry-pingbacks-disabled" id="blog-entry-pingbacks-disabled" value="y">
                             </tr>
-                            <tr>
-                                <td>#adminResource('blog.disable.trackbacks.text' 'Disable trackbacks?')</td>
-                                <td><input type="checkbox" name="blog-entry-trackbacks-disabled" value="y"></td>
-                            </tr>
-                            <tr>
-                                <td>#adminResource('blog.disable.pingbacks.text' 'Disable pingbacks?')</td>
-                                <td><input type="checkbox" name="blog-entry-pingbacks-disabled" value="y"></td>
-                            </tr>
+                            </div>
                             <tr>
                                 <td>#adminResource('blog.publish.text' 'Blog entry publish date and time') <br>(MM/dd/yyyy HH:mm:ss)</td>
                                 <td><input type="text" size="30" name="blog-entry-publish-datetime"></td>
@@ -113,38 +88,6 @@
                 </div>
             </div>
             <div class="yui-b"></div>
-        <script type="text/javascript">var edCanvas = document.getElementById('blog-entry-description');</script>
-
-        #set($useRichtextEditor = ("true" == $BLOJSOM_USER_OBJECT.getMetaData().get("use-richtext-editor")))
-        #if ($useRichtextEditor)
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/tiny_mce/tiny_mce.js"></script>
-        <script type="text/javascript">
-        tinyMCE.init({
-            theme        : "advanced",
-            mode         : "exact",
-            convert_urls : false,
-            theme_advanced_toolbar_location     : "top",
-            theme_advanced_resize_horizontal    : false,
-		    theme_advanced_path_location        : "bottom",
-            theme_advanced_toolbar_align        : "left",
-            theme_advanced_resizing             : true,
-            theme_advanced_source_editor_height : "600",
-            elements     : "blog-entry-description"
-        });
-        </script>
-        #else
-        <script type="text/javascript">
-            function reloadPreviewDiv() {
-                var previewString = document.getElementById('blog-entry-description').value;
-                document.getElementById('blog-entry-preview').innerHTML = previewString;
-            }
-
-            function loadPreviewText() {
-                document.getElementById('blog-entry-preview').innerHTML = document.getElementById('blog-entry-description').value;
-            }
-        </script>
-        #end
-
         <script type="text/javascript">
             
             function changeToDraft() {

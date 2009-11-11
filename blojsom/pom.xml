@@ -32,16 +32,9 @@
       
     <dependency>
       <groupId>org.blojsom</groupId>
-      <artifactId>blojsom-plugins</artifactId>
-      <version>3.5-SNAPSHOT</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.blojsom</groupId>
       <artifactId>blojsom-core</artifactId>
       <version>3.5-SNAPSHOT</version>
     </dependency>
-
     <dependency>
       <groupId>org.blojsom</groupId>
       <artifactId>blojsom-extensions</artifactId>
@@ -49,25 +42,18 @@
     </dependency>
     <dependency>
       <groupId>org.blojsom</groupId>
+      <artifactId>blojsom-plugins</artifactId>
+      <version>3.5-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>org.blojsom</groupId>
       <artifactId>blojsom-plugins-templates</artifactId>
       <version>3.5-SNAPSHOT</version>
     </dependency>
-
     <dependency>
       <groupId>org.blojsom</groupId>
       <artifactId>blojsom-resources</artifactId>
       <version>3.5-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.blojsom</groupId>
-      <artifactId>blojsom-addon-plugins</artifactId>
-      <version>3.5-SNAPSHOT</version>
-      <exclusions>
-        <exclusion>
-          <artifactId>servlet-api</artifactId>
-          <groupId>javax.servlet</groupId>
-        </exclusion>
-      </exclusions>
     </dependency>
     <!-- test -->
     <dependency>

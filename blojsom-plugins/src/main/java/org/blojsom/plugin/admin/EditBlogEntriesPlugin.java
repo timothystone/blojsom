@@ -137,6 +137,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
     private static final String BLOG_ENTRY_ID = "blog-entry-id";
     private static final String BLOG_ENTRY_TITLE = "blog-entry-title";
     private static final String BLOG_ENTRY_DESCRIPTION = "blog-entry-description";
+    private static final String BLOG_ENTRY_METADATA = "blog-entry-metadata";
     private static final String BLOG_COMMENT_ID = "blog-comment-id";
     private static final String BLOG_TRACKBACK_ID = "blog-trackback-id";
     private static final String BLOG_PINGBACK_ID = "blog-pingback-id";
@@ -561,6 +562,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
             }
 
             String blogEntryDescription = BlojsomUtils.getRequestValue(BLOG_ENTRY_DESCRIPTION, httpServletRequest);
+            String blogEntryMetadata = BlojsomUtils.getRequestValue(BLOG_ENTRY_METADATA, httpServletRequest);
             String blogEntryTitle = BlojsomUtils.getRequestValue(BLOG_ENTRY_TITLE, httpServletRequest);
 
             if (BlojsomUtils.checkNullOrBlank(blogEntryTitle) && BlojsomUtils.checkNullOrBlank(blogEntryDescription)) {
