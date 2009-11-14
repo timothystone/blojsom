@@ -1,32 +1,31 @@
 #AdminPageTitle('blog.preferences.page.header' 'User Preferences')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
 
-<body>
-    <a name="top" />
-    <div id="wrap">
+<body class="yui-skin-sam">
+    <div id="doc3" class="yui-t6">
+        <div id="hd">
+            <h1>Blojsom Administration Interface</h1>
+            #parse("org/blojsom/plugin/admin/templates/admin-login-include.vm")
+            #parse("org/blojsom/plugin/admin/templates/admin-navigation-include.vm")
+        </div>
+        <div id="errStatus">
+            #showErrorMessage()
+        </div>
 
-        <h1>Blojsom Administration Interface</h1>
-
-        #parse("org/blojsom/plugin/admin/templates/admin-login-include.vm")
-
-        #parse("org/blojsom/plugin/admin/templates/admin-navigation-include.vm")
-
-        <div id="main">
-            <div id="contents">
-                #showErrorMessage()
-
-                <div class="mainClm">
+        <div id="bd">
+            <div id="yui-main">
+                <div class="yui-b">
                     <h3>#adminResource('blog.preferences.page.header' '')</h3>
-                    <table border=".5">
-                        <form name="edit-blog-preferences" action="." method="post" accept-charset="UTF-8">
-                            <input type="hidden" name="action" value="edit-blog-preferences"/>
-                            <input type="hidden" name="flavor" value="admin"/>
-                            <input type="hidden" name="plugins" value="edit-blog-preferences"/>
-
-
+                    <form name="edit-blog-preferences" action="." method="post" accept-charset="UTF-8">
+                        <div style="display:none">
+                            <input type="hidden" name="action" value="edit-blog-preferences">
+                            <input type="hidden" name="flavor" value="admin">
+                            <input type="hidden" name="plugins" value="edit-blog-preferences">
+                        </div>
+                        <table width="100%">
                             <!-- Response preferences -->
                             <tr>
-                                <th>#adminResource('response.preferences.text' '')</th>
+                                <th colspan="2">#adminResource('response.preferences.text' '')</th>
                             </tr>
                             <tr>
                                 <td>#adminResource('display.response.text' '')</td>
@@ -37,12 +36,12 @@
                             </tr>
 
                             <tr>
-                                <td>&nbsp;</td>
+                                <td colspan="2">&nbsp;</td>
                             </tr>
 
                             <!-- Write preferences -->
                             <tr>
-                                <th>#adminResource('write.preferences.text' '')</th>
+                                <th colspan="2">#adminResource('write.preferences.text' '')</th>
                             </tr>
                             <tr>
                                 <td>#adminResource('use.richtext.editor.text' '')</td>
@@ -55,16 +54,16 @@
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
-                                    <input type="submit" name="submit" value="#adminResource('update.properties.text' '')"/>
-                                    <input type="reset" name="reset" value="#adminResource('reset.text' '')"/>
+                                    <input type="submit" name="submit" value="#adminResource('update.properties.text' '')">
+                                    <input type="reset" name="reset" value="#adminResource('reset.text' '')">
                                 </td>
                             </tr>
-                        </form>
-                    </table>
+                        </table>
+                    </form>
                  </div>
             </div>
+            <div class="yui-b"></div>
         </div>
     </div>
-</body>
 
 #parse("org/blojsom/plugin/admin/templates/admin-footer-include.vm")
