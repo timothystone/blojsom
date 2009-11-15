@@ -53,7 +53,9 @@
                 margin-left: 0;
             }
 
-
+            ul#userproperties {
+                margin-top: 0;
+            }
 
         </style>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/yahoo-dom-event/yahoo-dom-event.js"></script>

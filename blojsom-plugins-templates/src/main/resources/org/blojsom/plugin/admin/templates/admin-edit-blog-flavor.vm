@@ -14,7 +14,7 @@
 
         <div id="bd">
             <div id="yui-main">
-                <div class="yui-b">
+                <div class="yui-b stdotcom">
                     <!-- Modify blog flavor form -->
                     <h3>#adminResource('modify.blog.flavor.text' 'Modify blog flavor')</h3>
                     <form name="modify-blog-flavor" action="." method="post" accept-charset="UTF-8">

@@ -15,7 +15,7 @@
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b">
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
 
                         #set($confirmationText = "#adminResource('delete.flavor.confirmation.text' '')")
                         #set($specificType = 'Flavor')
@@ -24,7 +24,7 @@
                         <!-- Existing Flavor Maps -->
                         <h3>#adminResource('existing.blog.flavor.text' '') (<a href="#addblogflavor">#adminResource('add.blog.flavor.text' '')</a>)</h3>
                         <p>#adminResource('default.flavor.selected.text' '')</p>
-                        <table>
+                        <table width="100%">
                             <tr>
                                 <th>#adminResource('flavor.text' '')</th> <th>#adminResource('page.mime.characterset.text' '')</th> <th colspan="2">#adminResource('actions.text' '')</th>
                             </tr>
@@ -41,7 +41,7 @@
 
                     <!-- Add blog flavor form -->
                     <a id="addblogflavor"></a>
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <h3>#adminResource('add.blog.flavor.text' '')</h3>
                         <form name="add-blog-flavor" action="." method="post" accept-charset="UTF-8">
                             <div style="display:none">

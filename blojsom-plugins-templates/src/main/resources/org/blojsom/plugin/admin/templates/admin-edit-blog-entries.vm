@@ -15,7 +15,7 @@
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b">
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <h3>#adminResource('add.entry.to.category.text' 'Add entry to category')</h3>
                         <form name="add-blog-entry" action="." method="post" accept-charset="UTF-8">
                             <div style="display:none">
@@ -43,7 +43,7 @@
                             </table>
                         </form>
                     </div>
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <h3>#adminResource('edit.entries.in.category.text' 'Edit entries in an existing blog category')</h3>
                         <form name="edit-blog-entries" action="." method="post" accept-charset="UTF-8">
                             <div style="display:none">

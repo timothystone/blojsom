@@ -15,7 +15,7 @@
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b">
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
 
                     <h3>#adminResource('add.blog.user.text' 'Add blog user')</h3>
                     <form name="add-blog-user" action="." method="post" accept-charset="UTF-8">
@@ -67,35 +67,35 @@
                 #set($specificType = 'Blog')
                 #DeleteConfirmationPrompt($specificType $confirmationText)
 
-                    <div class="yui-g">
-                <!-- Delete blog -->
-                    <h3>#adminResource('delete.blog.user.text' 'Delete blog user')</h3>
-                    <form name="delete-blog-user" action="." method="post" accept-charset="UTF-8">
-                        <div style="display:none">
-                            <input type="hidden" name="action" value="delete-blog-user">
-                            <input type="hidden" name="flavor" value="admin">
-                            <input type="hidden" name="plugins" value="edit-blogs">
-                        </div>
-                        <table>
-                            <tr>
-                                <td>#adminResource('blog.user.id.text' 'Blog user ID')</td>
-                                <td>
-                                    <select name="blog-id">
-                                    #foreach ($blogID in $BLOJSOM_PLUGIN_EDIT_BLOGS)
-                                        <option value="$blogID">$blogID</option>
-                                    #end
-                                    </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>
-                                    <input type="submit" name="submit" value="#adminResource('delete.blog.user.text' 'Delete blog')" #OnClickDeletePrompt($specificType) >
-                                    <input type="reset" name="reset" value="#adminResource('reset.text' 'Reset')">
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
+                    <div class="yui-g stdotcom">
+                        <!-- Delete blog -->
+                        <h3>#adminResource('delete.blog.user.text' 'Delete blog user')</h3>
+                        <form name="delete-blog-user" action="." method="post" accept-charset="UTF-8">
+                            <div style="display:none">
+                                <input type="hidden" name="action" value="delete-blog-user">
+                                <input type="hidden" name="flavor" value="admin">
+                                <input type="hidden" name="plugins" value="edit-blogs">
+                            </div>
+                            <table>
+                                <tr>
+                                    <td>#adminResource('blog.user.id.text' 'Blog user ID')</td>
+                                    <td>
+                                        <select name="blog-id">
+                                        #foreach ($blogID in $BLOJSOM_PLUGIN_EDIT_BLOGS)
+                                            <option value="$blogID">$blogID</option>
+                                        #end
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td>
+                                        <input type="submit" name="submit" value="#adminResource('delete.blog.user.text' 'Delete blog')" #OnClickDeletePrompt($specificType) >
+                                        <input type="reset" name="reset" value="#adminResource('reset.text' 'Reset')">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
                     </div>
                 </div>
             </div>

@@ -14,7 +14,7 @@
 
         <div id="bd">
             <div id="yui-main">
-                <div class="yui-b">
+                <div class="yui-b stdotcom">
                     #set($confirmationText = "#adminResource('delete.blog.entry.confirmation.text' '')")
                     #DeleteConfirmationPrompt('' $confirmationText)
 
@@ -53,16 +53,18 @@
                 </div>
             </div>
             <div class="yui-b">
-                <form name="search-blog-entries" action="." method="post" accept-charset="UTF-8">
-                    <div style="display:none">
-                        <input type="hidden" name="flavor" value="admin">
-                        <input type="hidden" name="action" value="edit-entries-list">
-                        <input type="hidden" name="plugins" value="edit-blog-entries">
-                    </div>
-                    <div>
-                        <input type="text" name="query" id="searchquery"  value="#if ($query) $query #else #adminResource('search.posts.text' '')&#8230;" #end size="20"> <input type="submit" name="submitsearch" value="#adminResource('submit.text' '')" >
-                    </div>
-                </form>
+                <div id="sidebar">
+                    <form name="search-blog-entries" action="." method="post" accept-charset="UTF-8">
+                        <div style="display:none">
+                            <input type="hidden" name="flavor" value="admin">
+                            <input type="hidden" name="action" value="edit-entries-list">
+                            <input type="hidden" name="plugins" value="edit-blog-entries">
+                        </div>
+                        <div>
+                            <input type="text" name="query" id="searchquery"  value="#if ($query) $query #else #adminResource('search.posts.text' '')&#8230;" #end size="20"> <input type="submit" name="submitsearch" value="#adminResource('submit.text' '')" >
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

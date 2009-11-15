@@ -15,7 +15,7 @@
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b">
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <!-- Current permissions -->
                         <h3>#adminResource('current.permissions.text' 'Current permissions')</h3>
 
@@ -29,7 +29,7 @@
                         </table>
                         #end
                     </div>
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <!-- Add blog user permission form -->
 
                         <h3>#adminResource('add.user.permission.text' 'Add a new permission for a user of the current blog')</h3>
@@ -64,7 +64,7 @@
                             </table>
                         </form>
                     </div>
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
 
                         <!-- Delete blog user permission form -->
                         <h3>#adminResource('delete.user.permission.text' 'Delete a permission for a user of the current blog')</h3>

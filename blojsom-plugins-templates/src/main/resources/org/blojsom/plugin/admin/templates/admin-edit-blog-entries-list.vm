@@ -15,7 +15,7 @@
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b">
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <h3>#CategoryDescription($BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_CATEGORY)</h3>
                         <form name="edit-blog-entry" action="." method="post" accept-charset="UTF-8">
                             <div style="display:none">
@@ -48,7 +48,7 @@
 #set($confirmationText = "#adminResource('delete.blog.entry.confirmation.text' '')")
 #DeleteConfirmationPrompt('' $confirmationText)
 
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <!-- Delete blog entries form -->
                         <h3>#CategoryDescription($BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_CATEGORY)</h3>
                         <form name="delete-blog-entry" action="." method="post" accept-charset="UTF-8" #OnSubmitDeletePrompt('')>

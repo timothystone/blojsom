@@ -14,7 +14,7 @@
 
         <div id="bd">
             <div id="yui-main">
-                <div class="yui-b">
+                <div class="yui-b stdotcom">
 
                     <h3>#adminResource('manage.responses.text' '')</h3>
 
@@ -98,17 +98,19 @@
                 </div>
             </div>
             <div class="yui-b">
-               <h3>#adminResource('bulk.search.help.text' '')</h3>
-               <form name="search-blog-responses" action="." method="post" accept-charset="UTF-8">
-                    <div style="display:none">
-                        <input type="hidden" name="flavor" value="admin">
-                        <input type="hidden" name="action" value="bulk-response-management">
-                        <input type="hidden" name="plugins" value="bulk-response-management">
-                    </div>
-                    <div>
-                        <input type="text" id="searchresponses" name="query" value="#if ($query) $query #else #adminResource('search.responses.text' '')&#8230;"#end size="20"> <input type="submit" name="submitresponsequery" value="#adminResource('submit.text' '')">
-                    </div>
-                </form>
+               <div id="sidebar">
+                   <h3>#adminResource('bulk.search.help.text' '')</h3>
+                   <form name="search-blog-responses" action="." method="post" accept-charset="UTF-8">
+                        <div style="display:none">
+                            <input type="hidden" name="flavor" value="admin">
+                            <input type="hidden" name="action" value="bulk-response-management">
+                            <input type="hidden" name="plugins" value="bulk-response-management">
+                        </div>
+                        <div>
+                            <input type="text" id="searchresponses" name="query" value="#if ($query) $query #else #adminResource('search.responses.text' '')&#8230;"#end size="20"> <input type="submit" name="submitresponsequery" value="#adminResource('submit.text' '')">
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

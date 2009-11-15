@@ -15,7 +15,7 @@
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b">
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <h3 id="top">#adminResource('blog.properties.page.header' '')</h3>
                         <form name="edit-blog-properties" action="." method="post" accept-charset="UTF-8">
                             <div style="display:none">
@@ -290,7 +290,7 @@
                         </form>
                      </div>
 
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <h3>#adminResource('set.individual.property.text' 'Set individual property')</h3>
                         <form name="set-blog-properties" action="." method="post" accept-charset="UTF-8">
                             <div style="display:none">
@@ -319,7 +319,7 @@
                         </form>
                      </div>
 
-                     <div class="yui-g">
+                     <div class="yui-g stdotcom">
                         <h3>#adminResource('check.individual.property.text' '')</h3>
                         <form name="check-blog-properties" action="." method="post" accept-charset="UTF-8">
                             <div style="display:none">

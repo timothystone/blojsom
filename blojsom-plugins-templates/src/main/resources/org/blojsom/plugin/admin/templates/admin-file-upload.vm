@@ -15,7 +15,7 @@
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b">
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <h3>#adminResource('file.upload.text' 'Upload a file')</h3>
                         <form name="upload-file" action=".?flavor=admin&amp;plugins=file-upload&amp;action=upload-file" method="post" accept-charset="UTF-8" enctype="multipart/form-data">
                             <table>
@@ -39,7 +39,7 @@
                     #DeleteConfirmationPrompt($specificType $confirmationText)
 
                     <!-- File upload delete form -->
-                    <div class="yui-g">
+                    <div class="yui-g stdotcom">
                         <h3>#adminResource('file.delete.text' 'Delete a file(s)')</h3>
                         <form name="delete-upload-files" action="." method="post" accept-charset="UTF-8">
                             <div style="display:none">

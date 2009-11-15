@@ -39,7 +39,14 @@ div#hd {
 }
 
 #doc3 div#bd {
-    margin: 4em 2em auto;
+    margin: 4em 0 auto 2em;
+}
+
+div.stdotcom {
+    margin: 0 auto 2em;
+    border: 3px double #92a9ba;
+    background: #fff;
+    padding: 1em;
 }
 
 div.login {
@@ -214,7 +221,7 @@ form input.small {
 
 #sidebar {
     width: 84.3%;
-    margin: 2em auto;
+    margin: 0 auto 2em;
     border: 1px solid #ADAE8C;
     background-color: #F5F9DE;
     padding: 10px;
