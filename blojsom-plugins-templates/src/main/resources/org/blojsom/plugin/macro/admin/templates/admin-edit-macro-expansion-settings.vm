@@ -57,7 +57,7 @@
                                 <tr>
                                     <td>#adminResource('macros.text' 'Macros')</td>
                                     <td>
-                                        #if ($BLOJSOM_PLUGIN_EDIT_MACRO_EXPANSION_MACROS && $BLOJSOM_PLUGIN_EDIT_MACRO_EXPANSION_MACROS.size > 0)
+                                        #if ($BLOJSOM_PLUGIN_EDIT_MACRO_EXPANSION_MACROS && $BLOJSOM_PLUGIN_EDIT_MACRO_EXPANSION_MACROS.size() > 0)
                                         <select name="macros" size="5" multiple>
                                         #if ($BLOJSOM_PLUGIN_EDIT_MACRO_EXPANSION_MACROS)
                                             #foreach ($macro in $BLOJSOM_PLUGIN_EDIT_MACRO_EXPANSION_MACROS.keySet())

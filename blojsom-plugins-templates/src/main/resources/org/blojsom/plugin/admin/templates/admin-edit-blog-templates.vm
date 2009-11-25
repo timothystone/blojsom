@@ -24,13 +24,18 @@
                         <h3>#adminResource('templates.text' 'Templates') (<a href="#addblogtemplate">#adminResource('add.blog.template.text' '')</a> #adminResource('or.text' '') <a href="#modifydirectories">#adminResource('modify.template.directories.text' '')</a>)</h3>
                         <table width="100%">
                             <tr>
-                                <th>#adminResource('template.name.text' '')</th> <th colspan="2">#adminResource('actions.text' '')</th>
+                                <th>#adminResource('template.name.text' '')</th>
+                                <th>#adminResource('actions.text' '')</th>
                             </tr>
                             #foreach ($blogTemplate in $BLOJSOM_PLUGIN_EDIT_BLOG_TEMPLATES_TEMPLATE_FILES)
-                            <tr>
+                                #set($stripe = 'on')
+                                #if(($velocityCount % 2) == 0)#set($stripe = 'off')#end
+                            <tr class="$stripe">
                                 <td>$blogTemplate</td>
-                                <td><a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-templates&amp;action=edit-blog-template&amp;blog-template=$blogTemplate">#adminResource('edit.text' '')</a></td>
-                                <td><a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-templates&amp;action=delete-blog-template&amp;blog-template=$blogTemplate" #OnClickDeletePrompt($specificType)>#adminResource('delete.text' '')</a></td>
+                                <td>
+                                    <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-templates&amp;action=edit-blog-template&amp;blog-template=$blogTemplate">#adminResource('edit.text' '')</a>&nbsp;
+                                    <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-templates&amp;action=delete-blog-template&amp;blog-template=$blogTemplate" #OnClickDeletePrompt($specificType)>#adminResource('delete.text' '')</a>
+                                </td>
                             </tr>
                             #end
                         </table>

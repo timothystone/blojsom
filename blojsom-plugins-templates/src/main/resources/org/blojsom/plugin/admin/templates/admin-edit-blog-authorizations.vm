@@ -27,10 +27,14 @@
                                 <th>#adminResource('authorized.user.id.text' '')</th> <th colspan="2">#adminResource('actions.text' '')</th>
                             </tr>
                             #foreach ($blogUser in $BLOJSOM_PLUGIN_EDIT_BLOG_USERS)
-                            <tr>
+                                #set($stripe = 'on')
+                                #if(($velocityCount % 2) == 0)#set($stripe = 'off')#end
+                            <tr class="$stripe">
                                 <td>$blogUser.getUserLogin()</td>
-                                <td><a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-authorization&amp;action=edit-blog-authorization&amp;blog-user-id=$blogUser.getId()">#adminResource('edit.text' '')</a></td>
-                                <td><a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-authorization&amp;action=delete-blog-authorization&amp;blog-user-id=$blogUser.getId()" #OnClickDeletePrompt($specificType)>#adminResource('delete.text' '')</a></td>
+                                <td>
+                                    <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-authorization&amp;action=edit-blog-authorization&amp;blog-user-id=$blogUser.getId()">#adminResource('edit.text' '')</a>&nbsp;
+                                    <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-authorization&amp;action=delete-blog-authorization&amp;blog-user-id=$blogUser.getId()" #OnClickDeletePrompt($specificType)>#adminResource('delete.text' '')</a>
+                                </td>
                             </tr>
                             #end
                         </table>

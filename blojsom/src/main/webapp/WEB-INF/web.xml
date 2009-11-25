@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<!DOCTYPE web-app
-        PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-        "http://java.sun.com/dtd/web-app_2_3.dtd">
-
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
 <web-app>
 
     <!-- blojsom filter definitions -->
 
+    <display-name>blojsom - the Java weblog</display-name>
+    <description>blojsom is a full-featured, multi-user, multi-blog package written in Java. blojsom aims to retain simplicity in design while adding user flexibility in areas like back-end storage, flavors, templating, themes, and plugins.</description>
     <filter>
         <filter-name>PermalinkFilter</filter-name>
         <filter-class>org.blojsom.filter.PermalinkFilter</filter-class>

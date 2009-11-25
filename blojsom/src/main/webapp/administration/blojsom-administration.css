@@ -38,6 +38,16 @@ div#errStatus p span.error {
     background: url(images/cross.png) no-repeat 0 50%;
 }
 
+div#errStatus p span.tick {
+    padding-left: 24px;
+    background: url(images/tick.png) no-repeat 0 50%;
+}
+
+div#errStatus p span.warn {
+    padding-left: 24px;
+    background: url(images/error.png) no-repeat 0 50%;
+}
+
 div#hd {
     position: relative;
     height: 111px;
@@ -45,7 +55,7 @@ div#hd {
 }
 
 #doc3 div#bd {
-    margin: 4em 0 auto 2em;
+    margin: 2em 0 auto 2em;
 }
 
 div.stdotcom {
@@ -137,6 +147,7 @@ h1 {
 
 h2 {
     clear: left;
+    margin-top: 0;
     font-size:200%;
     font-weight: normal;
 }
@@ -199,13 +210,6 @@ div.desc {
     margin:0 0 20px 0;
 }
 
-div.mainClm {
-    margin: 0 0 10px 0;
-    border: double #A4AEB2;
-    padding: 10px;
-    background-color: #fff;
-}
-
 table th {
     font-size: 85%;
     color:#fff;
@@ -214,6 +218,10 @@ table th {
     text-align: left;
     padding:5px 0 5px 5px;
 }
+
+tr.on { background-color: #F0F0EA; }
+
+tr.off { background-color: #ffffff; }
 
 th, td { border: none; }
 

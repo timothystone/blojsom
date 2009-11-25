@@ -30,7 +30,9 @@
                                     <th align="center">#adminResource('plugins.text' '')</th>
                                 </tr>
                                     #foreach ($flavor in $BLOJSOM_PLUGIN_EDIT_BLOG_PLUGINS_MAP.keySet())
-                                <tr>
+                                    #set($stripe = 'on')
+                                    #if(($velocityCount % 2) == 0)#set($stripe = 'off')#end
+                                <tr class="$stripe">
                                     <td>#if ($flavor.equals("default")) <strong>$flavor</strong> #else $flavor #end</td>
                                     <td>
                                         <input name="${flavor}.blojsom-plugin-chain" type="text" size="80" value="$BLOJSOM_PLUGIN_EDIT_BLOG_PLUGINS_MAP.get($flavor)">
