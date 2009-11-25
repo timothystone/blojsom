@@ -16,8 +16,9 @@ html {
 }
 
 div#errStatus {
-    position: absolute;
-    top: 118px;
+    position: fixed;
+    bottom: 0px;
+    z-index:100;
     width: 100%;
     height: 0px;
     overflow: hidden;
@@ -30,6 +31,11 @@ div#errStatus p {
     padding: .5em 1em .5em 32px;
     background: url(images/statusBg.gif) repeat-x top #f8fbfc;
     color: #000000;
+}
+
+div#errStatus p span.error {
+    padding-left: 24px;
+    background: url(images/cross.png) no-repeat 0 50%;
 }
 
 div#hd {

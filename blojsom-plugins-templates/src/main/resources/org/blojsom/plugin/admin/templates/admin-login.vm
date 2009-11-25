@@ -19,7 +19,7 @@
                         <li><label for="password">#adminResource('password.text' 'Password')</label><input id="password" name="password" type="password" size="25"></li>
                     </ul>
                     <p>
-                        <input id="submit-login" type="submit" name="login" value="#adminResource('login.text' 'Login')">&nbsp;<span class="metalink"><a href="#BlogURL()/" title="Back to $BLOJSOM_BLOG.getBlogName()">Cancel</a></span>
+                        <input id="submit-login" type="submit" name="login" value="#adminResource('login.text' 'Login')">&nbsp;<span class="metalink">or <a href="#BlogURL()/" title="Back to $BLOJSOM_BLOG.getBlogName()">Cancel</a></span>
                     </p>
                     <p class="metalink">
                         <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=forgotten-password&amp;action=page">#adminResource('forget.your.password.text' 'Forget your password?')</a>
