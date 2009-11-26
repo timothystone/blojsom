@@ -76,7 +76,7 @@
                 var disableComments = new Button("blog-entry-comments-disabled", {label:"#adminResource('blog.disable.comments.text' 'Disable comments?')"});
                 var disableTrackbacks = new Button("blog-entry-trackbacks-disabled", {label:"#adminResource('blog.disable.trackbacks.text' 'Disable trackbacks?')"});
                 var disablePingbacks = new Button("blog-entry-pingbacks-disabled", {label:"#adminResource('blog.disable.pingbacks.text' 'Disable pingbacks?')"});
-#if(!$!params.action.get(0) == "new-blog-entry")
+#if($!params.action.get(0) != "new-blog-entry")
 #if (!$!BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.allowsComments())
                 disableComments.set("checked", true, true);
 #end

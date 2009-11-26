@@ -43,6 +43,11 @@ div#errStatus p span.tick {
     background: url(images/tick.png) no-repeat 0 50%;
 }
 
+div#errStatus p span.deleted {
+    padding-left: 24px;
+    background: url(images/delete.png) no-repeat 0 50%;
+}
+
 div#errStatus p span.warn {
     padding-left: 24px;
     background: url(images/error.png) no-repeat 0 50%;

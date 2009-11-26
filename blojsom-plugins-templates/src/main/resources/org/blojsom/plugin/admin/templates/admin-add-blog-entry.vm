@@ -31,11 +31,11 @@
                                 </tr>
                                 <tr>
                                     <td>#adminResource('blog.entry.text.text' 'Blog entry text')</td>
-                                    <td><textarea cols="80" rows="20" name="blog-entry-description" id="blog-entry-description"></textarea></td>
+                                    <td><textarea cols="72" rows="20" name="blog-entry-description" id="blog-entry-description"></textarea></td>
                                 </tr>
                                 <tr>
                                     <td>#adminResource('blog.entry.text.meta' 'Blog entry metatags')</td>
-                                    <td><textarea cols="80" rows="5" name="blog-entry-metadata" id="blog-entry-metadata"></textarea></td>
+                                    <td><textarea cols="72" rows="5" name="blog-entry-metadata" id="blog-entry-metadata"></textarea></td>
                                 </tr>
 
                                 <tr>

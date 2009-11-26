@@ -109,7 +109,7 @@
     </select>
 #end
 
-#macro( adminResource $resourceID $fallback )$!BLOJSOM_RESOURCE_MANAGER.getString($resourceID, "org.blojsom.plugin.admin.resources.messages", $fallback, $BLOJSOM_BLOG.getBlogAdministrationLocale())#end
+#macro(adminResource $resourceID $fallback )$!BLOJSOM_RESOURCE_MANAGER.getString($resourceID, "org.blojsom.plugin.admin.resources.messages", $fallback, $BLOJSOM_BLOG.getBlogAdministrationLocale())#end
         
 #macro(AdminPageTitle $resourceID $fallback)#set ($page = $!BLOJSOM_RESOURCE_MANAGER.getString($resourceID, "org.blojsom.plugin.admin.resources.messages", $fallback, $BLOJSOM_BLOG.getBlogAdministrationLocale()))#end
 

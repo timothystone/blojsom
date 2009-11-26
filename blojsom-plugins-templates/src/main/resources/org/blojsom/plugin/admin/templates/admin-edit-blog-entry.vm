@@ -23,8 +23,8 @@
                                 <input type="hidden" name="plugins" value="edit-blog-entries">
                                 <input type="hidden" name="blog-category-id" value="$BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.getBlogCategoryId()">
                                 <input type="hidden" name="blog-entry-id" value="$BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.getId()">
-                                <input type="submit" name="submitreload" value="#adminResource('reload.blog.entry.text' 'Reload blog entry')">
                             </div>
+                            <input type="submit" name="submitreload" value="#adminResource('reload.blog.entry.text' 'Reload blog entry')">
                         </form>
 
                         <h3>#adminResource('edit.blog.entry.header' 'Edit Blog Entry')</h3>
@@ -141,6 +141,7 @@
     </div>
 </div>
           <script type="text/javascript">
+
             function reloadPreviewDiv() {
                 var previewString = document.getElementById('blog-entry-description').value;
                 document.getElementById('blog-entry-preview').innerHTML = previewString;
