@@ -143,6 +143,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
     private static final String BLOG_PINGBACK_ID = "blog-pingback-id";
     private static final String BLOG_ENTRY_PUBLISH_DATETIME = "blog-entry-publish-datetime";
     private static final String BLOG_TRACKBACK_URLS = "blog-trackback-urls";
+    private static final String ENTRY_METADATA = "entry-metadata";
     private static final String POST_SLUG = "post-slug";
     private static final String PING_BLOG_URLS = "ping-blog-urls";
     private static final String RESPONSE_TYPE = "response-type";
@@ -377,6 +378,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
             String allowPingbacks = BlojsomUtils.getRequestValue(BlojsomMetaDataConstants.BLOG_METADATA_PINGBACKS_DISABLED, httpServletRequest);
             String blogTrackbackURLs = BlojsomUtils.getRequestValue(BLOG_TRACKBACK_URLS, httpServletRequest);
             String pingBlogURLS = BlojsomUtils.getRequestValue(PING_BLOG_URLS, httpServletRequest);
+            String blogEntryMetaData = BlojsomUtils.getRequestValue(BLOG_ENTRY_METADATA, httpServletRequest);
             String sendPingbacks = BlojsomUtils.getRequestValue(PingbackPlugin.PINGBACK_PLUGIN_METADATA_SEND_PINGBACKS, httpServletRequest);
             String status = BlojsomUtils.getRequestValue(STATUS, httpServletRequest);
 
@@ -416,6 +418,12 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
                     entryMetaData.put(WeblogsPingPlugin.NO_PING_WEBLOGS_METADATA, "true");
                 } else {
                     entryMetaData.remove(WeblogsPingPlugin.NO_PING_WEBLOGS_METADATA);
+                }
+
+                if (!BlojsomUtils.checkNullOrBlank(blogEntryMetaData)) {
+                    entryMetaData.put(ENTRY_METADATA, entryMetaData);
+                } else {
+                    entryMetaData.remove(ENTRY_METADATA);
                 }
 
                 if (!BlojsomUtils.checkNullOrBlank(sendPingbacks)) {
@@ -639,6 +647,12 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
                 entryMetaData.put(WeblogsPingPlugin.NO_PING_WEBLOGS_METADATA, "true");
             } else {
                 entryMetaData.remove(WeblogsPingPlugin.NO_PING_WEBLOGS_METADATA);
+            }
+
+            if (!BlojsomUtils.checkNullOrBlank(blogEntryMetadata)) {
+                entryMetaData.put(ENTRY_METADATA, blogEntryMetadata);
+            } else {
+                entryMetaData.remove(ENTRY_METADATA);
             }
 
             if (!BlojsomUtils.checkNullOrBlank(sendPingbacks)) {

@@ -37,7 +37,7 @@
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>
-                                        <input type="submit" id="addEntryToCategory" name="addEntryToCategory" value="#adminResource('add.entry.to.category.text' 'Add entry&#8230;')"> <span class="metalink">or Cancel</span>
+                                        <input type="submit" id="addEntryToCategory" name="submitAddEntryToCategory" value="#adminResource('add.entry.to.category.text' 'Add entry&#8230;')"> <span class="metalink">or Cancel</span>
                                     </td>
                                 </tr>
                             </table>
@@ -65,7 +65,7 @@
                                 <tr>
                                     <td>&nbsp;</td>
                                     <td>
-                                        <input type="submit" id="editEntriesInCategory" name="editEntriesInCategory" value="#adminResource('edit.entries.in.category.text' 'Edit entries&#8230;')"> <span class="metalink">or Cancel</span>
+                                        <input type="submit" id="editEntriesInCategory" name="submitEditEntriesInCategory" value="#adminResource('edit.entries.in.category.text' 'Edit entries&#8230;')"> <span class="metalink">or Cancel</span>
                                     </td>
                                 </tr>
                             </table>
