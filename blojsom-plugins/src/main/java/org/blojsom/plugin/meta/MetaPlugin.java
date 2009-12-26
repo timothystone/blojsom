@@ -56,7 +56,6 @@ import java.util.Map;
 public class MetaPlugin implements Plugin {
 
     private Log _logger = LogFactory.getLog(MetaPlugin.class);
-
     private String _metaPrefix = "meta-";
 
     /**
@@ -85,7 +84,7 @@ public class MetaPlugin implements Plugin {
      * @throws PluginException If there is an error processing the blog entries
      */
     public Entry[] process(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Blog blog, Map context, Entry[] entries) throws PluginException {
-        String description;
+        String entryMetaData;
         Entry entry;
         BufferedReader br;
         StringReader sr;
@@ -94,44 +93,42 @@ public class MetaPlugin implements Plugin {
 
         for (int i = 0; i < entries.length; i++) {
             entry = entries[i];
-            description = entry.getDescription();
-            sr = new StringReader(description);
-            br = new BufferedReader(sr);
+            entryMetaData = (String) entry.getMetaData().get("entry-metadata");
+            if (!BlojsomUtils.checkNullOrBlank(entryMetaData)) {
+                sr = new StringReader(entryMetaData);
+                br = new BufferedReader(sr);
 
-            try {
-                int equalIndex;
-                String key;
-                String value;
-                Map metadata;
-                noMetaDescription = new StringBuffer();
+                try {
+                    int equalIndex;
+                    String key;
+                    String value;
+                    Map metadata;
 
-                while ((line = br.readLine()) != null) {
-                    if (line.trim().startsWith(_metaPrefix)) {
-                        equalIndex = line.indexOf("=", _metaPrefix.length());
-                        if (equalIndex != -1) {
-                            key = line.substring(_metaPrefix.length(), equalIndex);
-                            value = line.substring(equalIndex + 1);
-                            metadata = entry.getMetaData();
-                            if (metadata != null) {
-                                metadata.put(key, value);
-                                entry.setMetaData(metadata);
+                    while ((line = br.readLine()) != null) {
+                        if (line.trim().startsWith(_metaPrefix)) {
+                            equalIndex = line.indexOf("=", _metaPrefix.length());
+                            if (equalIndex != -1) {
+                                key = line.substring(_metaPrefix.length(), equalIndex);
+                                value = line.substring(equalIndex + 1);
+                                metadata = entry.getMetaData();
+                                if (metadata != null) {
+                                    metadata.put(key, value);
+                                    entry.setMetaData(metadata);
+                                } else {
+                                    metadata = new HashMap();
+                                    metadata.put(key, value);
+                                    entry.setMetaData(metadata);
+                                }
                             } else {
-                                metadata = new HashMap();
-                                metadata.put(key, value);
-                                entry.setMetaData(metadata);
                             }
                         } else {
-                            noMetaDescription.append(line).append(BlojsomUtils.LINE_SEPARATOR);
                         }
-                    } else {
-                        noMetaDescription.append(line).append(BlojsomUtils.LINE_SEPARATOR);
                     }
-                }
 
-                entry.setDescription(noMetaDescription.toString());
-            } catch (IOException e) {
-                if (_logger.isErrorEnabled()) {
-                    _logger.error(e);
+                } catch (IOException e) {
+                    if (_logger.isErrorEnabled()) {
+                        _logger.error(e);
+                    }
                 }
             }
         }

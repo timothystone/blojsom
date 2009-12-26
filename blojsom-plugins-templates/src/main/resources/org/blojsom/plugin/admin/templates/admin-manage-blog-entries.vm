@@ -45,7 +45,11 @@
                             <td>#CategoryDescription($entry.getBlogCategory())</td>
                             <td>$entry.getResponses().size()</td>
                             <td>$!entry.getAuthor()</td>
-                            <td>$!entry.getStatus()</td>
+                            #if($!entry.getStatus() == "published")
+                            <td><img src="#BlogBaseAdminURL()/administration/images/page_white_world.png" alt="$!entry.getStatus()"></td>
+                            #else
+                            <td><img src="#BlogBaseAdminURL()/administration/images/page_white_edit.png" alt="$!entry.getStatus()"></td>
+                            #end
                             <td>
                                 <a href="#BlogURL()$entry.getBlogCategory().getName()$entry.getPostSlug()">View</a>&nbsp;
                                 <a href="#BlogAdminURL()/?flavor=admin&amp;action=edit-blog-entry&amp;plugins=edit-blog-entries&amp;blog-category-id=$entry.getBlogCategory().getId()&amp;blog-entry-id=$entry.getId()">Edit</a>&nbsp;

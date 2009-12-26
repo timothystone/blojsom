@@ -421,7 +421,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
                 }
 
                 if (!BlojsomUtils.checkNullOrBlank(blogEntryMetaData)) {
-                    entryMetaData.put(ENTRY_METADATA, entryMetaData);
+                    entryMetaData.put(ENTRY_METADATA, blogEntryMetaData);
                 } else {
                     entryMetaData.remove(ENTRY_METADATA);
                 }

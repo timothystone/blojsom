@@ -1,4 +1,4 @@
-﻿-- There is no conditional drop in PostgreSQL.
+-- There is no conditional drop in PostgreSQL.
 -- Commented out for now in case the error from a failed DROP is not handled.
 
 -- Alter tables to drop foreign key constraints

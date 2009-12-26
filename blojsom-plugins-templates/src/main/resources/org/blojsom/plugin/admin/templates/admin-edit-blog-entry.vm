@@ -51,7 +51,7 @@
                                 </tr>
                                 <tr>
                                     <td>#adminResource('blog.entry.text.meta' 'Blog entry metatags')</td>
-                                    <td><textarea cols="72" rows="5" name="blog-entry-metadata" id="blog-entry-metadata">$BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.getMetaData().get("entry-metadata")</textarea></td>
+                                    <td><textarea cols="72" rows="5" name="blog-entry-metadata" id="blog-entry-metadata">$!BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.getMetaData().get("entry-metadata")</textarea></td>
                                 </tr>
 
                                 <tr>
