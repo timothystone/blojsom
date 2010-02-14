@@ -9,12 +9,12 @@
     <name>blojsom-plugins</name>
     <url>http://blojsom.sf.net</url>
     <parent>
-        <groupId>org.blojsom</groupId>
+        <groupId>net.sf.blojsom</groupId>
         <artifactId>
-        blojsom-maven
+            blojsom-maven
         </artifactId>
         <version>
-        3.5-SNAPSHOT
+            3.5-SNAPSHOT
         </version>
     </parent>
     <dependencies>
@@ -25,7 +25,7 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.blojsom</groupId>
+            <groupId>net.sf.blojsom</groupId>
             <artifactId>blojsom-core</artifactId>
             <version>3.5-SNAPSHOT</version>
         </dependency>
