@@ -7,64 +7,11 @@ blojsom acknowledges the contributions of the following developers.
 
 blojsom contains a number of third-party software components.
 
-blojsom uses Maven for its build management. Some dependencies are stored on a
-dedicated maven repository at www.anothercaffeinatedday.com.
+blojsom uses Maven for its build management. Developers should have Maven 
+installed. Users can create custom spins of blojsom packaging using Maven.
 
-The repository uses HTTPS. This will cause problems in your IDE and makes users
-the repository "dedicated users"; for only a dedicated user would bother with
-managing the certificates in the JDK keystore.
-
-The following is the recommended way preparing the maven build:
-
-1. The HTTPS certificate issuer, cacert.org, should (and must) be added to your 
-   JDK cacerts trust database.
-
-   Download the cacert certificates from cacert.org:
-
-   % curl -k -o "cacert-root.crt" "https://www.cacert.org/certs/root.crt"
-   % curl -k -o "cacert-class3.crt" "https://www.cacert.org/certs/class3.crt"
-
-   VALIDATE EACH CERTIFICATE!
-
-   MD5 and SHA1 hashes are available here:
-   https://www.cacert.org/index.php?id=3
-
-   `keytool' provides a view mode:
-
-   % keytool -printcert -file /path/to/crtfile | grep -A5 "Valid from"
-
-   Now, add the certificates to the cacerts trust database:
-
-   NB: You may be required to `sudo' to update the keystore.
-
-   NB: The command on Snow Leopard (Mac OS X 10.6.x) differs slightly where
-       there is no "JRE":
-
-       % keytool -import -alias cacert.org-root \
-       > -keystore /Library/Java/Home/lib/security/cacerts \
-       > -file /path/to/cacert-root.crt
-
-       /Library/Java/Home is a symlink to the current, OS default, JDK.
-
-       Snow Leopard ships with Java 1.6.0.
-
-   NB: The default keystore password is "changeit".
-
-   % keytool -import -alias cacert.org-root \
-   > -keystore $JAVA_HOME/jre/lib/security/cacerts \
-   > -file /path/to/cacert-root.crt
-
-   % keytool -import -alias cacert.org-class3 \
-   > -keystore $JAVA_HOME/jre/lib/security/cacerts \
-   > -file /path/to/cacert-class3.crt
-
-2. Add the HTTPS server public key to your personal keystore:
-
-   % keytool -import -alias www.anothercaffeinatedday.com 
-   > -file www.anothercaffeinatedday.com-expires-2010-03-20.cer
-
-   The certificate is issued by cacert.org and is routinely expired and updated.
-   You will have to perform this task periodically.
+To learn how to install and use Maven in 15 minutes, visit the Maven Users Centre at
+http://bit.ly/9nZlXl.
 
    * blojsom includes software developed by the Apache Software Foundation
      Copyright (c) 2003 The Apache Software Foundation.
