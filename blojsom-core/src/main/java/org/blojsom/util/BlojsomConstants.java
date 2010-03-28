@@ -43,7 +43,7 @@ public interface BlojsomConstants {
     /**
      * blojsom version
      */
-    public static final String BLOJSOM_VERSION_NUMBER = "blojsom v3.3";
+    public static final String BLOJSOM_VERSION_NUMBER = "blojsom v3.5";
 
     /**
      * Key under which blog information will be placed
