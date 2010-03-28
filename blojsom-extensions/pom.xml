@@ -1,14 +1,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>net.sf.blojsom</groupId>
+  <groupId>org.blojsom</groupId>
   <artifactId>blojsom-extensions</artifactId>
   <packaging>jar</packaging>
   <version>3.5-SNAPSHOT</version>
   <name>blojsom-extensions</name>
   <url>http://blojsom.sf.net</url>
   <parent>
-    <groupId>net.sf.blojsom</groupId>
+    <groupId>org.blojsom</groupId>
     <artifactId>
         blojsom-maven
     </artifactId>
@@ -24,12 +24,12 @@
         <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>net.sf.blojsom</groupId>
+      <groupId>org.blojsom</groupId>
       <artifactId>blojsom-core</artifactId>
       <version>3.5-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>net.sf.blojsom</groupId>
+      <groupId>org.blojsom</groupId>
       <artifactId>blojsom-plugins</artifactId>
       <version>3.5-SNAPSHOT</version>
     </dependency>
