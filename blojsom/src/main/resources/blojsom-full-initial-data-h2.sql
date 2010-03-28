@@ -77,6 +77,9 @@ CREATE TABLE `DBUserMetadata` (
 ) ;
 
 INSERT INTO `DBUserMetadata` VALUES (1,1,'all_permissions_permission','true');
+INSERT INTO `DBUserMetadata` VALUES (2,1,'display-response-text','false');
+INSERT INTO `DBUserMetadata` VALUES (3,1,'use-richtext-editor','false');
+
 CREATE TABLE `Entry` (
   `entry_id` int(11) NOT NULL auto_increment,
   `blog_id` int(11) NOT NULL,

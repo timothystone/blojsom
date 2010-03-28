@@ -178,6 +178,8 @@ CREATE SEQUENCE Blojsom_user_md_id_Seq START WITH 1 INCREMENT BY 1;
 --
 
 INSERT INTO Blojsom_DBUserMetadata VALUES (Blojsom_user_md_id_Seq.nextval,Blojsom_user_id_Seq.currval,'all_permissions_permission','true');
+INSERT INTO Blojsom_DBUserMetadata VALUES (Blojsom_user_md_id_Seq.nextval,Blojsom_user_id_Seq.currval,'display-response-text','false');
+INSERT INTO Blojsom_DBUserMetadata VALUES (Blojsom_user_md_id_Seq.nextval,Blojsom_user_id_Seq.currval,'use-richtext-editor','false');
 
 --
 -- Table structure for table Blojsom_Entry

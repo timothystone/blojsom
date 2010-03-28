@@ -194,3 +194,6 @@ CREATE TABLE DBUserMetadata (
 ) ;
 
 INSERT INTO DBUserMetadata VALUES (NULL, 1, 'all_permissions_permission','true');
+INSERT INTO DBUserMetadata VALUES (NULL, 1, 'display-response-text','false');
+INSERT INTO DBUserMetadata VALUES (NULL, 1, 'use-richtext-editor','false');
+
