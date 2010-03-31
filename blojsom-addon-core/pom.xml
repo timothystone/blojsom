@@ -20,14 +20,25 @@
     <dependency>
         <groupId>javax.servlet</groupId>
         <artifactId>servlet-api</artifactId>
+        <version>${servlet-api.version}</version>
         <scope>provided</scope>
-        <version>2.5</version>
     </dependency>
     <dependency>
-      <groupId>org.blojsom</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>blojsom-core</artifactId>
-      <version>3.5-SNAPSHOT</version>
+      <version>${project.version}</version>
       <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.velocity</groupId>
+      <artifactId>velocity</artifactId>
+      <version>${velocity.version}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+      <version>1.0.4</version>
     </dependency>
     <dependency>
       <groupId>netscape-ldapjdk</groupId>
@@ -53,12 +64,6 @@
       <groupId>webmacro</groupId>
       <artifactId>webmacro</artifactId>
       <version>2.0</version>
-    </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>

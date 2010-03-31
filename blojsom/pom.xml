@@ -19,36 +19,29 @@
   <dependencies>
       
     <dependency>
-      <groupId>org.blojsom</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>blojsom-core</artifactId>
-      <version>3.5-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.blojsom</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>blojsom-extensions</artifactId>
-      <version>3.5-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.blojsom</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>blojsom-plugins</artifactId>
-      <version>3.5-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.blojsom</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>blojsom-plugins-templates</artifactId>
-      <version>3.5-SNAPSHOT</version>
+      <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>org.blojsom</groupId>
+      <groupId>${project.groupId}</groupId>
       <artifactId>blojsom-resources</artifactId>
-      <version>3.5-SNAPSHOT</version>
-    </dependency>
-    <!-- test -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
+      <version>${project.version}</version>
     </dependency>
   </dependencies>
   <build>

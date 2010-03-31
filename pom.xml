@@ -10,17 +10,17 @@
         <license>
             <name>Berkeley Software Distribution (BSD) License</name>
             <url>http://www.opensource.org/licenses/bsd-license.php</url>
-            <distribution>repo</distribution> 
+            <distribution>repo</distribution>
             <comments>
                 The BSD License is considered the most liberal OSS license.
             </comments>
-        </license> 
+        </license>
     </licenses>
-    <organization> 
-        <name>blojsom</name> 
+    <organization>
+        <name>blojsom</name>
         <url>http://www.sourceforge.net/projects/blojsom/</url>
     </organization>
-    <developers> 
+    <developers>
         <developer>
             <id>david</id>
             <name>David A. Czarnecki</name>
@@ -64,5 +64,70 @@
         <module>blojsom-extensions</module>
         <module>blojsom-plugins-templates</module>
         <module>blojsom-resources</module>
-  </modules>
+    </modules>
+
+    <properties>
+        <velocity.version>1.6.2</velocity.version>
+        <servlet-api.version>2.5</servlet-api.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>3.8.1</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <version>1.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.0</version>
+                    <configuration>
+                        <tagBase>https://blojsom.svn.sourceforge.net/svnroot/blojsom/</tagBase>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
