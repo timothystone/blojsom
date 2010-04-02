@@ -63,13 +63,11 @@
 
 #macro(showErrorMessage)
     #if ($BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT)
-        <p id="operation_result">$BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT</p>
+        <div id="operation_result">$BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT</div>
         <script type="text/javascript">
             var errStatus = Dom.get("errStatus");
             var showStat = new Y.util.Anim('errStatus', {height:{to:errStatus.scrollHeight}}, .5);
-            var stat = new Y.util.ColorAnim('operation_result', {backgroundColor:{from: '#ff0', to: '#f8fbfc'}},3);
             showStat.animate();
-            stat.animate();
             stat.onComplete.subscribe( function() {
                     window.setTimeout('new Y.util.Anim(errStatus, {height:{to:0}}, 1).animate()','4000');
                 });

@@ -47,6 +47,20 @@
           destroy-method="destroy"/>
     <bean id="date-format" class="org.blojsom.plugin.date.DateFormatPlugin" init-method="init"
           destroy-method="destroy"/>
+
+    <bean id="dashboard" class="org.blojsom.plugin.dashboard.DashboardPlugin" init-method="init"
+          destroy-method="destroy">
+        <property name="servletConfig">
+            <ref bean="servletConfigFactoryBean"/>
+        </property>
+        <property name="eventBroadcaster">
+            <ref bean="eventBroadcaster"/>
+        </property>
+        <property name="blojsomProperties">
+            <ref bean="defaultProperties"/>
+        </property>
+    </bean>
+
     <bean id="days-since-posted" class="org.blojsom.plugin.statistics.DaysSincePostedPlugin" init-method="init"
           destroy-method="destroy"/>
     <bean id="emoticons" class="org.blojsom.plugin.emoticons.EnhancedEmoticonsPlugin" init-method="init"

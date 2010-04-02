@@ -18,38 +18,7 @@
                     <div class="yui-g">
                         <h2>Welcome to the <a href="http://blojsom.sourceforge.net">blojsom</a> administration console.</h2>
                     </div>
-                    <div class="yui-gb">
-                        <div class="yui-u first">
-                            <h3>New Entry</h3>
-                            <p>Add a new entry in:</p>
-                            <ul>
-                                <li><a href="?action=new-blog-entry&amp;flavor=admin&amp;plugins=edit-blog-entries&blog-category-id=1">Uncategorized</a></li>
-                                <li><a href="?action=new-blog-entry&amp;flavor=admin&amp;plugins=edit-blog-entries&blog-category-id=2">test</a></li>
-                                <li><a href="?action=new-blog-entry&amp;flavor=admin&amp;plugins=edit-blog-entries&blog-category-id=3">nerdery</a></li>
-                                <li>More&#8230;</li>
-                            </ul>
-                        </div>
-                        <div class="yui-u">
-                            <h3>Manage Responses</h3>
-                            <p>There are n new responses:</p>
-                            <ul>
-                                <li>Res 1</li>
-                                <li>Res 2</li>
-                                <li>Res 3</li>
-                                <li>More&#8230;</li>
-                            </ul>
-                        </div>
-                        <div class="yui-u">
-                            <h3>Manage Entries</h3>
-                            <p>Recent entries include:</p>
-                            <ul>
-                                <li>Entry 1</li>
-                                <li>Entry 2</li>
-                                <li>Entry 3</li>
-                                <li>More&#8230;</li>
-                            </ul>
-                        </div>
-                    </div>
+                    #DisplayTemplateAdditions()
                 </div>
             </div>
 
