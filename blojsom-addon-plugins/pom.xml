@@ -2,12 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.blojsom</groupId>
+    <groupId>${parent.groupId}</groupId>
     <artifactId>blojsom-addon-plugins</artifactId>
     <packaging>jar</packaging>
-    <version>3.5-SNAPSHOT</version>
+    <version>${parent.version}</version>
     <name>blojsom-addon-plugins</name>
-    <url>http://blojsom.sf.net</url>
+    <url>http://sourceforge.net/projects/blojsom/</url>
     <parent>
         <groupId>org.blojsom</groupId>
         <artifactId>
