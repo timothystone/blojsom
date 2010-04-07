@@ -23,13 +23,13 @@ div#errStatus {
     height: 0px;
     overflow: hidden;
     border-bottom: 1px #92a9ba solid;
-    background: #ffc703;
+    background: #ffe13e;
 }
 
 div#operation_result {
     margin: 0;
     padding: .5em 1em .5em 32px;
-    background: url(images/statusBg.gif) repeat-x top #ffc703;
+    background: url(images/statusBg.gif) repeat-x top #ffe13e;
     color: #000000;
 }
 

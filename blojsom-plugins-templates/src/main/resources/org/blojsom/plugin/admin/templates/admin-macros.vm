@@ -68,7 +68,7 @@
             var errStatus = Dom.get("errStatus");
             var showStat = new Y.util.Anim('errStatus', {height:{to:errStatus.scrollHeight}}, .5);
             showStat.animate();
-            stat.onComplete.subscribe( function() {
+            showStat.onComplete.subscribe( function() {
                     window.setTimeout('new Y.util.Anim(errStatus, {height:{to:0}}, 1).animate()','4000');
                 });
         </script>
