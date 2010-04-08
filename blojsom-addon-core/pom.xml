@@ -40,6 +40,7 @@
       <artifactId>commons-logging</artifactId>
       <version>1.0.4</version>
     </dependency>
+    <!-- needs to be installed in local repos -->
     <dependency>
       <groupId>netscape-ldapjdk</groupId>
       <artifactId>netscape-ldapjdk</artifactId>
@@ -60,6 +61,7 @@
       <artifactId>groovy</artifactId>
       <version>1.0-beta-4</version>
     </dependency>
+    <!-- needs to be installed in local repos -->
     <dependency>
       <groupId>webmacro</groupId>
       <artifactId>webmacro</artifactId>
