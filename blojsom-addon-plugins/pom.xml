@@ -300,4 +300,11 @@
             <version>1.0-b2</version>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>java.net</id>
+            <name>java.net Maven 2 Repository</name>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+    </repositories>
 </project>
