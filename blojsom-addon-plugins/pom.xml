@@ -1,6 +1,6 @@
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>${parent.groupId}</groupId>
     <artifactId>blojsom-addon-plugins</artifactId>
@@ -18,7 +18,7 @@
         </version>
     </parent>
     <dependencies>
-    
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
@@ -66,7 +66,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+        
         <dependency>
             <groupId>markdownj</groupId>
             <artifactId>markdownj</artifactId>
@@ -289,7 +289,7 @@
         </dependency>
 
         <dependency>
-            <groupId>org.apache.velocity.tools</groupId>
+            <groupId>velocity-tools</groupId>
             <artifactId>velocity-tools</artifactId>
             <version>1.1</version>
         </dependency>
