@@ -58,8 +58,6 @@
     <modules>
         <module>blojsom-core</module>
         <module>blojsom-plugins</module>
-        <module>blojsom-addon-plugins</module>
-        <module>blojsom-addon-core</module>
         <module>blojsom</module>
         <module>blojsom-extensions</module>
         <module>blojsom-plugins-templates</module>
@@ -141,6 +139,19 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>build-addons</id>
+            <activation>
+                <property>
+                    <name>buildAddons</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <modules>
+                <module>blojsom-addon-plugins</module>
+                <module>blojsom-addon-core</module>
+            </modules>
         </profile>
     </profiles>
 </project>
