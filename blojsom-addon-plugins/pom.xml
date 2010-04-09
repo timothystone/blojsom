@@ -302,6 +302,11 @@
             <version>1.0-b2</version>
         </dependency>
     </dependencies>
+
+    <!-- TODO                                                                  -->
+    <!-- will prevent central sync up. where dependencies are not available in  -->
+    <!-- central, may need to consider alternate library.                       -->
+
     <repositories>
         <repository>
             <id>java.net</id>
