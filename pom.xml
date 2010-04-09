@@ -22,33 +22,46 @@
     </organization>
     <developers>
         <developer>
-            <id>david</id>
+            <id>czarneckid</id>
             <name>David A. Czarnecki</name>
             <email>czarneckid@users.sourceforge.net</email>
             <url>http://www.blojsom.com/</url>
             <organization>blojsom</organization>
-            <organizationUrl>http://www.blojsom.com/</organizationUrl>
+            <organizationUrl>http://sourceforge.net/projects/blojsom/</organizationUrl>
             <roles>
                 <role>developer</role>
             </roles>
             <timezone>-5</timezone>
         </developer>
         <developer>
-            <id>mark</id>
+            <id>intabulas</id>
             <name>Mark Lussier</name>
+            <email>intabulas@users.sourceforge.net</email>
             <organization>blojsom</organization>
-            <organizationUrl>http://www.blojsom.com/</organizationUrl>
+            <organizationUrl>http://sourceforge.net/projects/blojsom/</organizationUrl>
             <roles>
                 <role>developer</role>
             </roles>
         </developer>
         <developer>
-            <id>timothy</id>
+            <id>gefahrmaus</id>
             <name>Timothy Stone</name>
-            <email>tstone@code-henge.com</email>
+            <email>gefahrmaus@users.sourceforge.net</email>
             <url>http://www.code-henge.com/</url>
-            <organization>codehenge</organization>
-            <organizationUrl>http://www.code-henge.com/</organizationUrl>
+            <organization>blojsom</organization>
+            <organizationUrl>http://sourceforge.net/projects/blojsom/</organizationUrl>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+        <developer>
+            <id>owenfarrell</id>
+            <name>Owen Farrell</name>
+            <email>owenfarrell@users.sourceforge.net</email>
+            <url>http://owenfarrell.users.sourceforge.net/</url>
+            <organization>blojsom</organization>
+            <organizationUrl>http://sourceforge.net/projects/blojsom/</organizationUrl>
             <roles>
                 <role>developer</role>
             </roles>
