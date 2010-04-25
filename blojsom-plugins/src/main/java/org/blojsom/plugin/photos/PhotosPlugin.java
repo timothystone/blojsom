@@ -70,6 +70,7 @@ public class PhotosPlugin implements Plugin {
      *
      * @throws PluginException If there is an error initializing the plugin
      */
+    @Override
     public void init() throws PluginException {
     }
 
@@ -84,80 +85,62 @@ public class PhotosPlugin implements Plugin {
      * @return Modified set of blog entries
      * @throws BlojsomPluginException If there is an error processing the blog entries
      */
+    @Override
     public Entry[] process(HttpServletRequest request,
-                           HttpServletResponse response,
-                           Blog blog,
-                           Map context,
-                           Entry[] entries) throws PluginException {
+            HttpServletResponse response,
+            Blog blog,
+            Map context,
+            Entry[] entries) throws PluginException {
 
-        ArrayList photos = null;
-        String photoAlbum = "";
-        String photoAlbumList = "";
-        String photoAlbumThumbnail = "";
         String blogResourcePath = getBlogResourcePath(blog);
 
         for (int i = 0; i < entries.length; i++) {
             Entry entry = entries[i];
-            photos = new ArrayList();
-            photoAlbum = getPhotoAlbum(entry, photoAlbum);
-            photoAlbumList = getPhotoAlbumList(entry, photoAlbumList);
-            photoAlbumThumbnail = getPhotoAlbumThumbnail(entry, photoAlbumThumbnail);
-            String photoAlbumRealPath = getPhotoAlbumRealPath(blogResourcePath, photoAlbum);
-
-            if( !BlojsomUtils.checkNullOrBlank(photoAlbumRealPath) ) {
-                try {
-
-                    File file = new File( photoAlbumRealPath );
-
-                    if( file.isDirectory() ) {
-
-                        if( BlojsomUtils.checkNullOrBlank(photoAlbumList) ) {
-                            String[] filesInList = BlojsomUtils.parseCommaList((String)entry.getMetaData().get("photo-album-list"));
-                            for( int f = 0; f < filesInList.length; f++ ) {
-                                if( (filesInList[f].toLowerCase().indexOf("thumb")) > 0 ) {
-                                    continue;
+            ArrayList photos = new ArrayList();
+            String photoAlbum = getPhotoAlbum(entry.getMetaData());
+            String photoAlbumList = getPhotoAlbumList(entry.getMetaData());
+            String photoAlbumThumbnail = getPhotoAlbumThumbnail(entry.getMetaData());
+            String photoAlbumRealPath = getPhotoAlbumRealPath(blogResourcePath + BlojsomUtils.removeSlashes(photoAlbum));
+            if (!BlojsomUtils.checkNullOrBlank(photoAlbumRealPath)) {
+                if (!BlojsomUtils.checkNullOrBlank(photoAlbumList)) {
+                    String[] filesInList = BlojsomUtils.parseCommaList(photoAlbumList);
+                    for (int f = 0; f < filesInList.length; f++) {
+                        photos.add(blogResourcePath + BlojsomUtils.addTrailingSlash(photoAlbum) + filesInList[f]);
+                    }
+                } else {
+                    try {
+                        File file = new File(photoAlbumRealPath);
+                        if(file.exists()) {
+                            if (file.isDirectory()) {
+                                File[] files = file.listFiles(BlojsomUtils.getExtensionsFilter(new String[]{".jpeg", ".jpg", ".gif", ".png"}));
+                                for (int f = 0; f < files.length; f++) {
+                                    if (!(files[f].getName()).equalsIgnoreCase(photoAlbumThumbnail)) {
+                                        photos.add(blogResourcePath + BlojsomUtils.addTrailingSlash(photoAlbum) + files[f].getName());
+                                    }
                                 }
-                                photos.add(blogResourcePath + BlojsomUtils.addTrailingSlash(photoAlbum) + filesInList[f]);
                             }
-
-                        } else {
-
-                            File[] files = file.listFiles( BlojsomUtils.getExtensionsFilter( new String[] {".jpg",".gif",".png"} ) );
-                            for( int f = 0; f < files.length; f++ ) {
-                                if( (files[f].getName()).toLowerCase().indexOf("thumb") > 0 ) {
-                                    continue;
-                                }
-                                photos.add(blogResourcePath + BlojsomUtils.addTrailingSlash(photoAlbum) + files[f].getName());
+                            if (file.isFile()) {
+                                photos.add(blogResourcePath + photoAlbum);
                             }
                         }
-                        photoAlbumThumbnail = blogResourcePath + BlojsomUtils.addTrailingSlash(photoAlbum) + photoAlbumThumbnail;
-                   }
-
-
-                    if( file.isFile() ) {
-                        photos.add( blogResourcePath + photoAlbum );
-                        photoAlbumThumbnail = blogResourcePath + photoAlbumThumbnail;
+                    } catch (NullPointerException npe) {
+                        _logger.error("Photo album is 'null'.\n");
+                    } catch (SecurityException se) {
+                        _logger.error(se.getMessage());
                     }
-
-                    if( photoAlbumThumbnail != null ) {
-                        entry.getMetaData().put( "photo-album-thumbnail", photoAlbumThumbnail );
-                        _logger.debug( "photoAlbumThumbnail is: " + photoAlbumThumbnail );
-                    }
-
-                    entry.getMetaData().put( "photo-album", photos );
-
-                    _logger.debug( "Photo album loaded with " +
-                            photos.size() + ((photos.size() == 1)? " photo.":" photos.") );
-
-                } catch( NullPointerException npe ) {
-                    _logger.error( "Error while trying to retrieve photo album");
                 }
-
+                if (photoAlbumThumbnail != null) {
+                    photoAlbumThumbnail = blogResourcePath + BlojsomUtils.addTrailingSlash(photoAlbum) + photoAlbumThumbnail;
+                    entry.getMetaData().put("photo-album-thumbnail", photoAlbumThumbnail);
+                    _logger.debug("photoAlbumThumbnail is: " + photoAlbumThumbnail);
+                }
+                entry.getMetaData().put("photo-album", photos);
+                _logger.debug("Photo album loaded with "
+                        + photos.size() + ((photos.size() == 1) ? " photo." : " photos."));
             } else {
-                _logger.debug( "No photo album defined. Moving on...");
+                _logger.debug("No photo album. Moving on...\n");
             }
         }
-
         return entries;
     }
 
@@ -168,40 +151,43 @@ public class PhotosPlugin implements Plugin {
         return blogResourcePath;
     }
 
-    private String getPhotoAlbumRealPath(String blogResourcePath, String photoAlbum) {
-        String photoAlbumRealPath = _servletConfig.getServletContext().getRealPath(blogResourcePath + photoAlbum);
-        _logger.debug("photoAlbumRealPath is: " + photoAlbumRealPath);
-        return photoAlbumRealPath;
-    }
-
-    private String getPhotoAlbumThumbnail(Entry entry, String photoAlbumThumbnail) {
-        if (BlojsomUtils.checkMapForKey(entry.getMetaData(), "photo-album-thumbnail")) {
-            photoAlbumThumbnail = ((String) entry.getMetaData().get("photo-album-thumbnail")).trim();
+    private String getPhotoAlbum(Map metaData) {
+        String photoAlbum;
+        if (BlojsomUtils.checkMapForKey(metaData, "photo-album")) {
+            photoAlbum = ((String) metaData.get("photo-album")).trim();
         } else {
-            photoAlbumThumbnail = "";
+            photoAlbum = null;
         }
-        _logger.debug("photoAlbumThumbnail is: " + photoAlbumThumbnail);
-        return photoAlbumThumbnail;
+        _logger.debug("photoAlbum is: " + photoAlbum);
+        return photoAlbum;
     }
 
-    private String getPhotoAlbumList(Entry entry, String photoAlbumList) {
-        if (BlojsomUtils.checkMapForKey(entry.getMetaData(), "photo-album-list")) {
-            photoAlbumList = ((String) entry.getMetaData().get("photo-album-list")).trim();
+    private String getPhotoAlbumList(Map metaData) {
+        String photoAlbumList;
+        if (BlojsomUtils.checkMapForKey(metaData, "photo-album-list")) {
+            photoAlbumList = ((String) metaData.get("photo-album-list")).trim();
         } else {
-            photoAlbumList = "";
+            photoAlbumList = null;
         }
         _logger.debug("photoAlbumList is: " + photoAlbumList);
         return photoAlbumList;
     }
 
-    private String getPhotoAlbum(Entry entry, String photoAlbum) {
-        if (BlojsomUtils.checkMapForKey(entry.getMetaData(), "photo-album")) {
-            photoAlbum = ((String) entry.getMetaData().get("photo-album")).trim();
+    private String getPhotoAlbumThumbnail(Map metaData) {
+        String photoAlbumThumbnail;
+        if (BlojsomUtils.checkMapForKey(metaData, "photo-album-thumbnail")) {
+            photoAlbumThumbnail = ((String) metaData.get("photo-album-thumbnail")).trim();
         } else {
-            photoAlbum = "";
+            photoAlbumThumbnail = null;
         }
-        _logger.debug("photoAlbum is: " + photoAlbum);
-        return photoAlbum;
+        _logger.debug("photoAlbumThumbnail is: " + photoAlbumThumbnail);
+        return photoAlbumThumbnail;
+    }
+
+    private String getPhotoAlbumRealPath(String photoAlbum) {
+        String photoAlbumRealPath = _servletConfig.getServletContext().getRealPath(photoAlbum);
+        _logger.debug("photoAlbumRealPath is: " + photoAlbumRealPath);
+        return photoAlbumRealPath;
     }
 
     /**
@@ -209,6 +195,7 @@ public class PhotosPlugin implements Plugin {
      *
      * @throws PluginException If there is an error performing cleanup for this plugin
      */
+    @Override
     public void cleanup() throws PluginException {
     }
 
@@ -217,6 +204,7 @@ public class PhotosPlugin implements Plugin {
      *
      * @throws PluginException If there is an error in finalizing this plugin
      */
+    @Override
     public void destroy() throws PluginException {
     }
 
@@ -233,7 +221,4 @@ public class PhotosPlugin implements Plugin {
     public void setBlojsomProperties(Properties blojsomProperties) {
         this._blojsomProperties = blojsomProperties;
     }
-
 }
-
-
