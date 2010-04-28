@@ -9,12 +9,8 @@
     <url>http://sourceforge.net/projects/blojsom/</url>
     <parent>
         <groupId>org.blojsom</groupId>
-        <artifactId>
-            blojsom-maven
-        </artifactId>
-        <version>
-            3.5-SNAPSHOT
-        </version>
+        <artifactId>blojsom-maven</artifactId>
+        <version>3.5-SNAPSHOT</version>
     </parent>
     <dependencies>
         <dependency>

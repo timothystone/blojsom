@@ -88,47 +88,27 @@
             <url>http://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.5</maven.compiler.source>
+        <maven.compiler.target>1.5</maven.compiler.target>
         <velocity.version>1.6.2</velocity.version>
         <servlet-api.version>2.5</servlet-api.version>
     </properties>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.testng</groupId>
                 <artifactId>testng</artifactId>
                 <version>5.11</version>
+                <classifier>jdk15</classifier>
                 <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-gpg-plugin</artifactId>
-                    <version>1.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-release-plugin</artifactId>
-                    <version>2.0</version>
-                    <configuration>
-                        <tagBase>https://blojsom.svn.sourceforge.net/svnroot/blojsom/</tagBase>
-                        <mavenExecutorId>forked-path</mavenExecutorId>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-        <plugins>
-        </plugins>
-    </build>
     <profiles>
         <profile>
-            <id>release-sign-artifacts</id>
+            <id>release-artifacts</id>
             <activation>
                 <property>
                     <name>performRelease</name>
@@ -139,7 +119,17 @@
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>2.0</version>
+                        <configuration>
+                            <tagBase>https://blojsom.svn.sourceforge.net/svnroot/blojsom/</tagBase>
+                            <mavenExecutorId>forked-path</mavenExecutorId>
+                        </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.0</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>

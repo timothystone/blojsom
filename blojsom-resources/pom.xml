@@ -1,21 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>${parent.groupId}</groupId>
-  <artifactId>blojsom-resources</artifactId>
-  <packaging>jar</packaging>
-  <version>${parent.version}</version>
-  <name>blojsom-resources</name>
-  <url>http://sourceforge.net/projects/blojsom/</url>
-  <parent>
-    <groupId>org.blojsom</groupId>
-    <artifactId>
-        blojsom-maven
-    </artifactId>
-    <version>
-        3.5-SNAPSHOT
-    </version>
-  </parent>
-  <dependencies>
-  </dependencies>
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>${parent.groupId}</groupId>
+    <artifactId>blojsom-resources</artifactId>
+    <packaging>jar</packaging>
+    <version>${parent.version}</version>
+    <name>blojsom-resources</name>
+    <url>http://sourceforge.net/projects/blojsom/</url>
+    <parent>
+        <groupId>org.blojsom</groupId>
+        <artifactId>blojsom-maven</artifactId>
+        <version>3.5-SNAPSHOT</version>
+    </parent>
 </project>
