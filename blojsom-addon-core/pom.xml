@@ -34,7 +34,7 @@
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
-            <version>1.0.4</version>
+            <version>${commons-logging.version}</version>
         </dependency>
         <!-- needs to be installed in local repos -->
         <dependency>
@@ -53,9 +53,14 @@
             <version>2.3.16</version>
         </dependency>
         <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jcl</artifactId>
+            <version>${org.slf4j.version}</version>
+        </dependency>
+        <dependency>
             <groupId>groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>1.0-beta-4</version>
+            <version>1.0</version>
         </dependency>
         <!-- needs to be installed in local repos -->
         <dependency>

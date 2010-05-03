@@ -95,7 +95,7 @@
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
-            <version>1.0.4</version>
+            <version>${commons-logging.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-pool</groupId>
@@ -133,6 +133,11 @@
                     <artifactId>ehcache</artifactId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-jcl</artifactId>
+            <version>${org.slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>javax.transaction</groupId>
