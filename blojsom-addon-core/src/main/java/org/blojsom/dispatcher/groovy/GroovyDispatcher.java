@@ -190,13 +190,8 @@ public class GroovyDispatcher implements Dispatcher {
 
                 try {
                     Template groovyTemplate = simpleTemplateEngine.createTemplate(isr);
-                    groovyTemplate.setBinding(context);
-                    groovyTemplate.writeTo(responseWriter);
-                } catch (SyntaxException e) {
-                    if (_logger.isErrorEnabled()) {
-                        _logger.error(e);
-                    }
-                } catch (ClassNotFoundException e) {
+                    groovyTemplate.make(context).writeTo(responseWriter);
+                } catch (Exception e) {
                     if (_logger.isErrorEnabled()) {
                         _logger.error(e);
                     }
@@ -216,13 +211,8 @@ public class GroovyDispatcher implements Dispatcher {
 
                     try {
                         Template groovyTemplate = simpleTemplateEngine.createTemplate(isr);
-                        groovyTemplate.setBinding(context);
-                        groovyTemplate.writeTo(responseWriter);
-                    } catch (SyntaxException e) {
-                        if (_logger.isErrorEnabled()) {
-                            _logger.error(e);
-                        }
-                    } catch (ClassNotFoundException e) {
+                        groovyTemplate.make(context).writeTo(responseWriter);
+                    } catch (Exception e) {
                         if (_logger.isErrorEnabled()) {
                             _logger.error(e);
                         }
@@ -248,13 +238,8 @@ public class GroovyDispatcher implements Dispatcher {
 
                 try {
                     Template groovyTemplate = simpleTemplateEngine.createTemplate(isr);
-                    groovyTemplate.setBinding(context);
-                    groovyTemplate.writeTo(responseWriter);
-                } catch (SyntaxException e) {
-                    if (_logger.isErrorEnabled()) {
-                        _logger.error(e);
-                    }
-                } catch (ClassNotFoundException e) {
+                    groovyTemplate.make(context).writeTo(responseWriter);
+                } catch (Exception e) {
                     if (_logger.isErrorEnabled()) {
                         _logger.error(e);
                     }
@@ -274,13 +259,8 @@ public class GroovyDispatcher implements Dispatcher {
 
                     try {
                         Template groovyTemplate = simpleTemplateEngine.createTemplate(isr);
-                        groovyTemplate.setBinding(context);
-                        groovyTemplate.writeTo(responseWriter);
-                    } catch (SyntaxException e) {
-                        if (_logger.isErrorEnabled()) {
-                            _logger.error(e);
-                        }
-                    } catch (ClassNotFoundException e) {
+                        groovyTemplate.make(context).writeTo(responseWriter);
+                    } catch (Exception e) {
                         if (_logger.isErrorEnabled()) {
                             _logger.error(e);
                         }

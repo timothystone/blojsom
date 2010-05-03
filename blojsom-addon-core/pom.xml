@@ -60,7 +60,7 @@
         <dependency>
             <groupId>groovy</groupId>
             <artifactId>groovy</artifactId>
-            <version>1.0</version>
+            <version>${groovy.version}</version>
         </dependency>
         <!-- needs to be installed in local repos -->
         <dependency>
