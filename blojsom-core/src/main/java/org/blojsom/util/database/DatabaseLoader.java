@@ -118,7 +118,7 @@ public class DatabaseLoader {
     }
 
     /**
-     * Initalize the blojsom database
+     * Initialize the blojsom database
      */
     public void init() {
         if (_dbScript == null) {
@@ -192,11 +192,11 @@ public class DatabaseLoader {
 
                 if (!_upgrading) {
                     if (_logger.isInfoEnabled()) {
-                        _logger.info("Finised blojsom database creation");
+                        _logger.info("Finished blojsom database creation");
                     }
                 } else {
                     if (_logger.isInfoEnabled()) {
-                        _logger.info("Finised upgrading blojsom database");
+                        _logger.info("Finished upgrading blojsom database");
                     }
                 }
             }
