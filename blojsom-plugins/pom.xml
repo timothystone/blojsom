@@ -1,35 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!-- The Basics -->
     <groupId>${parent.groupId}</groupId>
     <artifactId>blojsom-plugins</artifactId>
-    <packaging>jar</packaging>
     <version>${parent.version}</version>
-    <name>blojsom-plugins</name>
-    <url>http://sourceforge.net/projects/blojsom/</url>
-    <parent>
-        <groupId>org.blojsom</groupId>
-        <artifactId>blojsom-maven</artifactId>
-        <version>3.5-SNAPSHOT</version>
-    </parent>
     <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>${servlet-api.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>blojsom-core</artifactId>
-            <version>${project.version}</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.activation</groupId>
-            <artifactId>activation</artifactId>
-            <version>1.1.1</version>
-        </dependency>
         <dependency>
             <groupId>antlr</groupId>
             <artifactId>antlr</artifactId>
@@ -37,12 +13,12 @@
         </dependency>
         <dependency>
             <groupId>asm</groupId>
-            <artifactId>asm-attrs</artifactId>
+            <artifactId>asm</artifactId>
             <version>1.5.3</version>
         </dependency>
         <dependency>
             <groupId>asm</groupId>
-            <artifactId>asm</artifactId>
+            <artifactId>asm-attrs</artifactId>
             <version>1.5.3</version>
         </dependency>
         <dependency>
@@ -88,6 +64,11 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
             <version>1.1</version>
@@ -109,24 +90,56 @@
             </exclusions>
         </dependency>
         <dependency>
-            <groupId>commons-fileupload</groupId>
-            <artifactId>commons-fileupload</artifactId>
-            <version>1.1</version>
-        </dependency>
-        <dependency>
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.activation</groupId>
+            <artifactId>activation</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>${servlet-api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.8</version>
         </dependency>
         <dependency>
             <groupId>net.sf.ehcache</groupId>
             <artifactId>ehcache</artifactId>
             <version>1.2.3</version>
         </dependency>
+        <!-- needs to be installed in local repos -->
+        <dependency>
+            <groupId>net.sf.textile4j</groupId>
+            <artifactId>textile4j</artifactId>
+            <version>1.20</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>blojsom-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate</artifactId>
-            <version>3.1.3</version>
+            <version>${org.hibernate.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>ehcache</groupId>
@@ -140,21 +153,6 @@
             <version>${org.slf4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>javax.transaction</groupId>
-            <artifactId>jta</artifactId>
-            <version>1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.8</version>
-        </dependency>
-        <dependency>
-            <groupId>javax.mail</groupId>
-            <artifactId>mail</artifactId>
-            <version>1.4.2</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring</artifactId>
             <version>2.0-m4</version>
@@ -165,12 +163,16 @@
             <version>2.0-m2</version>
             <exclusions>
                 <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-jdbc</artifactId>
+                    <groupId>java.persistence</groupId>
+                    <artifactId>ejb</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.hibernate</groupId>
+                    <artifactId>hibernate-annotations</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>org.springframework</groupId>
-                    <artifactId>spring-dao</artifactId>
+                    <artifactId>spring-aop</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>org.springframework</groupId>
@@ -178,23 +180,18 @@
                 </exclusion>
                 <exclusion>
                     <groupId>org.springframework</groupId>
-                    <artifactId>spring-aop</artifactId>
+                    <artifactId>spring-dao</artifactId>
                 </exclusion>
                 <exclusion>
-                    <groupId>org.hibernate</groupId>
-                    <artifactId>hibernate-annotations</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>java.persistence</groupId>
-                    <artifactId>ejb</artifactId>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-jdbc</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
-        <!-- needs to be installed in local repos -->
         <dependency>
-            <groupId>net.sf.textile4j</groupId>
-            <artifactId>textile4j</artifactId>
-            <version>1.20</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>5.13.1</version>
         </dependency>
         <dependency>
             <groupId>xmlrpc</groupId>
@@ -202,11 +199,12 @@
             <version>2.0.1</version>
         </dependency>
     </dependencies>
-    <repositories>
-        <repository>
-            <id>java.net</id>
-            <name>java.net Maven 2 Repository</name>
-            <url>http://download.java.net/maven/2</url>
-        </repository>
-    </repositories>
+    <parent>
+        <groupId>org.blojsom</groupId>
+        <artifactId>blojsom-maven</artifactId>
+        <version>3.5-SNAPSHOT</version>
+    </parent>
+    <!-- Environment Settings -->
+    <name>blojsom Plugins</name>
+    <!-- TODO Add project description -->
 </project>
