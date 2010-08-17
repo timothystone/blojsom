@@ -38,7 +38,11 @@ import org.blojsom.authorization.AuthorizationException;
 import org.blojsom.authorization.AuthorizationProvider;
 import org.blojsom.blog.Blog;
 import org.blojsom.blog.database.DatabaseUser;
-import org.hibernate.*;
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.Map;

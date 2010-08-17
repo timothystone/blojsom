@@ -30,7 +30,13 @@
  */
 package org.blojsom.fetcher;
 
-import org.blojsom.blog.*;
+import org.blojsom.blog.Blog;
+import org.blojsom.blog.Category;
+import org.blojsom.blog.Comment;
+import org.blojsom.blog.Entry;
+import org.blojsom.blog.Pingback;
+import org.blojsom.blog.Trackback;
+import org.blojsom.blog.User;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
