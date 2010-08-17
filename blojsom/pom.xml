@@ -1,17 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!-- The Basics -->
     <groupId>${parent.groupId}</groupId>
     <artifactId>blojsom</artifactId>
-    <packaging>war</packaging>
     <version>${parent.version}</version>
-    <name>blojsom</name>
-    <url>http://sourceforge.net/projects/blojsom/</url>
-    <parent>
-        <groupId>org.blojsom</groupId>
-        <artifactId>blojsom-maven</artifactId>
-        <version>3.5-SNAPSHOT</version>
-    </parent>
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -39,10 +33,19 @@
             <version>${project.version}</version>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>${project.artifactId}</finalName>
-    </build>
+    <parent>
+        <groupId>org.blojsom</groupId>
+        <artifactId>blojsom-maven</artifactId>
+        <version>3.5-SNAPSHOT</version>
+    </parent>
     <properties>
         <netbeans.hint.deploy.server>Tomcat60</netbeans.hint.deploy.server>
     </properties>
+    <!-- Build Settings -->
+    <build>
+        <finalName>${project.artifactId}</finalName>
+    </build>
+    <!-- More Project Information -->
+    <name>blojsom Web Application</name>
+    <!-- TODO Add project description -->
 </project>
