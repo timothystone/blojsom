@@ -45,7 +45,9 @@ import org.blojsom.util.BlojsomConstants;
 import org.blojsom.util.BlojsomUtils;
 import org.blojsom.util.BlojsomMetaDataConstants;
 
-import java.util.*;
+import java.util.Date;
+import java.util.Hashtable;
+import java.util.Vector;
 
 /**
  * Blogger API handler
