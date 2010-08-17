@@ -57,8 +57,8 @@ public class AuthorizationException extends BlojsomException {
      * @param message the detail message. The detail message is saved for
      *                later retrieval by the {@link #getMessage()} method.
      */
-    public AuthorizationException(String string) {
-        super(string);
+    public AuthorizationException(String message) {
+        super(message);
     }
 
     /**
@@ -74,8 +74,8 @@ public class AuthorizationException extends BlojsomException {
      *                permitted, and indicates that the cause is nonexistent or
      *                unknown.)
      */
-    public AuthorizationException(String string, Throwable throwable) {
-        super(string, throwable);
+    public AuthorizationException(String message, Throwable cause) {
+        super(message, cause);
     }
 
     /**
@@ -91,7 +91,7 @@ public class AuthorizationException extends BlojsomException {
      *              permitted, and indicates that the cause is nonexistent or
      *              unknown.)
      */
-    public AuthorizationException(Throwable throwable) {
-        super(throwable);
+    public AuthorizationException(Throwable cause) {
+        super(cause);
     }
 }

@@ -126,18 +126,18 @@ public class DatabaseTrackback implements Trackback, Serializable {
     }
 
     /**
-     * Retrieve the {@link BlogEntry} associated with this trackback
+     * Retrieve the {@link Entry} associated with this trackback
      *
-     * @return {@link BlogEntry}
+     * @return {@link Entry}
      */
     public Entry getEntry() {
         return _entry;
     }
 
     /**
-     * Set the {@link BlogEntry} associated with this trackback
+     * Set the {@link Entry} associated with this trackback
      *
-     * @param blogEntry {@link BlogEntry}
+     * @param entry {@link Entry}
      */
     public void setEntry(Entry entry) {
         _entry = entry;
@@ -358,9 +358,9 @@ public class DatabaseTrackback implements Trackback, Serializable {
     }
 
     /**
-     * Get the IP
+     * Set the IP
      *
-     * @return IP
+     * @param ip IP
      */
     public void setIp(String ip) {
         _ip = ip;

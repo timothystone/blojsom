@@ -67,7 +67,7 @@ public interface Category {
      *
      * @param parentCategoryId Parent category ID
      */
-    void setParentCategoryId(Integer id);
+    void setParentCategoryId(Integer parentCategoryId);
 
     /**
      * Get the blog ID
@@ -142,7 +142,7 @@ public interface Category {
     /**
      * Sets the parent category of this category
      *
-     * @param cateogory {@link org.blojsom.blog.Category} that represents the parent category
+     * @param category {@link org.blojsom.blog.Category} that represents the parent category
      */
     void setParentCategory(Category category);
 }

@@ -81,9 +81,9 @@ public interface Response {
     public String getIp();
 
     /**
-     * Get the IP
+     * Set the IP
      *
-     * @return IP
+     * @param ip IP
      */
     public void setIp(String ip);
 }

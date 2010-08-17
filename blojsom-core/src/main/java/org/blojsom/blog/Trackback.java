@@ -210,9 +210,9 @@ public interface Trackback extends Response {
     /**
      * Set the {@link Entry} associated with this trackback
      *
-     * @param blogEntry {@link Entry}
+     * @param entry {@link Entry}
      */
-    void setEntry(Entry blogEntry);
+    void setEntry(Entry entry);
 
     /**
      * Retrieve the date this trackback was created
