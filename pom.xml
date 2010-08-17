@@ -39,7 +39,7 @@
             </plugins>
         </pluginManagement>
     </build>
-    <!-- Environment Settings -->
+    <!-- More Project Information -->
     <name>blojsom Maven Parent POM</name>
     <description>A full-featured, multi-user, multi-blog platform.</description>
     <url>http://wiki.blojsom.com/wiki/display/BLOJSOM/Home</url>
