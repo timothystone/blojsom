@@ -1,17 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!-- The Basics -->
     <groupId>${parent.groupId}</groupId>
     <artifactId>blojsom-core</artifactId>
-    <packaging>jar</packaging>
     <version>${parent.version}</version>
-    <name>blojsom-core</name>
-    <url>http://sourceforge.net/projects/blojsom/</url>
-    <parent>
-        <groupId>org.blojsom</groupId>
-        <artifactId>blojsom-maven</artifactId>
-        <version>3.5-SNAPSHOT</version>
-    </parent>
     <dependencies>
         <dependency>
             <groupId>org.apache.velocity</groupId>
@@ -51,4 +44,12 @@
             <version>2.0-m4</version>
         </dependency>
     </dependencies>
+    <parent>
+        <groupId>org.blojsom</groupId>
+        <artifactId>blojsom-maven</artifactId>
+        <version>3.5-SNAPSHOT</version>
+    </parent>
+    <!-- More Project Information -->
+    <name>blojsom Core</name>
+    <description>The core of the blojsom platform.</description>
 </project>
