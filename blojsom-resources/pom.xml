@@ -11,6 +11,6 @@
         <version>3.5-SNAPSHOT</version>
     </parent>
     <!-- More Project Information -->
-    <name>blojsom-resources</name>
+    <name>blojsom Localization Resources</name>
     <!-- TODO Add project description -->
 </project>

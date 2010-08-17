@@ -29,6 +29,6 @@
         <version>3.5-SNAPSHOT</version>
     </parent>
     <!-- More Project Information -->
-    <name>blojsom Localization Extensions</name>
+    <name>blojsom Extensions</name>
     <!-- TODO Add project description -->
 </project>
