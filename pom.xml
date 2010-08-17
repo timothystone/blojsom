@@ -6,24 +6,13 @@
     <version>3.5-SNAPSHOT</version>
     <artifactId>blojsom-maven</artifactId>
     <packaging>pom</packaging>
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.testng</groupId>
-                <artifactId>testng</artifactId>
-                <version>5.11</version>
-                <classifier>jdk15</classifier>
-                <scope>test</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
     <modules>
         <module>blojsom-core</module>
         <module>blojsom-plugins</module>
-        <module>blojsom</module>
         <module>blojsom-extensions</module>
         <module>blojsom-plugins-templates</module>
         <module>blojsom-resources</module>
+        <module>blojsom</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
