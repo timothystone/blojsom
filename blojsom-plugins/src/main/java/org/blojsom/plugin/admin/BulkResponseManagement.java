@@ -32,7 +32,11 @@ package org.blojsom.plugin.admin;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.blojsom.blog.*;
+import org.blojsom.blog.Blog;
+import org.blojsom.blog.Comment;
+import org.blojsom.blog.Entry;
+import org.blojsom.blog.Pingback;
+import org.blojsom.blog.Trackback;
 import org.blojsom.event.EventBroadcaster;
 import org.blojsom.fetcher.Fetcher;
 import org.blojsom.fetcher.FetcherException;

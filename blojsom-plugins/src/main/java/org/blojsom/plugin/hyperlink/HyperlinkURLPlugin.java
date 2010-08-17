@@ -30,7 +30,8 @@
  */
 package org.blojsom.plugin.hyperlink;
 
-import org.blojsom.blog.*;
+import org.blojsom.blog.Blog;
+import org.blojsom.blog.Entry;
 import org.blojsom.plugin.Plugin;
 import org.blojsom.plugin.PluginException;
 

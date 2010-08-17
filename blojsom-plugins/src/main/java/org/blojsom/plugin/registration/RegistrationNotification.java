@@ -40,7 +40,11 @@ import org.blojsom.plugin.notification.AbstractNotification;
 import javax.mail.Address;
 import javax.mail.MessagingException;
 import java.net.URL;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 /**
  * RegistrationNotification
