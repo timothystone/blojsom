@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!-- The Basics -->
     <groupId>${parent.groupId}</groupId>
     <artifactId>blojsom-quickrstart</artifactId>
     <version>${parent.version}</version>
@@ -29,6 +30,6 @@
         <netbeans.hint.deploy.server>Tomcat60</netbeans.hint.deploy.server>
     </properties>
     <!-- More Project Information -->
-    <name>blojsom Quick Start Web Application</name>
-    <description>An blojsom web application instance capable of running completely in memory with no external resources necessary.</description>
+    <name>blojsom Web Application Quick Start</name>
+    <description>A blojsom web application instance capable of running completely in memory with no external resources necessary.</description>
 </project>
