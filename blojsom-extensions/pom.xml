@@ -28,6 +28,9 @@
         <artifactId>blojsom-maven</artifactId>
         <version>3.5-SNAPSHOT</version>
     </parent>
+    <properties>
+        <metrics.exclude>false</metrics.exclude>
+    </properties>
     <!-- More Project Information -->
     <name>blojsom Extensions</name>
     <!-- TODO Add project description -->

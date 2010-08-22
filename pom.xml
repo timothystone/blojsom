@@ -22,7 +22,8 @@
         <org.slf4j.version>1.3.0</org.slf4j.version>
         <velocity.version>1.6.2</velocity.version>
         <servlet-api.version>2.5</servlet-api.version>
-        <targetJDK>1.6</targetJDK>
+        <metrics.directory>${project.build.directory}/metrics</metrics.directory>
+        <metrics.exclude>true</metrics.exclude>
     </properties>
     <!-- Build Settings -->
     <build>
@@ -128,9 +129,9 @@
     </scm>
     <repositories>
         <repository>
-            <id>repo1</id>
+            <id>central</id>
             <name>Apache Maven central repository</name>
-            <url>http://repo2.maven.org/maven2</url>
+            <url>http://repo1.maven.org/maven2</url>
         </repository>
         <repository>
             <id>maven2-repository.dev.java.net</id>
@@ -152,7 +153,97 @@
     </distributionManagement>
     <profiles>
         <profile>
-            <id>release-artifacts</id>
+            <id>addons</id>
+            <modules>
+                <module>blojsom-addon-plugins</module>
+                <module>blojsom-addon-core</module>
+            </modules>
+        </profile>
+        <profile>
+            <id>docs</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                                <configuration>
+                                    <quiet>true</quiet>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>metrics</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-dependency-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>unpack</goal>
+                                </goals>
+                                <configuration>
+                                    <artifactItems>
+                                        <artifactItem>
+                                            <groupId>org.blojsom</groupId>
+                                            <artifactId>blojsom-metrics</artifactId>
+                                            <version>${project.version}</version>
+                                            <type>jar</type>
+                                            <outputDirectory>${metrics.directory}</outputDirectory>
+                                        </artifactItem>
+                                    </artifactItems>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-checkstyle-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>check</goal>
+                                </goals>
+                                <configuration>
+                                    <configLocation>${metrics.directory}/checkstyle.xml</configLocation>
+                                    <failOnViolation>false</failOnViolation>
+                                    <skip>${metrics.exclude}</skip>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-pmd-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>check</goal>
+                                    <goal>cpd-check</goal>
+                                </goals>
+                                <configuration>
+                                    <failOnViolation>false</failOnViolation>
+                                    <skip>${metrics.exclude}</skip>
+                                    <targetJdk>${maven.compiler.target}</targetJdk>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>
@@ -177,13 +268,6 @@
                     </plugin>
                 </plugins>
             </build>
-        </profile>
-        <profile>
-            <id>build-addons</id>
-            <modules>
-                <module>blojsom-addon-plugins</module>
-                <module>blojsom-addon-core</module>
-            </modules>
         </profile>
     </profiles>
 </project>

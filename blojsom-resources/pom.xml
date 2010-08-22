@@ -10,6 +10,9 @@
         <artifactId>blojsom-maven</artifactId>
         <version>3.5-SNAPSHOT</version>
     </parent>
+    <properties>
+        <metrics.exclude>false</metrics.exclude>
+    </properties>
     <!-- More Project Information -->
     <name>blojsom Localization Resources</name>
     <!-- TODO Add project description -->
