@@ -6,14 +6,6 @@
     <version>3.5-SNAPSHOT</version>
     <artifactId>blojsom-maven</artifactId>
     <packaging>pom</packaging>
-    <modules>
-        <module>blojsom-core</module>
-        <module>blojsom-plugins</module>
-        <module>blojsom-plugins-templates</module>
-        <module>blojsom-extensions</module>
-        <module>blojsom-resources</module>
-        <module>blojsom</module>
-    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <groovy.version>1.0</groovy.version>
@@ -182,6 +174,9 @@
         </profile>
         <profile>
             <id>metrics</id>
+            <modules>
+                <module>blojsom-metrics</module>
+            </modules>
             <build>
                 <plugins>
                     <plugin>
@@ -268,6 +263,20 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>default</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <modules>
+                <module>blojsom-core</module>
+                <module>blojsom-plugins</module>
+                <module>blojsom-plugins-templates</module>
+                <module>blojsom-extensions</module>
+                <module>blojsom-resources</module>
+                <module>blojsom</module>
+            </modules>
         </profile>
     </profiles>
 </project>
