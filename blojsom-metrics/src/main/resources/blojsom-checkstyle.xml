@@ -115,7 +115,9 @@
         <module name="AbstractClassName"/>
         <module name="ConstantName"/>
         <module name="LocalVariableName"/>
-        <module name="MemberName"/>
+        <module name="MemberName">
+            <property name="format" value="^_[a-z][a-zA-Z]*$"/>
+        </module>
         <module name="MethodName"/>
         <module name="PackageName">
 <!--            <property name="format" value="^org\.blojsom\.?([a-z]*\.)$"/>-->
