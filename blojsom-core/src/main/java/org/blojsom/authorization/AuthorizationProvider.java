@@ -30,11 +30,10 @@
  */
 package org.blojsom.authorization;
 
+import java.util.Map;
+
 import org.blojsom.ConfigurationException;
 import org.blojsom.blog.Blog;
-import org.blojsom.blog.User;
-
-import java.util.Map;
 
 /**
  * AuthorizationProvider
@@ -50,7 +49,7 @@ public interface AuthorizationProvider {
      *
      * @throws ConfigurationException If there is an error initializing the provider
      */
-    public void init() throws ConfigurationException;
+    void init() throws ConfigurationException;
 
     /**
      * Authorize a username and password for the given {@link Blog}
@@ -62,7 +61,7 @@ public interface AuthorizationProvider {
      * @param password             Password
      * @throws AuthorizationException If there is an error authorizing the username and password
      */
-    public void authorize(Blog blog, Map authorizationContext, String userLogin, String password) throws AuthorizationException;
+    void authorize(Blog blog, Map authorizationContext, String userLogin, String password) throws AuthorizationException;
 
     /**
      * Check a permission for the given {@link Blog}
@@ -74,5 +73,5 @@ public interface AuthorizationProvider {
      * @param permission        Permission
      * @throws AuthorizationException If there is an error checking the permission for the username and permission
      */
-    public void checkPermission(Blog blog, Map permissionContext, String userLogin, String permission) throws AuthorizationException;
+    void checkPermission(Blog blog, Map permissionContext, String userLogin, String permission) throws AuthorizationException;
 }

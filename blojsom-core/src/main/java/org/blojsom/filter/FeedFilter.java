@@ -229,13 +229,10 @@ public class FeedFilter implements Filter {
 
             Map updatedParams = new HashMap(httpServletRequest.getParameterMap());
             Iterator keys = params.keySet().iterator();
-            while (keys.hasNext())
-
-            {
+            while (keys.hasNext()) {
                 Object o = keys.next();
                 updatedParams.put(o, params.get(o));
             }
-
             this.params = Collections.unmodifiableMap(updatedParams);
             this.uri = uri;
             this.url = url;

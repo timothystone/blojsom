@@ -80,7 +80,7 @@ public class ServletConfigFactoryBean extends AbstractFactoryBean {
      *
      * @throws IllegalStateException If the {@link ServletConfig} instance has not been set
      */
-    protected final void verifyState() throws IllegalStateException {
+    protected final void verifyState() {
         if (servletConfig == null) {
             throw new IllegalStateException("You invoke the ServletConfigFactoryBean.setServletConfig() " +
                 "method prior to attempting to get the ServletConfig.");

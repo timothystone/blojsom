@@ -30,22 +30,22 @@
  */
 package org.blojsom.authorization.database;
 
+import java.util.Map;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.blojsom.ConfigurationException;
-import org.blojsom.util.BlojsomUtils;
 import org.blojsom.authorization.AuthorizationException;
 import org.blojsom.authorization.AuthorizationProvider;
 import org.blojsom.blog.Blog;
 import org.blojsom.blog.database.DatabaseUser;
+import org.blojsom.util.BlojsomUtils;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
-
-import java.util.Map;
 
 /**
  * Database authorization provider
@@ -58,7 +58,6 @@ public class DatabaseAuthorizationProvider implements AuthorizationProvider {
 
     private Log _logger = LogFactory.getLog(DatabaseAuthorizationProvider.class);
     private static final String ALL_PERMISSIONS_PERMISSION = "all_permissions_permission";
-
     protected SessionFactory _sessionFactory;
 
     /**
