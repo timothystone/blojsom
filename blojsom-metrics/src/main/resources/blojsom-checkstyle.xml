@@ -54,7 +54,7 @@
         <module name="EqualsHashCode"/>
         <module name="ExplicitInitialization"/>
         <module name="HiddenField"/>
-        <module name="IllegalCatch"/>
+<!--        <module name="IllegalCatch"/>-->
         <module name="IllegalThrows"/>
         <module name="InnerAssignment"/>
         <module name="MagicNumber"/>
