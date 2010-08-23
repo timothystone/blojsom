@@ -62,7 +62,6 @@ import java.util.regex.Pattern;
 public class PermalinkFilter implements Filter {
 
     private static final Log _logger = LogFactory.getLog(PermalinkFilter.class);
-
     private static final String YMD_PERMALINK_REGEX = "/(\\d\\d\\d\\d)/(\\d{1,2}+)/(\\d{1,2}+)/(.+)";
     private static final Pattern YMD_PERMALINK_PATTERN = Pattern.compile(YMD_PERMALINK_REGEX, Pattern.UNICODE_CASE);
     private static final String YMD_REGEX = "/(\\d\\d\\d\\d)/(\\d{1,2}+)/(\\d{1,2}+)/";
@@ -111,7 +110,7 @@ public class PermalinkFilter implements Filter {
      * @throws ServletException If there is an error executing the filter
      */
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
-        throws IOException, ServletException {
+            throws IOException, ServletException {
         request.setCharacterEncoding(BlojsomConstants.UTF8);
 
         HttpServletRequest hreq = (HttpServletRequest) request;
@@ -198,10 +197,8 @@ public class PermalinkFilter implements Filter {
             int permalinkIndex = pathInfo.substring(1).lastIndexOf(permalinkSubstring);
             if (permalinkIndex != -1 && permalinkIndex < pathInfo.length() - 1) {
                 extraParameters = new HashMap();
-                if (request.getParameter("permalink") == null) {
-                    if (!"/".equals(pathInfo.substring(permalinkIndex + 1))) {
-                        extraParameters.put("permalink", new String[]{pathInfo.substring(permalinkIndex + 1)});
-                    }
+                if (request.getParameter("permalink") == null && !"/".equals(pathInfo.substring(permalinkIndex + 1))) {
+                    extraParameters.put("permalink", new String[]{pathInfo.substring(permalinkIndex + 1)});
                 }
                 String pathinfo = pathInfo.substring(0, permalinkIndex + 1);
                 permalinkIndex = uri.lastIndexOf(permalinkSubstring);

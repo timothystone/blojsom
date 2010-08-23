@@ -188,10 +188,8 @@ public class DatabaseAuthorizationProvider implements AuthorizationProvider {
 
             tx.commit();
 
-            if (!user.getMetaData().containsKey(ALL_PERMISSIONS_PERMISSION)) {
-                if (!user.getMetaData().containsKey(permission)) {
-                    throw new AuthorizationException("Permission authorization failure");
-                }
+            if (!user.getMetaData().containsKey(ALL_PERMISSIONS_PERMISSION) && !user.getMetaData().containsKey(permission)) {
+                throw new AuthorizationException("Permission authorization failure");
             }
         } catch (HibernateException e) {
             if (tx != null) {
