@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
     <!-- The Basics -->
     <groupId>org.blojsom</groupId>
-    <version>3.5-SNAPSHOT</version>
     <artifactId>blojsom-maven</artifactId>
+    <version>3.5-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>blojsom-core</module>
@@ -61,27 +61,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jxr-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <configuration>
-                    <failOnViolation>false</failOnViolation>
-                    <skip>${metrics.exclude}</skip>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <configuration>
-                    <failOnViolation>false</failOnViolation>
-                    <skip>${metrics.exclude}</skip>
-                    <targetJdk>${maven.compiler.target}</targetJdk>
-                </configuration>
             </plugin>
         </plugins>
     </reporting>
