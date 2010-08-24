@@ -77,14 +77,14 @@ public interface Entry {
      *
      * @return Blog category ID
      */
-    public Integer getBlogCategoryId();
+    Integer getBlogCategoryId();
 
     /**
      * Set the blog category ID
      *
      * @param blogCategoryId Blog category ID
      */
-    public void setBlogCategoryId(Integer blogCategoryId);
+    void setBlogCategoryId(Integer blogCategoryId);
 
     /**
      * Date of the blog entry
@@ -381,70 +381,70 @@ public interface Entry {
      *
      * @return Status
      */
-    public String getStatus();
+    String getStatus();
 
     /**
      * Set the status
      *
      * @param status Status
      */
-    public void setStatus(String status);
+    void setStatus(String status);
 
     /**
      * Get the author
      *
      * @return Author
      */
-    public String getAuthor();
+    String getAuthor();
 
     /**
      * Set the author
      *
      * @param author Author
      */
-    public void setAuthor(String author);
+    void setAuthor(String author);
 
     /**
      * Get the post slug
      *
      * @return Post slug
      */
-    public String getPostSlug();
+    String getPostSlug();
 
     /**
      * Get the post slug encoded as UTF-8
      *
      * @return Post slug encoded as UTF-8
      */
-    public String getEncodedPostSlug();
+    String getEncodedPostSlug();
 
     /**
      * Set the post slug
      *
      * @param postSlug Post slug
      */
-    public void setPostSlug(String postSlug);
+    void setPostSlug(String postSlug);
 
     /**
      * Get the last modified date
      *
      * @return Last modified date
      */
-    public Date getModifiedDate();
+    Date getModifiedDate();
 
     /**
      * Set the last modified date
      *
      * @param modifiedDate Last modified date
      */
-    public void setModifiedDate(Date modifiedDate);
+    void setModifiedDate(Date modifiedDate);
 
     /**
      * Get the responses (comments, trackbacks, pingbacks)
      *
      * @return Responses (comments, trackbacks, pingbacks)
      */
-    public List getResponses();
+    List getResponses();
 
     /**
      * Get the responses (comments, trackbacks, pingbacks) matching some status code
@@ -452,7 +452,7 @@ public interface Entry {
      * @param status Status code
      * @return Responses (comments, trackbacks, pingbacks) matching some status code
      */
-    public List getResponsesMatchingStatus(String status);
+    List getResponsesMatchingStatus(String status);
 
     /**
      * Get the responses (comments, trackbacks, pingbacks) not matching some status code
@@ -460,5 +460,5 @@ public interface Entry {
      * @param status Status code
      * @return Responses (comments, trackbacks, pingbacks) not matching some status code
      */
-    public List getResponsesNotMatchingStatus(String status);
+    List getResponsesNotMatchingStatus(String status);
 }

@@ -53,7 +53,7 @@ public interface Trackback extends Response {
      *
      * @return Trackback ID
      */
-    public Integer getId();
+    Integer getId();
 
     /**
      * Set the blog ID
@@ -74,14 +74,14 @@ public interface Trackback extends Response {
      *
      * @return Blog entry ID
      */
-    public Integer getBlogEntryId();
+    Integer getBlogEntryId();
 
     /**
      * Set the blog entry ID
      *
      * @param blogEntryId Blog entry ID
      */
-    public void setBlogEntryId(Integer blogEntryId);
+    void setBlogEntryId(Integer blogEntryId);
 
     /**
      * Get the title of the trackback

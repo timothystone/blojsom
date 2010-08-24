@@ -47,70 +47,70 @@ public interface Blog {
      *
      * @return Unique ID
      */
-    public Integer getId();
+    Integer getId();
 
     /**
      * Set the id
      *
      * @param id Unique ID
      */
-    public void setId(Integer id);
+    void setId(Integer id);
 
     /**
      * Retrieve the blog ID
      *
      * @return Blog ID
      */
-    public String getBlogId();
+    String getBlogId();
 
     /**
      * Set the blog ID
      *
      * @param blogID Blog ID
      */
-    public void setBlogId(String blogID);
+    void setBlogId(String blogID);
 
     /**
      * Get a map of the templates
      *
      * @return Map of the templates
      */
-    public Map getTemplates();
+    Map getTemplates();
 
     /**
      * Set the templates
      *
      * @param templates Map of the templates
      */
-    public void setTemplates(Map templates);
+    void setTemplates(Map templates);
 
     /**
      * Get a map of the plugins
      *
      * @return Map of the plugins
      */
-    public Map getPlugins();
+    Map getPlugins();
 
     /**
      * Set the plugins
      *
      * @param plugins Plugins
      */
-    public void setPlugins(Map plugins);
+    void setPlugins(Map plugins);
 
     /**
      * Get the properties for the blog
      *
      * @return Properties for the blog
      */
-    public Map getProperties();
+    Map getProperties();
 
     /**
      * Set the properties for the blog
      *
      * @param properties Blog properties
      */
-    public void setProperties(Map properties);
+    void setProperties(Map properties);
 
     /**
      * Name of the blog

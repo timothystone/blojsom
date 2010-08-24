@@ -55,7 +55,7 @@ public interface Comment extends Response {
      *
      * @return Comment ID
      */
-    public Integer getId();
+    Integer getId();
 
     /**
      * Set the blog ID
@@ -76,14 +76,14 @@ public interface Comment extends Response {
      *
      * @return Blog entry ID
      */
-    public Integer getBlogEntryId();
+    Integer getBlogEntryId();
 
     /**
      * Set the blog entry ID
      *
      * @param blogEntryId Blog entry ID
      */
-    public void setBlogEntryId(Integer blogEntryId);
+    void setBlogEntryId(Integer blogEntryId);
 
     /**
      * Get the author of the comment
@@ -249,12 +249,12 @@ public interface Comment extends Response {
      *
      * @return Comment parent ID
      */
-    public Integer getParentId();
+    Integer getParentId();
 
     /**
      * Set the comment parent ID
      *
      * @param parentId Comment parent ID
      */
-    public void setParentId(Integer parentId);
+    void setParentId(Integer parentId);
 }

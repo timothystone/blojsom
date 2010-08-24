@@ -64,26 +64,26 @@ public interface Response {
      *
      * @return Status
      */
-    public String getStatus();
+    String getStatus();
 
     /**
      * Set the status
      *
      * @param status Status
      */
-    public void setStatus(String status);
+    void setStatus(String status);
 
     /**
      * Get the IP
      *
      * @return IP
      */
-    public String getIp();
+    String getIp();
 
     /**
      * Set the IP
      *
      * @param ip IP
      */
-    public void setIp(String ip);
+    void setIp(String ip);
 }

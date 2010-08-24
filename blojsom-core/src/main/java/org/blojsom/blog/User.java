@@ -47,124 +47,124 @@ public interface User {
      *
      * @return User ID
      */
-    public Integer getId();
+    Integer getId();
 
     /**
      * Set the user ID
      *
      * @param id User ID
      */
-    public void setId(Integer id);
+    void setId(Integer id);
 
     /**
      * Get the blog ID
      *
      * @return Blog ID
      */
-    public Integer getBlogId();
+    Integer getBlogId();
 
     /**
      * Set the blog ID
      *
      * @param blogId Blog ID
      */
-    public void setBlogId(Integer blogId);
+    void setBlogId(Integer blogId);
 
     /**
      * Get the user login
      *
      * @return User login
      */
-    public String getUserLogin();
+    String getUserLogin();
 
     /**
      * Set the user login
      *
      * @param userLogin User login
      */
-    public void setUserLogin(String userLogin);
+    void setUserLogin(String userLogin);
 
     /**
      * Get the password
      *
      * @return Password
      */
-    public String getUserPassword();
+    String getUserPassword();
 
     /**
      * Set the password
      *
      * @param userPassword Password
      */
-    public void setUserPassword(String userPassword);
+    void setUserPassword(String userPassword);
 
     /**
      * Get the user name
      *
      * @return User name
      */
-    public String getUserName();
+    String getUserName();
 
     /**
      * Set the user name
      *
      * @param userName User name
      */
-    public void setUserName(String userName);
+    void setUserName(String userName);
 
     /**
      * Get the user e-mail
      *
      * @return User e-mail
      */
-    public String getUserEmail();
+    String getUserEmail();
 
     /**
      * Set the user e-mail
      *
      * @param userEmail User e-mail
      */
-    public void setUserEmail(String userEmail);
+    void setUserEmail(String userEmail);
 
     /**
      * Get the user registered date
      *
      * @return User registered date
      */
-    public Date getUserRegistered();
+    Date getUserRegistered();
 
     /**
      * Set the user registered date
      *
      * @param userRegistered User registered date
      */
-    public void setUserRegistered(Date userRegistered);
+    void setUserRegistered(Date userRegistered);
 
     /**
      * Get the user status
      *
      * @return User status
      */
-    public String getUserStatus();
+    String getUserStatus();
 
     /**
      * Set the user status
      *
      * @param userStatus User status
      */
-    public void setUserStatus(String userStatus);
+    void setUserStatus(String userStatus);
 
     /**
      * Get the meta-data
      *
      * @return Meta-data
      */
-    public Map getMetaData();
+    Map getMetaData();
 
     /**
      * Set the meta-data
      *
      * @param metaData Meta-data
      */
-    public void setMetaData(Map metaData);
+    void setMetaData(Map metaData);
 }
