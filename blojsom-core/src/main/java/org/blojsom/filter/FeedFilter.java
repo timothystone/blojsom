@@ -61,7 +61,7 @@ import java.util.regex.Matcher;
  */
 public class FeedFilter implements Filter {
 
-    private static final Log _logger = LogFactory.getLog(FeedFilter.class);
+    private static final Log LOGGER = LogFactory.getLog(FeedFilter.class);
 
     private static final String FEED_WITH_TYPE_REGEX = "/feed/(.+)/$";
     private static final Pattern FEED_WITH_TYPE_PATTERN = Pattern.compile(FEED_WITH_TYPE_REGEX, Pattern.UNICODE_CASE);
@@ -99,7 +99,7 @@ public class FeedFilter implements Filter {
             _permalinkExtensions = BlojsomUtils.parseOnlyCommaList(permalinkExtensions, true);
         }
 
-        _logger.debug("Initialized feed filter using default feed type: " + _defaultFeedType);
+        LOGGER.debug("Initialized feed filter using default feed type: " + _defaultFeedType);
     }
 
     /**
@@ -132,7 +132,7 @@ public class FeedFilter implements Filter {
             pathInfo = "/";
         }
 
-        _logger.debug("Handling feed filter request: " + pathInfo);
+        LOGGER.debug("Handling feed filter request: " + pathInfo);
 
         Matcher feedWithTypeMatcher = FEED_WITH_TYPE_PATTERN.matcher(pathInfo);
         Matcher feedNoTypeMatcher = FEED_NO_TYPE_PATTERN.matcher(pathInfo);
@@ -169,7 +169,7 @@ public class FeedFilter implements Filter {
                 URL += "/";
             }
 
-            _logger.debug("Handling feed type: " + feedType + " with path info: " + pathinfo + " URI: " + URI + " URL: " + URL);
+            LOGGER.debug("Handling feed type: " + feedType + " with path info: " + pathinfo + " URI: " + URI + " URL: " + URL);
             hreq = new FeedPermalinkRequst(hreq, extraParameters, URI, URL, pathinfo);
         } else if (feedNoTypeMatcher.find()) {
             extraParameters = new HashMap();
@@ -200,7 +200,7 @@ public class FeedFilter implements Filter {
                 URL += "/";
             }
 
-            _logger.debug("Handling default feed type: " + _defaultFeedType + " with path info: " + pathinfo + " URI: " + URI + " URL: " + URL);
+            LOGGER.debug("Handling default feed type: " + _defaultFeedType + " with path info: " + pathinfo + " URI: " + URI + " URL: " + URL);
             hreq = new FeedPermalinkRequst(hreq, extraParameters, URI, URL, pathinfo);
         }
 

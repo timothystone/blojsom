@@ -61,7 +61,7 @@ import java.util.regex.Matcher;
  */
 public class SkipEntriesFilter implements Filter {
 
-    private static final Log _logger = LogFactory.getLog(SkipEntriesFilter.class);
+    private static final Log LOGGER = LogFactory.getLog(SkipEntriesFilter.class);
 
     private static final String PAGE_WITH_NUMBER_REGEX = "/skip/(.+)/$";
     private static final Pattern PAGE_WITH_NUMBER_PATTERN = Pattern.compile(PAGE_WITH_NUMBER_REGEX, Pattern.UNICODE_CASE);
@@ -86,7 +86,7 @@ public class SkipEntriesFilter implements Filter {
             pathInfo = "/";
         }
 
-        _logger.debug("Handling skip entries request: " + pathInfo);
+        LOGGER.debug("Handling skip entries request: " + pathInfo);
 
         Matcher pageNumberMatcher = PAGE_WITH_NUMBER_PATTERN.matcher(pathInfo);
         Map extraParameters;
@@ -105,7 +105,7 @@ public class SkipEntriesFilter implements Filter {
             pageNumberIndex = url.lastIndexOf(pageNumberSubstring);
             String URL = url.substring(0, pageNumberIndex);
 
-            _logger.debug("Handling skip entries page: " + pageNumber + " with path info: " + pathinfo + " URI: " + URI + " URL: " + URL);
+            LOGGER.debug("Handling skip entries page: " + pageNumber + " with path info: " + pathinfo + " URI: " + URI + " URL: " + URL);
             hreq = new SkipEntriesPermalinkRequest(hreq, extraParameters, URI, URL, pathinfo);
         }
 

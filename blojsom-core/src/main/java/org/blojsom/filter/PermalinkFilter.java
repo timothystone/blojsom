@@ -61,7 +61,7 @@ import java.util.regex.Pattern;
  */
 public class PermalinkFilter implements Filter {
 
-    private static final Log _logger = LogFactory.getLog(PermalinkFilter.class);
+    private static final Log LOGGER = LogFactory.getLog(PermalinkFilter.class);
     private static final String YMD_PERMALINK_REGEX = "/(\\d\\d\\d\\d)/(\\d{1,2}+)/(\\d{1,2}+)/(.+)";
     private static final Pattern YMD_PERMALINK_PATTERN = Pattern.compile(YMD_PERMALINK_REGEX, Pattern.UNICODE_CASE);
     private static final String YMD_REGEX = "/(\\d\\d\\d\\d)/(\\d{1,2}+)/(\\d{1,2}+)/";
@@ -144,7 +144,7 @@ public class PermalinkFilter implements Filter {
             String URI = uri.substring(0, yearIndex);
             yearIndex = url.lastIndexOf(yearSubstring);
             String URL = url.substring(0, yearIndex);
-            _logger.debug("Handling YYYY/MM/DD/permalink request: " + pathinfo);
+            LOGGER.debug("Handling YYYY/MM/DD/permalink request: " + pathinfo);
             hreq = new PermalinkRequest(hreq, extraParameters, URI, URL, pathinfo);
         } else if (ymdMatcher.find()) {
             String year = ymdMatcher.group(1);
@@ -162,7 +162,7 @@ public class PermalinkFilter implements Filter {
             yearIndex = url.lastIndexOf(yearSubstring);
             String URL = url.substring(0, yearIndex);
             hreq = new PermalinkRequest(hreq, extraParameters, URI, URL, pathinfo);
-            _logger.debug("Handling YYYY/MM/DD/ request: " + pathinfo);
+            LOGGER.debug("Handling YYYY/MM/DD/ request: " + pathinfo);
         } else if (ymMatcher.find()) {
             String year = ymMatcher.group(1);
             String month = ymMatcher.group(2);
@@ -177,7 +177,7 @@ public class PermalinkFilter implements Filter {
             yearIndex = url.lastIndexOf(yearSubstring);
             String URL = url.substring(0, yearIndex);
             hreq = new PermalinkRequest(hreq, extraParameters, URI, URL, pathinfo);
-            _logger.debug("Handling YYYY/MM request: " + pathinfo);
+            LOGGER.debug("Handling YYYY/MM request: " + pathinfo);
         } else if (yMatcher.find()) {
             String year = yMatcher.group(1);
             extraParameters = new HashMap();
@@ -190,7 +190,7 @@ public class PermalinkFilter implements Filter {
             yearIndex = url.lastIndexOf(yearSubstring);
             String URL = url.substring(0, yearIndex);
             hreq = new PermalinkRequest(hreq, extraParameters, URI, URL, pathinfo);
-            _logger.debug("Handling YYYY request: " + pathinfo);
+            LOGGER.debug("Handling YYYY request: " + pathinfo);
         } else {
             // Check for a /category/permalink.html post
             String permalinkSubstring = "/";
@@ -205,7 +205,7 @@ public class PermalinkFilter implements Filter {
                 String URI = uri.substring(0, permalinkIndex + 1);
                 permalinkIndex = url.lastIndexOf(permalinkSubstring);
                 String URL = url.substring(0, permalinkIndex + 1);
-                _logger.debug("Handling permalink request: " + pathinfo);
+                LOGGER.debug("Handling permalink request: " + pathinfo);
                 hreq = new PermalinkRequest(hreq, extraParameters, URI, URL, pathinfo);
             }
         }

@@ -82,7 +82,7 @@ import java.util.regex.Matcher;
  */
 public class PageFilter implements Filter {
 
-    private static final Log _logger = LogFactory.getLog(PageFilter.class);
+    private static final Log LOGGER = LogFactory.getLog(PageFilter.class);
     private static final String PAGE_PATHINFO = "/page/";
     private static final String PAGE_REGEX = PAGE_PATHINFO + "$";
     private static final Pattern PAGE_PATTERN = Pattern.compile(PAGE_REGEX, Pattern.UNICODE_CASE);
@@ -106,7 +106,7 @@ public class PageFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
         _useRootBlogCompatability = Boolean.valueOf(filterConfig.getInitParameter(USE_ROOT_BLOG_COMPATABILITY_IP)).booleanValue();
 
-        _logger.debug("Initialized page filter (Root blog compatability: " + _useRootBlogCompatability + ")");
+        LOGGER.debug("Initialized page filter (Root blog compatability: " + _useRootBlogCompatability + ")");
     }
 
     /**
@@ -139,7 +139,7 @@ public class PageFilter implements Filter {
             pathInfo = "/";
         }
 
-        _logger.debug("Handling page filter request: " + pathInfo);
+        LOGGER.debug("Handling page filter request: " + pathInfo);
 
         Matcher pageMatcher = PAGE_PATTERN.matcher(pathInfo);
         Map extraParameters;
@@ -170,7 +170,7 @@ public class PageFilter implements Filter {
             }
 
             hreq = new PagePermalinkRequst(hreq, extraParameters, URI, URL, pathInfo);
-            _logger.debug("Handling pathinfo: " + pathInfo + " uri: " + URI + " url: " + URL);
+            LOGGER.debug("Handling pathinfo: " + pathInfo + " uri: " + URI + " url: " + URL);
         }
 
         chain.doFilter(hreq, response);
