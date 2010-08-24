@@ -42,57 +42,57 @@ public interface BlojsomMetaDataConstants {
     /**
      * Entry meta-data key for poster
      */
-    public static final String BLOG_ENTRY_METADATA_AUTHOR = "blog-entry-author";
+    static final String BLOG_ENTRY_METADATA_AUTHOR = "blog-entry-author";
 
     /**
      * Extended entry meta-data key for poster
      * <p/>
      * Used to store private meta-data so that the default templates wont render it, like an email address
      */
-    public static final String BLOG_ENTRY_METADATA_AUTHOR_EXT = "blog-entry-author-ext";
+    static final String BLOG_ENTRY_METADATA_AUTHOR_EXT = "blog-entry-author-ext";
 
     /**
      * Entry meta-data file feader
      */
-    public static final String BLOG_METADATA_HEADER = "blojsom entry metadata";
+    static final String BLOG_METADATA_HEADER = "blojsom entry metadata";
 
     /**
      * Entry attribute for file()
      */
-    public static final String SOURCE_ATTRIBUTE = "blog-entry-source";
+    static final String SOURCE_ATTRIBUTE = "blog-entry-source";
 
     /**
      * Entry meta-data key for entry time
      */
-    public static final String BLOG_ENTRY_METADATA_TIMESTAMP = "blog-entry-metadata-timestamp";
+    static final String BLOG_ENTRY_METADATA_TIMESTAMP = "blog-entry-metadata-timestamp";
 
     /**
      * Entry meta-data key for disabling comments
      */
-    public static final String BLOG_METADATA_COMMENTS_DISABLED = "blog-entry-comments-disabled";
+    static final String BLOG_METADATA_COMMENTS_DISABLED = "blog-entry-comments-disabled";
 
     /**
      * Entry meta-data key for disabling trackbacks
      */
-    public static final String BLOG_METADATA_TRACKBACKS_DISABLED = "blog-entry-trackbacks-disabled";
+    static final String BLOG_METADATA_TRACKBACKS_DISABLED = "blog-entry-trackbacks-disabled";
 
     /**
      * Entry meta-data key for disabling pingbacks
      */
-    public static final String BLOG_METADATA_PINGBACKS_DISABLED = "blog-entry-pingbacks-disabled";
+    static final String BLOG_METADATA_PINGBACKS_DISABLED = "blog-entry-pingbacks-disabled";
 
     /**
      * Entry meta-data key indicating "published" status
      */
-    public static final String PUBLISHED_STATUS = "published";
+    static final String PUBLISHED_STATUS = "published";
 
     /**
      * Entry meta-data key indicating "draft" status
      */
-    public static final String DRAFT_STATUS = "draft";
+    static final String DRAFT_STATUS = "draft";
 
     /**
      * Entry meta-data key indicating "new" status
      */
-    public static final String NEW_STATUS = "new";
+    static final String NEW_STATUS = "new";
 }

@@ -52,7 +52,7 @@ public interface Dispatcher {
      *
      * @throws org.blojsom.BlojsomException If there is an error initializing the dispatcher
      */
-    public void init() throws org.blojsom.BlojsomException;
+    void init() throws org.blojsom.BlojsomException;
 
     /**
      * Dispatch a request and response. A context map is provided for the BlojsomServlet to pass
@@ -69,5 +69,5 @@ public interface Dispatcher {
      * @throws IOException      If there is an exception during IO
      * @throws ServletException If there is an exception in dispatching the request
      */
-    public void dispatch(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Blog blog, Map context, String flavorTemplate, String flavorContentType) throws IOException, ServletException;
+    void dispatch(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Blog blog, Map context, String flavorTemplate, String flavorContentType) throws IOException, ServletException;
 }

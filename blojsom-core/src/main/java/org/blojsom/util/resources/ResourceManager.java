@@ -44,7 +44,7 @@ public interface ResourceManager {
     /**
      * Initialize the ResourceManager.
      */
-    public void init() throws org.blojsom.BlojsomException;
+    void init() throws org.blojsom.BlojsomException;
 
     /**
      * Retrieve a string from a given resource bundle for the default locale.
@@ -54,7 +54,7 @@ public interface ResourceManager {
      * @param fallback   Fallback string to use if the given resource ID cannot be found
      * @return <code>resourceID</code> from resource bundle <code>resource</code> or <code>fallback</code> if the given resource ID cannot be found
      */
-    public String getString(String resourceID, String resource, String fallback);
+    String getString(String resourceID, String resource, String fallback);
 
     /**
      * Retrieve a string from a given resource bundle for the particular language and country locale.
@@ -65,7 +65,7 @@ public interface ResourceManager {
      * @param language   Language code
      * @return <code>resourceID</code> from resource bundle <code>resource</code> or <code>fallback</code> if the given resource ID cannot be found
      */
-    public String getString(String resourceID, String resource, String fallback, String language);
+    String getString(String resourceID, String resource, String fallback, String language);
 
     /**
      * Retrieve a string from a given resource bundle for the particular language and country locale.
@@ -77,7 +77,7 @@ public interface ResourceManager {
      * @param country    Country code
      * @return <code>resourceID</code> from resource bundle <code>resource</code> or <code>fallback</code> if the given resource ID cannot be found
      */
-    public String getString(String resourceID, String resource, String fallback, String language, String country);
+    String getString(String resourceID, String resource, String fallback, String language, String country);
 
     /**
      * Retrieve a string from a given resource bundle for the particular language and country locale.
@@ -88,7 +88,7 @@ public interface ResourceManager {
      * @param locale     Locale object to use when retrieving the resource bundle
      * @return <code>resourceID</code> from resource bundle <code>resource</code> or <code>fallback</code> if the given resource ID cannot be found
      */
-    public String getString(String resourceID, String resource, String fallback, Locale locale);
+    String getString(String resourceID, String resource, String fallback, Locale locale);
 
     /**
      * Wrapper for {@link java.text.MessageFormat#format(String, Object[])}
@@ -98,5 +98,5 @@ public interface ResourceManager {
      * @return String where {@link java.text.MessageFormat#format(String, Object[])} has been applied or <code>null</code>
      *         if there is an error applying the arguments to the pattern
      */
-    public String format(String pattern, Object[] arguments);
+    String format(String pattern, Object[] arguments);
 }

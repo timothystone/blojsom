@@ -45,5 +45,5 @@ public interface Filter {
      * @param event {@link Event} to be processed
      * @return <code>true</code> if the event should be processed, <code>false</code> otherwise
      */
-    public boolean processEvent(Event event);
+    boolean processEvent(Event event);
 }

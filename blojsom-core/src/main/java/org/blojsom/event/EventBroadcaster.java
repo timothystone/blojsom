@@ -44,7 +44,7 @@ public interface EventBroadcaster {
      *
      * @param listener {@link Listener}
      */
-    public void addListener(Listener listener);
+    void addListener(Listener listener);
 
     /**
      * Add a event to this event broadcaster. Events are filtered using the {@link Filter} instance
@@ -53,26 +53,26 @@ public interface EventBroadcaster {
      * @param listener {@link Listener}
      * @param filter   {@link Filter} used to filter events
      */
-    public void addListener(Listener listener, Filter filter);
+    void addListener(Listener listener, Filter filter);
 
     /**
      * Remove a event from this event broadcaster
      *
      * @param listener {@link Listener}
      */
-    public void removeListener(Listener listener);
+    void removeListener(Listener listener);
 
     /**
      * Broadcast an event to all listeners
      *
      * @param event {@link org.blojsom.event.Event} to be broadcast to all listeners
      */
-    public void broadcastEvent(Event event);
+    void broadcastEvent(Event event);
 
     /**
      * Process an event with all listeners
      *
      * @param event {@link Event} to be processed by all listeners
      */
-    public void processEvent(Event event);
+    void processEvent(Event event);
 }

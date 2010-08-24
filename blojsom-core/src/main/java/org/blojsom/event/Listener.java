@@ -44,12 +44,12 @@ public interface Listener {
      *
      * @param event {@link Event} to be handled
      */
-    public void handleEvent(Event event);
+    void handleEvent(Event event);
 
     /**
      * Process an event from another component
      *
      * @param event {@link Event} to be handled
      */
-    public void processEvent(Event event);
+    void processEvent(Event event);
 }
