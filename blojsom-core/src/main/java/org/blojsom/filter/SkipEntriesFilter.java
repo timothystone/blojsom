@@ -30,11 +30,14 @@
  */
 package org.blojsom.filter;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.blojsom.util.BlojsomConstants;
-import org.blojsom.util.BlojsomUtils;
-
+import java.io.IOException;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -43,14 +46,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.blojsom.util.BlojsomConstants;
+import org.blojsom.util.BlojsomUtils;
 
 /**
  * Page Entries filter
@@ -62,7 +61,6 @@ import java.util.regex.Matcher;
 public class SkipEntriesFilter implements Filter {
 
     private static final Log LOGGER = LogFactory.getLog(SkipEntriesFilter.class);
-
     private static final String PAGE_WITH_NUMBER_REGEX = "/skip/(.+)/$";
     private static final Pattern PAGE_WITH_NUMBER_PATTERN = Pattern.compile(PAGE_WITH_NUMBER_REGEX, Pattern.UNICODE_CASE);
 

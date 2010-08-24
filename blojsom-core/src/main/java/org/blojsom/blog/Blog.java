@@ -30,8 +30,8 @@
  */
 package org.blojsom.blog;
 
-import java.util.Map;
 import java.util.Locale;
+import java.util.Map;
 
 /**
  * Blog

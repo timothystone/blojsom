@@ -30,11 +30,14 @@
  */
 package org.blojsom.filter;
 
-import org.blojsom.util.BlojsomConstants;
-import org.blojsom.util.BlojsomUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
+import java.io.IOException;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -43,14 +46,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.blojsom.util.BlojsomConstants;
+import org.blojsom.util.BlojsomUtils;
 
 /**
  * FeedFilter
@@ -62,7 +61,6 @@ import java.util.regex.Matcher;
 public class FeedFilter implements Filter {
 
     private static final Log LOGGER = LogFactory.getLog(FeedFilter.class);
-
     private static final String FEED_WITH_TYPE_REGEX = "/feed/(.+)/$";
     private static final Pattern FEED_WITH_TYPE_PATTERN = Pattern.compile(FEED_WITH_TYPE_REGEX, Pattern.UNICODE_CASE);
     private static final String FEED_NO_TYPE_REGEX = "/feed/$";
@@ -71,7 +69,6 @@ public class FeedFilter implements Filter {
     private static final String DEFAULT_FEED_TYPE_IP = "default-feed-type";
     private static final String PERMALINK_EXTENSIONS_IP = "permalink-extensions";
     private static final String[] DEFAULT_PERMALINK_EXTENSIONS = {".html", ".txt"};
-
     private String _defaultFeedType = DEFAULT_FEED_TYPE;
     private String[] _permalinkExtensions;
 

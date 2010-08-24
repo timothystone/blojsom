@@ -30,15 +30,6 @@
  */
 package org.blojsom.util.database;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.blojsom.util.BlojsomUtils;
-import org.hibernate.SQLQuery;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-
-import javax.servlet.ServletConfig;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -46,6 +37,14 @@ import java.io.StringReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.List;
+import javax.servlet.ServletConfig;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.blojsom.util.BlojsomUtils;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 
 /**
  * Database loader
@@ -57,9 +56,7 @@ import java.util.List;
 public class DatabaseLoader {
 
     private Log _logger = LogFactory.getLog(DatabaseLoader.class);
-
     private static final String DEFAULT_DETECT_BLOJSOM_SQL = "show tables;";
-
     private String _dbScript;
     private SessionFactory _sessionFactory;
     private ServletConfig _servletConfig;

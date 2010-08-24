@@ -30,14 +30,13 @@
  */
 package org.blojsom.event;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * SimpleEventBroadcaster.
@@ -57,7 +56,6 @@ import java.util.Set;
 public class SimpleEventBroadcaster implements EventBroadcaster {
 
     private Log _logger = LogFactory.getLog(SimpleEventBroadcaster.class);
-
     private static Set _listeners;
     private static Map _listenerToHandler;
 

@@ -30,11 +30,14 @@
  */
 package org.blojsom.filter;
 
-import org.blojsom.util.BlojsomConstants;
-import org.blojsom.util.BlojsomUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
+import java.io.IOException;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -43,14 +46,10 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletRequestWrapper;
-import java.io.IOException;
-import java.util.Collections;
-import java.util.Enumeration;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.blojsom.util.BlojsomConstants;
+import org.blojsom.util.BlojsomUtils;
 
 /**
  * Page filter supports URLs of the form <code>/[blojsom context]/[blojsom servlet mapping]/[blog ID]/[page name]/page/</code>. For example,
@@ -88,7 +87,6 @@ public class PageFilter implements Filter {
     private static final Pattern PAGE_PATTERN = Pattern.compile(PAGE_REGEX, Pattern.UNICODE_CASE);
     private static final String USE_ROOT_BLOG_COMPATABILITY_IP = "use-root-blog-compatability";
     private static final boolean USE_ROOT_BLOG_COMPATABILITY_DEFAULT = false;
-
     private boolean _useRootBlogCompatability = USE_ROOT_BLOG_COMPATABILITY_DEFAULT;
 
     /**

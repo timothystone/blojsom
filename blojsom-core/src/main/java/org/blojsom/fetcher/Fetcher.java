@@ -30,6 +30,11 @@
  */
 package org.blojsom.fetcher;
 
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.blojsom.blog.Blog;
 import org.blojsom.blog.Category;
 import org.blojsom.blog.Comment;
@@ -37,12 +42,6 @@ import org.blojsom.blog.Entry;
 import org.blojsom.blog.Pingback;
 import org.blojsom.blog.Trackback;
 import org.blojsom.blog.User;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
-import java.util.List;
-import java.util.Date;
 
 /**
  * Fetcher

@@ -30,6 +30,17 @@
  */
 package org.blojsom.dispatcher.velocity;
 
+import java.io.IOException;
+import java.io.StringWriter;
+import java.io.Writer;
+import java.util.Map;
+import java.util.Properties;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.velocity.VelocityContext;
@@ -39,22 +50,10 @@ import org.apache.velocity.exception.MethodInvocationException;
 import org.apache.velocity.exception.ParseErrorException;
 import org.apache.velocity.exception.ResourceNotFoundException;
 import org.apache.velocity.util.EnumerationIterator;
-import org.blojsom.dispatcher.Dispatcher;
 import org.blojsom.blog.Blog;
+import org.blojsom.dispatcher.Dispatcher;
 import org.blojsom.util.BlojsomConstants;
 import org.blojsom.util.BlojsomUtils;
-
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import java.io.IOException;
-import java.io.StringWriter;
-import java.io.Writer;
-import java.util.Map;
-import java.util.Properties;
 
 /**
  * Velocity dispatcher
@@ -66,13 +65,10 @@ import java.util.Properties;
 public class VelocityDispatcher implements Dispatcher {
 
     private Log _logger = LogFactory.getLog(VelocityDispatcher.class);
-
     private static final String BLOJSOM_RENDER_TOOL = "BLOJSOM_RENDER_TOOL";
-
     private Properties _velocityProperties;
     private ServletConfig _servletConfig;
     private Properties _blojsomProperties;
-
     private String _templatesDirectory;
     private String _blogsDirectory;
 
@@ -279,7 +275,6 @@ public class VelocityDispatcher implements Dispatcher {
     public class BlojsomRenderTool {
 
         private static final String LOG_TAG = "BlojsomRenderTool";
-
         private VelocityEngine _velocityEngine;
         private VelocityContext _velocityContext;
 

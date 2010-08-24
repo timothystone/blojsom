@@ -30,11 +30,6 @@
  */
 package org.blojsom.util;
 
-import org.blojsom.blog.Blog;
-import org.blojsom.blog.Response;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.FileInputStream;
@@ -63,8 +58,12 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.StringTokenizer;
 import java.util.TimeZone;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.blojsom.blog.Blog;
+import org.blojsom.blog.Response;
 
 /**
  * BlojsomUtils

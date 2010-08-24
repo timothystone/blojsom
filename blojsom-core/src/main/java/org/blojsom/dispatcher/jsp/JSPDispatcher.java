@@ -30,24 +30,23 @@
  */
 package org.blojsom.dispatcher.jsp;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-import org.blojsom.BlojsomException;
-import org.blojsom.dispatcher.Dispatcher;
-import org.blojsom.blog.Blog;
-import org.blojsom.filter.PermalinkFilter;
-import org.blojsom.util.BlojsomConstants;
-import org.blojsom.util.BlojsomUtils;
-
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Properties;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Properties;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.blojsom.BlojsomException;
+import org.blojsom.blog.Blog;
+import org.blojsom.dispatcher.Dispatcher;
+import org.blojsom.filter.PermalinkFilter;
+import org.blojsom.util.BlojsomConstants;
+import org.blojsom.util.BlojsomUtils;
 
 /**
  * JSPDispatcher
@@ -59,7 +58,6 @@ import java.util.Properties;
 public class JSPDispatcher implements Dispatcher {
 
     private Log _logger = LogFactory.getLog(JSPDispatcher.class);
-
     private ServletContext _context;
     private ServletConfig _servletConfig;
     private Properties _blojsomProperties;

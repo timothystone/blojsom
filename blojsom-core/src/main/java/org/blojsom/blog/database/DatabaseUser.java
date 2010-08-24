@@ -30,12 +30,11 @@
  */
 package org.blojsom.blog.database;
 
-import org.blojsom.blog.User;
-
-import java.util.Date;
-import java.util.Map;
-import java.util.HashMap;
 import java.io.Serializable;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+import org.blojsom.blog.User;
 
 /**
  * DatabaseUser
@@ -218,7 +217,6 @@ public class DatabaseUser implements User, Serializable {
 
         return _metaData;
     }
-
 
     /**
      * Set the meta-data

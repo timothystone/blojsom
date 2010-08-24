@@ -30,8 +30,6 @@
  */
 package org.blojsom.blog.database;
 
-import org.blojsom.util.BlojsomUtils;
-
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -47,6 +45,7 @@ import org.blojsom.blog.Entry;
 import org.blojsom.blog.Pingback;
 import org.blojsom.blog.Response;
 import org.blojsom.blog.Trackback;
+import org.blojsom.util.BlojsomUtils;
 
 /**
  * DatabaseEntry
@@ -60,7 +59,6 @@ public class DatabaseEntry implements Entry, Serializable {
     private Integer _id;
     private Integer _blogCategoryId;
     private Integer _blogId;
-
     private String _title;
     private String _link;
     private String _description;
@@ -637,7 +635,6 @@ public class DatabaseEntry implements Entry, Serializable {
     public String getPostSlug() {
         return _postSlug;
     }
-
 
     /**
      * Get the post slug encoded as UTF-8

@@ -30,16 +30,15 @@
  */
 package org.blojsom.blog.database;
 
+import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 import org.blojsom.blog.Comment;
 import org.blojsom.blog.Entry;
 import org.blojsom.util.BlojsomUtils;
-
-import java.io.Serializable;
-import java.util.Date;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.Locale;
-import java.text.SimpleDateFormat;
 
 /**
  * DatabaseComment
@@ -54,7 +53,6 @@ public class DatabaseComment implements Comment, Serializable {
     private Integer _blogId;
     private Integer _blogEntryId;
     private Entry _entry;
-
     private String _author;
     private String _authorEmail;
     private String _authorURL;

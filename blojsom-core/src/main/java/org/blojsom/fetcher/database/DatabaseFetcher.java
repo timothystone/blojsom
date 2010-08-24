@@ -30,6 +30,15 @@
  */
 package org.blojsom.fetcher.database;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Properties;
+import javax.servlet.ServletConfig;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.blojsom.blog.Blog;
@@ -64,16 +73,6 @@ import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Projections;
 import org.hibernate.criterion.Restrictions;
 
-import javax.servlet.ServletConfig;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-
 /**
  * Database fetcher
  *
@@ -84,7 +83,6 @@ import java.util.Properties;
 public class DatabaseFetcher implements Fetcher, Listener {
 
     protected Log _logger = LogFactory.getLog(DatabaseFetcher.class);
-
     protected ServletConfig _servletConfig;
     protected EventBroadcaster _eventBroadcaster;
     protected SessionFactory _sessionFactory;
@@ -261,7 +259,6 @@ public class DatabaseFetcher implements Fetcher, Listener {
 
         return blog;
     }
-
 
     /**
      * Load the {@link Blog} given the ID
@@ -866,7 +863,6 @@ public class DatabaseFetcher implements Fetcher, Listener {
         }
     }
 
-
     /**
      * Load a set of entries using a given page size and page in which to retrieve the entries
      *
@@ -1170,7 +1166,6 @@ public class DatabaseFetcher implements Fetcher, Listener {
         }
     }
 
-
     /**
      * Loads the previous entries of a specified entry
      *
@@ -1279,7 +1274,6 @@ public class DatabaseFetcher implements Fetcher, Listener {
             }
         }
     }
-
 
     /**
      * Count the number of entries for a blog category

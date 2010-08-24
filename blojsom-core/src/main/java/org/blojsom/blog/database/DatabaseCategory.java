@@ -30,12 +30,11 @@
  */
 package org.blojsom.blog.database;
 
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 import org.blojsom.blog.Category;
 import org.blojsom.util.BlojsomUtils;
-
-import java.io.Serializable;
-import java.util.Map;
-import java.util.HashMap;
 
 /**
  * DatabaseCategory
@@ -50,7 +49,6 @@ public class DatabaseCategory implements Category, Serializable {
     private Integer _parentCategoryId;
     private Integer _blogId;
     private Category _parentCategory;
-
     private String _name;
     private Map _metaData;
     private String _description;

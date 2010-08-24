@@ -30,15 +30,14 @@
  */
 package org.blojsom.blog.database;
 
+import java.io.Serializable;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.Locale;
+import java.util.Map;
 import org.blojsom.blog.Blog;
 import org.blojsom.util.BlojsomConstants;
 import org.blojsom.util.BlojsomUtils;
-
-import java.io.Serializable;
-import java.util.Locale;
-import java.util.Map;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * DatabaseBlog
@@ -673,4 +672,3 @@ public class DatabaseBlog implements Blog, Serializable {
         }
     }
 }
-

@@ -30,12 +30,11 @@
  */
 package org.blojsom.plugin;
 
-import org.blojsom.blog.Blog;
-import org.blojsom.blog.Entry;
-
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
+import org.blojsom.blog.Blog;
+import org.blojsom.blog.Entry;
 
 /**
  * Plugin

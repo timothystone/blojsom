@@ -30,16 +30,15 @@
  */
 package org.blojsom.blog.database;
 
-import org.blojsom.blog.Entry;
-import org.blojsom.blog.Trackback;
-import org.blojsom.util.BlojsomUtils;
-
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import org.blojsom.blog.Entry;
+import org.blojsom.blog.Trackback;
+import org.blojsom.util.BlojsomUtils;
 
 /**
  * DatabaseTrackback
@@ -54,7 +53,6 @@ public class DatabaseTrackback implements Trackback, Serializable {
     private Integer _blogId;
     private Integer _blogEntryId;
     private Entry _entry;
-
     private String _title;
     private String _excerpt;
     private String _url;
