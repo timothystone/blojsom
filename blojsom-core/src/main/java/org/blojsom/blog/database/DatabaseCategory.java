@@ -51,9 +51,9 @@ public class DatabaseCategory implements Category, Serializable {
     private Integer _blogId;
     private Category _parentCategory;
 
-    protected String _name;
-    protected Map _metaData = null;
-    protected String _description = null;
+    private String _name;
+    private Map _metaData;
+    private String _description;
 
     /**
      * Create a new instance of the database category

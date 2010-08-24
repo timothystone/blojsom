@@ -50,20 +50,20 @@ import java.text.SimpleDateFormat;
  */
 public class DatabaseComment implements Comment, Serializable {
 
-    protected Integer _id;
-    protected Integer _blogId;
-    protected Integer _blogEntryId;
-    protected Entry _entry;
+    private Integer _id;
+    private Integer _blogId;
+    private Integer _blogEntryId;
+    private Entry _entry;
 
-    protected String _author;
-    protected String _authorEmail;
-    protected String _authorURL;
-    protected String _comment;
-    protected Date _commentDate;
-    protected Map _metaData;
-    protected Integer _parentId;
-    protected String _status;
-    protected String _ip;
+    private String _author;
+    private String _authorEmail;
+    private String _authorURL;
+    private String _comment;
+    private Date _commentDate;
+    private Map _metaData;
+    private Integer _parentId;
+    private String _status;
+    private String _ip;
 
     /**
      * Create a new instance of the database comment

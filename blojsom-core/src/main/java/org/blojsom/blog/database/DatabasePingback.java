@@ -42,8 +42,8 @@ import org.blojsom.util.BlojsomUtils;
  */
 public class DatabasePingback extends DatabaseTrackback implements Pingback {
 
-    protected String _sourceURI;
-    protected String _targetURI;
+    private String _sourceURI;
+    private String _targetURI;
 
     /**
      * Create a new instance of the database pingback

@@ -57,26 +57,26 @@ import org.blojsom.blog.Trackback;
  */
 public class DatabaseEntry implements Entry, Serializable {
 
-    protected Integer _id;
-    protected Integer _blogCategoryId;
-    protected Integer _blogId;
+    private Integer _id;
+    private Integer _blogCategoryId;
+    private Integer _blogId;
 
-    protected String _title;
-    protected String _link;
-    protected String _description;
-    protected Date _entryDate;
-    protected Date _modifiedDate;
-    protected List _comments;
-    protected List _trackbacks;
-    protected List _pingbacks;
-    protected Category _category;
-    protected Map _metaData;
-    protected Integer _allowComments;
-    protected Integer _allowTrackbacks;
-    protected Integer _allowPingbacks;
-    protected String _status;
-    protected String _author;
-    protected String _postSlug;
+    private String _title;
+    private String _link;
+    private String _description;
+    private Date _entryDate;
+    private Date _modifiedDate;
+    private List _comments;
+    private List _trackbacks;
+    private List _pingbacks;
+    private Category _category;
+    private Map _metaData;
+    private Integer _allowComments;
+    private Integer _allowTrackbacks;
+    private Integer _allowPingbacks;
+    private String _status;
+    private String _author;
+    private String _postSlug;
 
     /**
      * Create a new instance of the database entry

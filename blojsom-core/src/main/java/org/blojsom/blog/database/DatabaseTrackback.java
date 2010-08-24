@@ -50,20 +50,20 @@ import java.util.Map;
  */
 public class DatabaseTrackback implements Trackback, Serializable {
 
-    protected Integer _id;
-    protected Integer _blogId;
-    protected Integer _blogEntryId;
-    protected Entry _entry;
+    private Integer _id;
+    private Integer _blogId;
+    private Integer _blogEntryId;
+    private Entry _entry;
 
-    protected String _title;
-    protected String _excerpt;
-    protected String _url;
-    protected String _blogName;
-    protected Date _trackbackDate;
-    protected long _trackbackDateLong;
-    protected Map _metaData;
-    protected String _status;
-    protected String _ip;
+    private String _title;
+    private String _excerpt;
+    private String _url;
+    private String _blogName;
+    private Date _trackbackDate;
+    private long _trackbackDateLong;
+    private Map _metaData;
+    private String _status;
+    private String _ip;
 
     /**
      * Create a new instance of the database trackback

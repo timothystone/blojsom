@@ -46,15 +46,15 @@ import java.io.Serializable;
  */
 public class DatabaseUser implements User, Serializable {
 
-    protected Integer _id;
-    protected Integer _blogId;
-    protected String _userLogin;
-    protected String _userPassword;
-    protected String _userName;
-    protected String _userEmail;
-    protected String _userStatus;
-    protected Date _userRegistered;
-    protected Map _metaData;
+    private Integer _id;
+    private Integer _blogId;
+    private String _userLogin;
+    private String _userPassword;
+    private String _userName;
+    private String _userEmail;
+    private String _userStatus;
+    private Date _userRegistered;
+    private Map _metaData;
 
     /**
      * Create a new instance of the database user
