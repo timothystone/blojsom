@@ -143,7 +143,7 @@ public class BlogCalendar {
      */
     public void setEntryForDOM(int dom) {
         if (dom > 0 && dom <= _dayswithentry.length) {
-            _dayswithentry[dom - 1] = Boolean.valueOf(true);
+            _dayswithentry[dom - 1] = Boolean.TRUE;
         }
     }
 
@@ -154,7 +154,7 @@ public class BlogCalendar {
      */
     public void removeEntryForDOM(int dom) {
         if (dom > 0 && dom <= _dayswithentry.length) {
-            _dayswithentry[dom - 1] = Boolean.valueOf(false);
+            _dayswithentry[dom - 1] = Boolean.FALSE;
         }
     }
 
