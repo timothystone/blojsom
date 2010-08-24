@@ -42,57 +42,57 @@ public interface BlojsomMetaDataConstants {
     /**
      * Entry meta-data key for poster
      */
-    static final String BLOG_ENTRY_METADATA_AUTHOR = "blog-entry-author";
+    String BLOG_ENTRY_METADATA_AUTHOR = "blog-entry-author";
 
     /**
      * Extended entry meta-data key for poster
      * <p/>
      * Used to store private meta-data so that the default templates wont render it, like an email address
      */
-    static final String BLOG_ENTRY_METADATA_AUTHOR_EXT = "blog-entry-author-ext";
+    String BLOG_ENTRY_METADATA_AUTHOR_EXT = "blog-entry-author-ext";
 
     /**
      * Entry meta-data file feader
      */
-    static final String BLOG_METADATA_HEADER = "blojsom entry metadata";
+    String BLOG_METADATA_HEADER = "blojsom entry metadata";
 
     /**
      * Entry attribute for file()
      */
-    static final String SOURCE_ATTRIBUTE = "blog-entry-source";
+    String SOURCE_ATTRIBUTE = "blog-entry-source";
 
     /**
      * Entry meta-data key for entry time
      */
-    static final String BLOG_ENTRY_METADATA_TIMESTAMP = "blog-entry-metadata-timestamp";
+    String BLOG_ENTRY_METADATA_TIMESTAMP = "blog-entry-metadata-timestamp";
 
     /**
      * Entry meta-data key for disabling comments
      */
-    static final String BLOG_METADATA_COMMENTS_DISABLED = "blog-entry-comments-disabled";
+    String BLOG_METADATA_COMMENTS_DISABLED = "blog-entry-comments-disabled";
 
     /**
      * Entry meta-data key for disabling trackbacks
      */
-    static final String BLOG_METADATA_TRACKBACKS_DISABLED = "blog-entry-trackbacks-disabled";
+    String BLOG_METADATA_TRACKBACKS_DISABLED = "blog-entry-trackbacks-disabled";
 
     /**
      * Entry meta-data key for disabling pingbacks
      */
-    static final String BLOG_METADATA_PINGBACKS_DISABLED = "blog-entry-pingbacks-disabled";
+    String BLOG_METADATA_PINGBACKS_DISABLED = "blog-entry-pingbacks-disabled";
 
     /**
      * Entry meta-data key indicating "published" status
      */
-    static final String PUBLISHED_STATUS = "published";
+    String PUBLISHED_STATUS = "published";
 
     /**
      * Entry meta-data key indicating "draft" status
      */
-    static final String DRAFT_STATUS = "draft";
+    String DRAFT_STATUS = "draft";
 
     /**
      * Entry meta-data key indicating "new" status
      */
-    static final String NEW_STATUS = "new";
+    String NEW_STATUS = "new";
 }
