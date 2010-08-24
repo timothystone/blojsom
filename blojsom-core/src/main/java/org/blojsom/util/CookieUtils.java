@@ -44,6 +44,12 @@ import javax.servlet.http.HttpServletResponse;
 public class CookieUtils {
 
     /**
+     * Private constructor so that the class cannot be instantiated.
+     */
+    private CookieUtils() {
+    }
+
+    /**
      * Return a cookie given a particular key
      *
      * @param httpServletRequest Request
