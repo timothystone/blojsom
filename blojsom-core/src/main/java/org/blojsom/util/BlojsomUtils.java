@@ -73,7 +73,7 @@ import java.util.regex.Matcher;
  * @version $Id: BlojsomUtils.java,v 1.19 2008-07-07 21:41:14 czarneckid Exp $
  * @since blojsom 3.0
  */
-public class BlojsomUtils implements BlojsomConstants {
+public final class BlojsomUtils implements BlojsomConstants {
 
     private static final int REGEX_OPTIONS = Pattern.DOTALL | Pattern.CASE_INSENSITIVE;
     private static final Pattern STRIP_HTML_PATTERN = Pattern.compile("^[^<>]*>|<.*?>|<[^<>]*$", REGEX_OPTIONS);

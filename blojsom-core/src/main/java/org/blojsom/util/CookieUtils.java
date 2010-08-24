@@ -41,7 +41,7 @@ import javax.servlet.http.HttpServletResponse;
  * @version $Id: CookieUtils.java,v 1.6 2008-07-07 19:55:06 czarneckid Exp $
  * @since blojsom 3.0
  */
-public class CookieUtils {
+public final class CookieUtils {
 
     /**
      * Private constructor so that the class cannot be instantiated.
