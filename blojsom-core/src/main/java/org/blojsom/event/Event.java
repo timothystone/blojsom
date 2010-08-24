@@ -43,7 +43,7 @@ public class Event {
 
     protected Object _source;
     protected Date _timestamp;
-    protected boolean _eventHandled = false;
+    protected boolean _eventHandled;
 
     /**
      * Create a new event.
