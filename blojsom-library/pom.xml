@@ -105,7 +105,6 @@
                                 <configuration>
                                     <failOnViolation>false</failOnViolation>
                                     <skip>${metrics.exclude}</skip>
-                                    <targetJdk>${maven.compiler.target}</targetJdk>
                                 </configuration>
                             </execution>
                         </executions>
