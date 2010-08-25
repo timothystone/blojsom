@@ -41,9 +41,9 @@ import java.util.Date;
  */
 public interface Response {
 
-    public static final String COMMENT_TYPE = "comment";
-    public static final String TRACKBACK_TYPE = "trackback";
-    public static final String PINGBACK_TYPE = "pingback";
+    String COMMENT_TYPE = "comment";
+    String TRACKBACK_TYPE = "trackback";
+    String PINGBACK_TYPE = "pingback";
 
     /**
      * Retrieve the date for this object

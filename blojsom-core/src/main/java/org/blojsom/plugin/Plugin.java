@@ -50,7 +50,7 @@ public interface Plugin {
      *
      * @throws PluginException If there is an error initializing the plugin
      */
-    public void init() throws PluginException;
+    void init() throws PluginException;
 
     /**
      * Process the blog entries
@@ -63,19 +63,19 @@ public interface Plugin {
      * @return Modified set of blog entries
      * @throws PluginException If there is an error processing the blog entries
      */
-    public Entry[] process(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Blog blog, Map context, Entry[] entries) throws PluginException;
+    Entry[] process(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Blog blog, Map context, Entry[] entries) throws PluginException;
 
     /**
      * Perform any cleanup for the plugin. Called after {@link #process}.
      *
      * @throws PluginException If there is an error performing cleanup for this plugin
      */
-    public void cleanup() throws PluginException;
+    void cleanup() throws PluginException;
 
     /**
      * Called when BlojsomServlet is taken out of service
      *
      * @throws PluginException If there is an error in finalizing this plugin
      */
-    public void destroy() throws PluginException;
+    void destroy() throws PluginException;
 }
