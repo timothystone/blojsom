@@ -41,21 +41,9 @@ import java.util.Date;
  */
 public interface Response {
 
-    enum Type {
-
-        /**
-         * A {@link Comment} {@link Response} {@link Type}
-         */
-        comment,
-        /**
-         * A {@link Trackback} {@link Response} {@link Type}
-         */
-        trackback,
-        /**
-         * A {@link Pingback} {@link Response} {@link Type}
-         */
-        pingback;
-    }
+    String COMMENT_TYPE = "comment";
+    String TRACKBACK_TYPE = "trackback";
+    String PINGBACK_TYPE = "pingback";
 
     /**
      * Retrieve the date for this object
@@ -69,7 +57,7 @@ public interface Response {
      *
      * @return Response type
      */
-    Type getType();
+    String getType();
 
     /**
      * Get the status
