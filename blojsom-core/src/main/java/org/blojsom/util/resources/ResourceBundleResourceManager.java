@@ -70,7 +70,7 @@ public class ResourceBundleResourceManager implements ResourceManager {
      * Resource bundles to pre-load are specified in a comma-separated list under the key
      * <code>blojsom-resource-manager-bundles</code>.
      */
-    public void init() throws org.blojsom.BlojsomException {
+    public void init() {
         if (_resourceBundles != null && _resourceBundles.length > 0) {
             for (int i = 0; i < _resourceBundles.length; i++) {
                 String resourceBundle = _resourceBundles[i];
