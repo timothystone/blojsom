@@ -129,16 +129,6 @@ public class IPAddressModerationAdminPlugin extends WebAdminPlugin {
     }
 
     /**
-     * Initialize this plugin. This method only called when the plugin is instantiated.
-     *
-     * @throws org.blojsom.plugin.PluginException
-     *          If there is an error initializing the plugin
-     */
-    public void init() throws PluginException {
-        super.init();
-    }
-
-    /**
      * Process the blog entries
      *
      * @param httpServletRequest  Request
