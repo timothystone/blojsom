@@ -18,6 +18,15 @@
         <artifactId>blojsom-maven</artifactId>
         <version>3.5-SNAPSHOT</version>
     </parent>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>5.13.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <properties>
         <groovy.version>1.0</groovy.version>
         <commons-logging.version>1.0.4</commons-logging.version>
