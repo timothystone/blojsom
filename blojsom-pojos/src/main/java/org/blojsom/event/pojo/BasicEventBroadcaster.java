@@ -30,7 +30,9 @@
  */
 package org.blojsom.event.pojo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import org.blojsom.event.Event;
 import org.blojsom.event.EventBroadcaster;
@@ -44,7 +46,11 @@ import org.blojsom.event.Listener;
 public class BasicEventBroadcaster implements EventBroadcaster {
 
     private static final Filter DEFAULT_FILTER = new BasicFilter();
-    private Map<Listener, Filter> _activeListeners = new HashMap<Listener, Filter>();
+    private List<Listener> _listenerOrder = new ArrayList<Listener>();
+    private Map<Listener, Filter> _listenerFilters = new HashMap<Listener, Filter>();
+
+    public BasicEventBroadcaster() {
+    }
 
     @Override
     public void addListener(Listener listener) {
@@ -53,21 +59,22 @@ public class BasicEventBroadcaster implements EventBroadcaster {
 
     @Override
     public void addListener(Listener listener, Filter filter) {
-        _activeListeners.put(listener, filter);
+        _listenerOrder.add(listener);
+        _listenerFilters.put(listener, filter);
     }
 
     @Override
     public void broadcastEvent(Event event) {
-        for (Map.Entry<Listener, Filter> entry : _activeListeners.entrySet()) {
-            if (entry.getValue().processEvent(event)) {
-                entry.getKey().handleEvent(event);
+        for (Listener listener : _listenerOrder) {
+            if (_listenerFilters.get(listener).processEvent(event)) {
+                listener.handleEvent(event);
             }
         }
     }
 
     @Override
     public void removeListener(Listener listener) {
-        _activeListeners.remove(listener);
+        _listenerFilters.remove(listener);
     }
 
     //TODO Remove method
