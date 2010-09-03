@@ -41,6 +41,6 @@ public class BasicFilter implements Filter {
 
     @Override
     public boolean processEvent(Event event) {
-        return true;
+        return event != null;
     }
 }

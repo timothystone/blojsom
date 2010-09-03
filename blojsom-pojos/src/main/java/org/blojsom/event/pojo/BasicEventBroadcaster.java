@@ -54,13 +54,18 @@ public class BasicEventBroadcaster implements EventBroadcaster {
 
     @Override
     public void addListener(Listener listener) {
-        addListener(listener, DEFAULT_FILTER);
+        addListener(listener, null);
     }
 
     @Override
     public void addListener(Listener listener, Filter filter) {
-        _listenerOrder.add(listener);
-        _listenerFilters.put(listener, filter);
+        if (listener != null) {
+            if (filter == null) {
+                filter = DEFAULT_FILTER;
+            }
+            _listenerOrder.add(listener);
+            _listenerFilters.put(listener, filter);
+        }
     }
 
     @Override
