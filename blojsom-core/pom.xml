@@ -23,6 +23,11 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>blojsom-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate</artifactId>
             <version>${org.hibernate.version}</version>

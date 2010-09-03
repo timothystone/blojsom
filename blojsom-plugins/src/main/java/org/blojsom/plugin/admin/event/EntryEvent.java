@@ -32,7 +32,7 @@ package org.blojsom.plugin.admin.event;
 
 import org.blojsom.blog.Blog;
 import org.blojsom.blog.Entry;
-import org.blojsom.event.Event;
+import org.blojsom.event.pojo.BasicEvent;
 
 import java.util.Date;
 
@@ -43,7 +43,7 @@ import java.util.Date;
  * @version $Id: EntryEvent.java,v 1.4 2008-07-07 19:54:10 czarneckid Exp $
  * @since blojsom 3.0
  */
-public class EntryEvent extends Event {
+public class EntryEvent extends BasicEvent {
 
     protected Entry _entry;
     protected Blog _blog;

@@ -31,7 +31,7 @@
 package org.blojsom.plugin.widget.event;
 
 import org.blojsom.blog.Blog;
-import org.blojsom.event.Event;
+import org.blojsom.event.pojo.BasicEvent;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -45,7 +45,7 @@ import java.util.Date;
  * @version $Id: ProcessWidgetRequest.java,v 1.2 2008-07-07 19:54:26 czarneckid Exp $
  * @since blojsom 3.2
  */
-public class ProcessWidgetRequest extends Event {
+public class ProcessWidgetRequest extends BasicEvent {
 
     protected String _widget;
     protected HttpServletRequest _request;

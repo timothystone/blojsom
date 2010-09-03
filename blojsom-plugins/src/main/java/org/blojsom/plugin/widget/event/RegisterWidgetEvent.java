@@ -30,7 +30,7 @@
  */
 package org.blojsom.plugin.widget.event;
 
-import org.blojsom.event.Event;
+import org.blojsom.event.pojo.BasicEvent;
 
 import java.util.Date;
 
@@ -41,7 +41,7 @@ import java.util.Date;
  * @version $Id: RegisterWidgetEvent.java,v 1.2 2008-07-07 19:54:26 czarneckid Exp $
  * @since blojsom 3.2
  */
-public class RegisterWidgetEvent extends Event {
+public class RegisterWidgetEvent extends BasicEvent {
 
     protected String _widget;
     protected String _displayName;

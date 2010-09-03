@@ -32,7 +32,7 @@ package org.blojsom.plugin.response.event;
 
 import org.blojsom.blog.Blog;
 import org.blojsom.blog.Entry;
-import org.blojsom.event.Event;
+import org.blojsom.event.pojo.BasicEvent;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -46,7 +46,7 @@ import java.util.Map;
  * @version $Id: ResponseSubmissionEvent.java,v 1.4 2008-07-07 19:54:24 czarneckid Exp $
  * @since blojsom 3.0
  */
-public class ResponseSubmissionEvent extends Event {
+public class ResponseSubmissionEvent extends BasicEvent {
 
     protected HttpServletRequest _httpServletRequest;
     protected HttpServletResponse _httpServletResponse;

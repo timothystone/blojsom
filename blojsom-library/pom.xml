@@ -7,6 +7,8 @@
     <version>3.5-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
+        <module>../blojsom-api</module>
+        <module>../blojsom-pojos</module>
         <module>../blojsom-core</module>
         <module>../blojsom-extensions</module>
         <module>../blojsom-plugins</module>
