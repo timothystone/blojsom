@@ -54,12 +54,16 @@ public class AsynchronousEventBroadcasterWrapper implements Runnable, EventBroad
 
     @Override
     public void addListener(Listener listener) {
-        _broadcaster.addListener(listener);
+        synchronized (_broadcaster) {
+            _broadcaster.addListener(listener);
+        }
     }
 
     @Override
     public void addListener(Listener listener, Filter filter) {
-        _broadcaster.addListener(listener, filter);
+        synchronized (_broadcaster) {
+            _broadcaster.addListener(listener, filter);
+        }
     }
 
     @Override
@@ -79,7 +83,9 @@ public class AsynchronousEventBroadcasterWrapper implements Runnable, EventBroad
 
     @Override
     public void removeListener(Listener listener) {
-        _broadcaster.removeListener(listener);
+        synchronized (_broadcaster) {
+            _broadcaster.removeListener(listener);
+        }
     }
 
     @Override
@@ -87,7 +93,9 @@ public class AsynchronousEventBroadcasterWrapper implements Runnable, EventBroad
         try {
             while (!Thread.interrupted()) {
                 Event e = _events.take();
-                _broadcaster.broadcastEvent(e);
+                synchronized (_broadcaster) {
+                    _broadcaster.broadcastEvent(e);
+                }
             }
             // TODO Log graceful termination between transactions
         } catch (InterruptedException e) {
