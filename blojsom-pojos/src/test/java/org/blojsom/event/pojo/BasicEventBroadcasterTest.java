@@ -8,6 +8,7 @@ import org.blojsom.event.Event;
 import org.blojsom.event.EventBroadcaster;
 import org.blojsom.event.Filter;
 import org.blojsom.event.Listener;
+import org.mockito.Mockito;
 import org.testng.annotations.Test;
 
 /**
@@ -43,20 +44,20 @@ public class BasicEventBroadcasterTest {
 
     public void testBroadcastMessage() {
         Event e = new BasicEvent(this);
-        Listener l = new BasicListener();
+        Listener l = Mockito.mock(Listener.class);
         EventBroadcaster eb = new BasicEventBroadcaster();
         eb.addListener(l);
         eb.broadcastEvent(e);
-        // TODO Implement mocking to ensure that e.handleEvent was called
+        Mockito.verify(l).handleEvent(e);
     }
 
     public void testRemoveListener() {
         Event e = new BasicEvent(this);
-        Listener l = new BasicListener();
+        Listener l = Mockito.mock(Listener.class);
         EventBroadcaster eb = new BasicEventBroadcaster();
         eb.addListener(l);
         eb.removeListener(l);
-        // TODO Implement mocking to ensure that e.handleEvent was _NOT_ called
+        Mockito.verifyZeroInteractions(l);
     }
 
     public void testRemoveListenerNegative() {
