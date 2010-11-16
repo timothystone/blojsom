@@ -79,6 +79,7 @@ public class BasicEventBroadcaster implements EventBroadcaster {
 
     @Override
     public void removeListener(Listener listener) {
+        _listenerOrder.remove(listener);
         _listenerFilters.remove(listener);
     }
 
