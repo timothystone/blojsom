@@ -265,6 +265,7 @@ public class RSSEnclosurePlugin implements Plugin, Listener {
      * @param event {@link org.blojsom.event.Event} to be handled
      */
     public void handleEvent(Event event) {
+        this.processEvent(event);
     }
 
     /**

@@ -345,7 +345,7 @@ public class CommentPlugin extends StandaloneVelocityPlugin implements Listener 
         // extract their information from the appropriate cookies
         Cookie authorCookie = CookieUtils.getCookie(httpServletRequest, COOKIE_AUTHOR);
         if ((authorCookie != null) && BlojsomUtils.checkNullOrBlank(author)) {
-            author = authorCookie.getValue();
+            author = BlojsomUtils.urlDecode(authorCookie.getValue());
             if (_logger.isDebugEnabled()) {
                 _logger.debug("Pulling author from cookie: " + author);
             }
@@ -358,7 +358,7 @@ public class CommentPlugin extends StandaloneVelocityPlugin implements Listener 
 
             Cookie authorEmailCookie = CookieUtils.getCookie(httpServletRequest, COOKIE_EMAIL);
             if ((authorEmailCookie != null) && BlojsomUtils.checkNullOrBlank(authorEmail)) {
-                authorEmail = authorEmailCookie.getValue();
+                authorEmail = BlojsomUtils.urlDecode(authorEmailCookie.getValue());
                 if (_logger.isDebugEnabled()) {
                     _logger.debug("Pulling author email from cookie: " + authorEmail);
                 }
@@ -372,7 +372,7 @@ public class CommentPlugin extends StandaloneVelocityPlugin implements Listener 
 
             Cookie authorUrlCookie = CookieUtils.getCookie(httpServletRequest, COOKIE_URL);
             if ((authorUrlCookie != null) && BlojsomUtils.checkNullOrBlank(authorURL)) {
-                authorURL = authorUrlCookie.getValue();
+                authorURL = BlojsomUtils.urlDecode(authorUrlCookie.getValue());
                 if (_logger.isDebugEnabled()) {
                     _logger.debug("Pulling author URL from cookie: " + authorURL);
                 }
@@ -545,7 +545,7 @@ public class CommentPlugin extends StandaloneVelocityPlugin implements Listener 
                 }
 
                 CommentResponseSubmissionEvent commentResponseSubmissionEvent = new CommentResponseSubmissionEvent(this, new Date(), blog, httpServletRequest, httpServletResponse, author, authorEmail, authorURL, commentText, entryForComment, commentMetaData);
-                _eventBroadcaster.processEvent(commentResponseSubmissionEvent);
+                _eventBroadcaster.broadcastEvent(commentResponseSubmissionEvent);
                 author = commentResponseSubmissionEvent.getSubmitter();
                 authorEmail = commentResponseSubmissionEvent.getSubmitterItem1();
                 authorURL = commentResponseSubmissionEvent.getSubmitterItem2();

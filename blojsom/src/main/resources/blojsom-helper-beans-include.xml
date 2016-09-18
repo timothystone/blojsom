@@ -10,14 +10,14 @@
     <bean id="servletConfigFactoryBean" class="org.blojsom.servlet.ServletConfigFactoryBean">
     </bean>
     <!-- MySQL -->
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+<!--    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/blojsom?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf-8"/>
         <property name="username" value="blojsom"/>
         <property name="password" value="blojsom"/>
-    </bean>
+    </bean>-->
     <!-- PostgreSQL -->
-<!--
+
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="org.postgresql.Driver"/>
@@ -25,7 +25,7 @@
         <property name="username" value="blojsom"/>
         <property name="password" value="blojsom"/>
     </bean>
--->
+
 
     <!-- hsqldb -->
 <!--
@@ -57,11 +57,11 @@
                 <prop key="c3p0.max_statements">100</prop>
                 <prop key="show_sql">false</prop>
                 <!-- MySQL -->
-                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>
+<!--                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</prop>-->
                 <!-- PostgreSQL -->
-<!--
+
                 <prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
--->
+
                 <!-- hsqldb -->
 <!--
                 <prop key="hbm2ddl.auto">create-drop</prop>

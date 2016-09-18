@@ -43,8 +43,12 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Properties;
 import javax.servlet.ServletConfig;
+import org.blojsom.event.Event;
+import org.blojsom.event.EventBroadcaster;
+import org.blojsom.event.Listener;
 import org.blojsom.plugin.Plugin;
 import org.blojsom.plugin.PluginException;
+import org.blojsom.util.BlojsomConstants;
 
 /**
  * Photos Plugin
@@ -53,11 +57,15 @@ import org.blojsom.plugin.PluginException;
  * @author Timothy Stone
  * @version 1.0
  */
-public class PhotosPlugin implements Plugin {
+public class PhotosPlugin implements Plugin, Listener {
 
     private Log _logger = LogFactory.getLog(PhotosPlugin.class);
-    private ServletConfig _servletConfig;
-    private Properties _blojsomProperties;
+    
+    protected EventBroadcaster _eventBroadcaster;
+    protected ServletConfig _servletConfig;
+    protected Properties _blojsomProperties;
+
+    protected String _photoDirectory;
 
     /**
      * Default constructor.
@@ -72,7 +80,13 @@ public class PhotosPlugin implements Plugin {
      */
     @Override
     public void init() throws PluginException {
-    }
+        _eventBroadcaster.addListener(this);
+
+        if (BlojsomUtils.checkNullOrBlank(_photoDirectory)) {
+            _photoDirectory = _blojsomProperties.getProperty(BlojsomConstants.PHOTO_DIRECTORY_IP, BlojsomConstants.DEFAULT_RESOURCES_DIRECTORY);
+        }
+
+        _logger.debug("Initialized Photo Album plugin");    }
 
     /**
      * Process the blog entries
@@ -83,7 +97,7 @@ public class PhotosPlugin implements Plugin {
      * @param context             Context
      * @param entries             Blog entries retrieved for the particular request
      * @return Modified set of blog entries
-     * @throws BlojsomPluginException If there is an error processing the blog entries
+     * @throws PluginException If there is an error processing the blog entries
      */
     @Override
     public Entry[] process(HttpServletRequest request,
@@ -220,5 +234,24 @@ public class PhotosPlugin implements Plugin {
      */
     public void setBlojsomProperties(Properties blojsomProperties) {
         this._blojsomProperties = blojsomProperties;
+    }
+
+    /**
+     * Set the {@link EventBroadcaster}
+     *
+     * @param eventBroadcaster {@link EventBroadcaster}
+     */
+    public void setEventBroadcaster(EventBroadcaster eventBroadcaster) {
+        _eventBroadcaster = eventBroadcaster;
+    }
+    
+    @Override
+    public void handleEvent(Event event) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void processEvent(Event event) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
