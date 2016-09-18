@@ -310,6 +310,7 @@ public interface BlojsomConstants {
     String DEFAULT_BLOG_IP = "default-blog";
     String TEMPLATES_DIRECTORY_IP = "templates-directory";
     String RESOURCES_DIRECTORY_IP = "resources-directory";
+    String PHOTO_DIRECTORY_IP = "photo-directory";
     String DEFAULT_CONFIGURATION_BASE_DIRECTORY = "/WEB-INF/";
     String BLOGS_DIRECTORY_IP = "blogs-directory";
     String DEFAULT_BLOGS_DIRECTORY = "/blogs/";

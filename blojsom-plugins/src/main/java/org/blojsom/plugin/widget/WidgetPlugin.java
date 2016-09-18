@@ -124,7 +124,7 @@ public class WidgetPlugin implements Plugin {
                 ProcessWidgetRequest processWidgetRequest = new ProcessWidgetRequest(this, new Date(), widget,
                     httpServletRequest, httpServletResponse, blog, context, "");
 
-                _eventBroadcaster.processEvent(processWidgetRequest);
+                _eventBroadcaster.broadcastEvent(processWidgetRequest);
 
                 widgetTemplates.add(processWidgetRequest.getWidgetTemplate());
                 widgetTemplatesByWidget.put(widget, processWidgetRequest.getWidgetTemplate());

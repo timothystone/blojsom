@@ -30,7 +30,9 @@
  */
 package org.blojsom.plugin.textile;
 
-import net.sf.textile4j.Textile;
+import java.io.StringWriter;
+import org.eclipse.mylyn.wikitext.core.parser.MarkupParser;
+import org.eclipse.mylyn.wikitext.textile.core.TextileLanguage;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.blojsom.blog.Blog;
@@ -42,6 +44,7 @@ import org.blojsom.util.BlojsomUtils;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
+import org.eclipse.mylyn.wikitext.core.parser.builder.HtmlDocumentBuilder;
 
 /**
  * Textile Plugin
@@ -70,8 +73,20 @@ public class TextilePlugin implements Plugin {
     /**
      * Textile Instance
      */
-    private Textile _textile;
+    private MarkupParser _textile;
 
+    /**
+     * HtmlDocumentBuilder for Textile
+     */
+    
+    private HtmlDocumentBuilder builder;
+    
+    /**
+     * StringWriter for DocumentBuilder
+     */
+    
+    private StringWriter writer;
+    
     /**
      * Logger instance
      */
@@ -83,7 +98,15 @@ public class TextilePlugin implements Plugin {
      * @throws PluginException If there is an error initializing the plugin
      */
     public void init() throws PluginException {
-        _textile = new Textile();
+        writer = new StringWriter();
+        builder = new HtmlDocumentBuilder(writer);
+        // avoid the <html> and <body> tags 
+        builder.setEmitAsDocument(false);
+        builder.setXhtmlStrict(false);
+        
+        _textile = new MarkupParser();
+        _textile.setMarkupLanguage(new TextileLanguage());
+        _textile.setBuilder(builder);    
     }
 
     /**
@@ -109,7 +132,8 @@ public class TextilePlugin implements Plugin {
                 if (_logger.isDebugEnabled()) {
                     _logger.debug("Textile processing: " + entry.getId());
                 }
-                entry.setDescription(_textile.process(entry.getDescription()));
+                _textile.parse(entry.getDescription()); 
+                entry.setDescription(writer.toString());
             }
         }
 

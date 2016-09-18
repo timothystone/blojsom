@@ -30,6 +30,15 @@
  */
 package org.blojsom.plugin.footnote;
 
+import java.text.MessageFormat;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.blojsom.blog.Blog;
@@ -38,18 +47,8 @@ import org.blojsom.plugin.Plugin;
 import org.blojsom.plugin.PluginException;
 import org.blojsom.util.BlojsomUtils;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.text.MessageFormat;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.Comparator;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 /**
- * Footnote Expansion Plugin
+ * Footnote Expansion Pluginºººº
  *
  * @author Mark Lussier
  * @author David Czarnecki
@@ -60,7 +59,7 @@ public class FootnotePlugin implements Plugin {
 
     private static final String FOOTNOTE_METADATA = "footnote";
     private static final String REGEX_FOOTNOTE = "\\[(\\d+)\\]";
-    private static final String FOOTNOTE_LINKAGE_FORMAT = "[{0}] {1}";
+    private static final String FOOTNOTE_LINKAGE_FORMAT = "<span class=\"footnoteIndex\">[{0}]</span> {1}";
     private static final String FOOTNOTES_PROCESSED_METADATA = "footnotes-processed";
 
     private Log _logger = LogFactory.getLog(FootnotePlugin.class);

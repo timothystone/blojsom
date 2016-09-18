@@ -40,6 +40,7 @@ import org.blojsom.blog.Pingback;
 import org.blojsom.blog.Response;
 import org.blojsom.blog.Trackback;
 import org.blojsom.event.EventBroadcaster;
+import org.blojsom.event.pojo.BasicEventBroadcaster;
 import org.blojsom.fetcher.Fetcher;
 import org.blojsom.fetcher.FetcherException;
 import org.blojsom.plugin.PluginException;
@@ -173,7 +174,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
     private static final String EDIT_BLOG_ENTRIES_PERMISSION = "edit_blog_entries_permission";
 
     private Fetcher _fetcher;
-    private EventBroadcaster _eventBroadcaster;
+    private BasicEventBroadcaster _eventBroadcaster;
 
     /**
      * Default constructor.
@@ -191,11 +192,11 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
     }
 
     /**
-     * Set the {@link EventBroadcaster}
+     * Set the {@link BasicEventBroadcaster}
      *
-     * @param eventBroadcaster {@link EventBroadcaster}
+     * @param eventBroadcaster {@link BasicEventBroadcaster}
      */
-    public void setEventBroadcaster(EventBroadcaster eventBroadcaster) {
+    public void setEventBroadcaster(BasicEventBroadcaster eventBroadcaster) {
         _eventBroadcaster = eventBroadcaster;
     }
 
@@ -345,7 +346,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
                 _fetcher.loadEntry(blog, entry);
                 context.put(BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY, entry);
 
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
             } catch (FetcherException e) {
                 if (_logger.isErrorEnabled()) {
                     _logger.error(e);
@@ -469,7 +470,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
                 entryToUpdate.setStatus(status);
                 entryToUpdate.setMetaData(entryMetaData);
 
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), entryToUpdate, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), entryToUpdate, blog, httpServletRequest, httpServletResponse, context));
 
                 _fetcher.saveEntry(blog, entryToUpdate);
                 _fetcher.loadEntry(blog, entryToUpdate);
@@ -544,7 +545,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
                 _logger.debug("User requested new blog entry action");
             }
 
-            _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), null, blog, httpServletRequest, httpServletResponse, context));
+            _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), null, blog, httpServletRequest, httpServletResponse, context));
 
             httpServletRequest.setAttribute(BlojsomConstants.PAGE_PARAM, ADD_BLOG_ENTRY_PAGE);
         } else if (ADD_BLOG_ENTRY_ACTION.equals(action)) {
@@ -593,7 +594,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
 
             if (BlojsomUtils.checkNullOrBlank(blogEntryTitle) && BlojsomUtils.checkNullOrBlank(blogEntryDescription)) {
                 httpServletRequest.setAttribute(BlojsomConstants.PAGE_PARAM, ADD_BLOG_ENTRY_PAGE);
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), null, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), null, blog, httpServletRequest, httpServletResponse, context));
 
                 addOperationResultMessage(context, getAdminResource(BLANK_ENTRY_KEY, BLANK_ENTRY_KEY, blog.getBlogAdministrationLocale()));
 
@@ -687,7 +688,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
             entry.setMetaData(entryMetaData);
 
             try {
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
 
                 _fetcher.saveEntry(blog, entry);
                 _fetcher.loadEntry(blog, entry);
@@ -1185,7 +1186,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
 
                 _fetcher.loadEntry(blog, entry);
 
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
 
                 context.put(BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY, entry);
             } catch (FetcherException e) {
@@ -1243,7 +1244,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
 
                 _fetcher.loadEntry(blog, entry);
 
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
 
                 context.put(BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY, entry);
             } catch (FetcherException e) {
@@ -1302,7 +1303,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
 
                 _fetcher.loadEntry(blog, entry);
 
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
 
                 context.put(BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY, entry);
             } catch (FetcherException e) {
@@ -1362,7 +1363,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
 
                 _fetcher.loadEntry(blog, entry);
 
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
 
                 context.put(BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY, entry);
             } catch (FetcherException e) {
@@ -1421,7 +1422,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
 
                 _fetcher.loadEntry(blog, entry);
 
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
 
                 context.put(BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY, entry);
             } catch (FetcherException e) {
@@ -1482,7 +1483,7 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
 
                 _fetcher.loadEntry(blog, entry);
 
-                _eventBroadcaster.processEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessEntryEvent(this, new Date(), entry, blog, httpServletRequest, httpServletResponse, context));
 
                 context.put(BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY, entry);
             } catch (FetcherException e) {

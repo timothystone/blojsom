@@ -30,6 +30,9 @@
  */
 package org.blojsom.event.pojo;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +47,8 @@ import org.blojsom.event.Listener;
  * @author owen
  */
 public class BasicEventBroadcaster implements EventBroadcaster {
+
+    protected static final Log _logger = LogFactory.getLog(BasicEventBroadcaster.class);
 
     private static final Filter DEFAULT_FILTER = new BasicFilter();
     private List<Listener> _listenerOrder = new ArrayList<Listener>();
@@ -65,6 +70,8 @@ public class BasicEventBroadcaster implements EventBroadcaster {
             }
             _listenerOrder.add(listener);
             _listenerFilters.put(listener, filter);
+            _logger.debug("Added listener for " + listener.getClass().getSimpleName() + " with " 
+                    + filter.getClass().getSimpleName() + " filter");
         }
     }
 

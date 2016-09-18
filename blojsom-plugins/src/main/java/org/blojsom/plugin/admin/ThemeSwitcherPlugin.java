@@ -314,9 +314,9 @@ public class ThemeSwitcherPlugin extends WebAdminPlugin {
                 context.put(CURRENT_HTML_THEME, currentHtmlFlavor);
 
                 addOperationResultMessage(context, formatAdminResource(THEME_SWITCHED_KEY, THEME_SWITCHED_KEY, blog.getBlogAdministrationLocale(), new Object[]{theme, flavor}));
-                _eventBroadcaster.processEvent(new ProcessRequestEvent(this, new Date(), blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessRequestEvent(this, new Date(), blog, httpServletRequest, httpServletResponse, context));
             } else {
-                _eventBroadcaster.processEvent(new ProcessRequestEvent(this, new Date(), blog, httpServletRequest, httpServletResponse, context));
+                _eventBroadcaster.broadcastEvent(new ProcessRequestEvent(this, new Date(), blog, httpServletRequest, httpServletResponse, context));
 
                 context.put(THEME_SWITCHER_PLUGIN_AVAILABLE_THEMES, getAvailableThemes());
             }

@@ -40,6 +40,7 @@
         <velocity.version>1.6.2</velocity.version>
         <servlet-api.version>2.5</servlet-api.version>
         <metrics.exclude>true</metrics.exclude>
+        <spring.version>2.0-m4</spring.version>
     </properties>
     <!-- More Project Information -->
     <name>blojsom Library Parent POM</name>

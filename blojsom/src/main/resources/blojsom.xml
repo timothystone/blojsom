@@ -17,6 +17,7 @@
                 <prop key="ignore-flavors">admin, rsd</prop>
                 <prop key="installed-locales">de, en, fr, jp, ko, pt_BR, sv, zh_CN</prop>
                 <prop key="resources-directory">/resources/</prop>
+                <prop key="photo-directory">/resources/photos/</prop>
                 <prop key="templates-directory">/templates/</prop>
                 <prop key="themes-directory">/themes/</prop>
                 <prop key="blogs-directory">/blogs/</prop>
@@ -52,18 +53,26 @@
         <property name="sessionFactory">
             <ref bean="hibernateSessionFactory"/>
         </property>
-        <property name="dbScript" value="/WEB-INF/classes/blojsom-full-initial-data-mysql.sql"/>
+        <!--<property name="dbScript" value="/WEB-INF/classes/blojsom-full-initial-data-mysql.sql"/>-->
+        <!-- PostgreSQL -->
+
+        <property name="dbScript" value="/WEB-INF/classes/blojsom-full-initial-data-postgresql.sql"/>
+
+        <!-- hsqldb -->
+<!--
+        <property name="dbScript" value="/WEB-INF/classes/blojsom-full-initial-data-hsqldb.sql"/>
+-->
         <property name="upgrading" value="false"/>
         <property name="servletConfig">
             <ref bean="servletConfigFactoryBean"/>
         </property>
         <property name="detectBlojsomSQL">
         <!-- MySQL -->
-            <value>show tables;</value>
+            <!--<value>show tables;</value>-->
         <!-- PostgreSQL -->
-<!--
+
             <value>select relname from pg_stat_user_tables where relname = 'blog';</value>
--->
+
         <!-- hsqldb -->
 <!--
             <value>select table_name from information_schema.system_tables where table_name = 'BLOG';</value>
@@ -81,7 +90,7 @@
         </property>
     </bean>
 
-    <bean id="eventBroadcaster" class="org.blojsom.event.SimpleEventBroadcaster">
+    <bean id="eventBroadcaster" class="org.blojsom.event.pojo.BasicEventBroadcaster">
     </bean>
 
     <!-- Fetcher (for database interaction) -->

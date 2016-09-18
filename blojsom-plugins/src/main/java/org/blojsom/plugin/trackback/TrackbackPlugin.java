@@ -442,7 +442,7 @@ public class TrackbackPlugin extends StandaloneVelocityPlugin implements Blojsom
 
             Integer code = new Integer(1);
 
-            _eventBroadcaster.processEvent(new TrackbackResponseSubmissionEvent(this, new Date(), blog, httpServletRequest, httpServletResponse, blogName, title, url, excerpt, entryForTrackback, trackbackMetaData));
+            _eventBroadcaster.broadcastEvent(new TrackbackResponseSubmissionEvent(this, new Date(), blog, httpServletRequest, httpServletResponse, blogName, title, url, excerpt, entryForTrackback, trackbackMetaData));
 
             // Check to see if the trackback should be destroyed (not saved) automatically
             if (!trackbackMetaData.containsKey(BLOJSOM_PLUGIN_TRACKBACK_METADATA_DESTROY)) {

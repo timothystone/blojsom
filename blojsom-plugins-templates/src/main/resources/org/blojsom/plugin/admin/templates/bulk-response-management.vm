@@ -80,7 +80,11 @@
                             $response.getEscapedExcerpt()
                             </div>
                             #end
-                            <div style="text-align:right">[ <input type="checkbox" name="$delete" value="$response.getId()" id="delete-$responseCounter" onclick="checkSingle(document.getElementById('approve-$responseCounter'),false)"> #adminResource('delete.text' '') - <input type="checkbox" name="$approve" value="$response.getId()" id="approve-$responseCounter" onclick="checkSingle(document.getElementById('delete-$responseCounter'),false)"> #adminResource('approve.text' '') - <input type="checkbox" name="$markspam" value="$response.getId()" id="markspam-$responseCounter"> #adminResource('mark.spam.text' '')] </div>
+                            <div style="text-align:right">[ 
+                                <input type="checkbox" name="$delete" value="$response.getId()" id="delete-$responseCounter" class="deleteResponse" onclick="checkSingle(document.getElementById('approve-$responseCounter'),false)"> #adminResource('delete.text' '') - 
+                                <input type="checkbox" name="$approve" value="$response.getId()" id="approve-$responseCounter" class=approveResponse" onclick="checkSingle(document.getElementById('delete-$responseCounter'),false)"> #adminResource('approve.text' '') - 
+                                <input type="checkbox" name="$markspam" value="$response.getId()" id="markspam-$responseCounter"> #adminResource('mark.spam.text' '')] 
+                            </div>
                             #set ($delete = "")
                             #set ($approve = "")
                             #set ($markspam = "")

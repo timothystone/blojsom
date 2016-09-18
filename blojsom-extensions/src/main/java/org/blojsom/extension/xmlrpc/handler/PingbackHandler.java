@@ -254,7 +254,7 @@ public class PingbackHandler extends APIHandler {
 
                 Map pingbackMetaData = new HashMap();
 
-                _eventBroadcaster.processEvent(new PingbackResponseSubmissionEvent(this, new Date(), _blog, _httpServletRequest, _httpServletResponse, getTitleFromSource(sourcePage.toString()), getTitleFromSource(sourcePage.toString()), sourceURI, getExcerptFromSource(sourcePage.toString(), targetURI), entry, pingbackMetaData));
+                _eventBroadcaster.broadcastEvent(new PingbackResponseSubmissionEvent(this, new Date(), _blog, _httpServletRequest, _httpServletResponse, getTitleFromSource(sourcePage.toString()), getTitleFromSource(sourcePage.toString()), sourceURI, getExcerptFromSource(sourcePage.toString(), targetURI), entry, pingbackMetaData));
 
                 // Check to see if the trackback should be destroyed (not saved) automatically
                 if (!pingbackMetaData.containsKey(PingbackPlugin.BLOJSOM_PLUGIN_PINGBACK_METADATA_DESTROY)) {

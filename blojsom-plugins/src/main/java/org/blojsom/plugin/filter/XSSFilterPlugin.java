@@ -53,6 +53,7 @@ import java.util.regex.Pattern;
  * XSSFilterPlugin
  *
  * @author David Czarnecki
+ * @auther Timothy Stone
  * @version $Id: XSSFilterPlugin.java,v 1.6 2008-07-07 19:54:26 czarneckid Exp $
  * @since blojsom 3.0
  */

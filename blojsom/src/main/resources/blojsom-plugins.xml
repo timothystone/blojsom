@@ -48,7 +48,7 @@
     <bean id="date-format" class="org.blojsom.plugin.date.DateFormatPlugin" init-method="init"
           destroy-method="destroy"/>
 
-    <bean id="dashboard" class="org.blojsom.plugin.dashboard.DashboardPlugin" init-method="init"
+<!--    <bean id="dashboard" class="org.blojsom.plugin.dashboard.DashboardPlugin" init-method="init"
           destroy-method="destroy">
         <property name="servletConfig">
             <ref bean="servletConfigFactoryBean"/>
@@ -59,7 +59,7 @@
         <property name="blojsomProperties">
             <ref bean="defaultProperties"/>
         </property>
-    </bean>
+    </bean>-->
 
     <bean id="days-since-posted" class="org.blojsom.plugin.statistics.DaysSincePostedPlugin" init-method="init"
           destroy-method="destroy"/>
