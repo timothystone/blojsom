@@ -28,7 +28,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.blojsom.plugin.technorati;
+package org.blojsom.plugin.tags;
 
 import org.blojsom.blog.Blog;
 import org.blojsom.blog.Entry;
@@ -49,27 +49,27 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Technorati tags plugin
+ * Entry tags plugin
  *
  * @author David Czarnecki
- * @version $Id: TechnoratiTagsPlugin.java,v 1.6 2008-07-07 19:54:16 czarneckid Exp $
+ * @version $Id: TagsPlugin.java,v 1.6 2008-07-07 19:54:16 czarneckid Exp $
  * @since blojsom 3.0
  */
-public class TechnoratiTagsPlugin extends StandaloneVelocityPlugin implements Listener {
+public class TagsPlugin extends StandaloneVelocityPlugin implements Listener {
 
-    private static final String TECHNORATI_TAGS_TEMPLATE = "org/blojsom/plugin/technorati/templates/admin-technorati-tags.vm";
-    private static final String TECHNORATI_TAG_LINK_TEMPLATE = "org/blojsom/plugin/technorati/templates/technorati-tag-link.vm";
-    private static final String TECHNORATI_TAGS = "TECHNORATI_TAGS";
-    private static final String TECHNORATI_TAG_LINKS = "TECHNORATI_TAG_LINKS";
+    private static final String TAGS_TEMPLATE = "org/blojsom/plugin/tags/templates/admin-tags-tags.vm";
+    private static final String TAG_LINK_TEMPLATE = "org/blojsom/plugin/tags/templates/tag-link.vm";
+    private static final String TAGS = "TAGS";
+    private static final String TAG_LINKS = "TAG_LINKS";
 
     private EventBroadcaster _eventBroadcaster;
 
-    public static final String METADATA_TECHNORATI_TAGS = "technorati-tags";
+    public static final String METADATA_TAGS = "tags";
 
     /**
-     * Create a new instance of the Technorati tag plugin
+     * Create a new instance of the tag plugin
      */
-    public TechnoratiTagsPlugin() {
+    public TagsPlugin() {
     }
 
     /**
@@ -109,18 +109,18 @@ public class TechnoratiTagsPlugin extends StandaloneVelocityPlugin implements Li
             Entry entry = entries[i];
             Map entryMetaData = entry.getMetaData();
 
-            if (BlojsomUtils.checkMapForKey(entryMetaData, METADATA_TECHNORATI_TAGS)) {
-                String[] tags = BlojsomUtils.parseOnlyCommaList((String) entryMetaData.get(METADATA_TECHNORATI_TAGS));
+            if (BlojsomUtils.checkMapForKey(entryMetaData, METADATA_TAGS)) {
+                String[] tags = BlojsomUtils.parseOnlyCommaList((String) entryMetaData.get(METADATA_TAGS));
                 if (tags != null && tags.length > 0) {
                     ArrayList tagLinks = new ArrayList(tags.length);
-                    String tagLinkTemplate = mergeTemplate(TECHNORATI_TAG_LINK_TEMPLATE, blog, new HashMap());
+                    String tagLinkTemplate = mergeTemplate(TAG_LINK_TEMPLATE, blog, new HashMap());
                     for (int j = 0; j < tags.length; j++) {
                         String tag = tags[j].trim();
 
                         tagLinks.add(MessageFormat.format(tagLinkTemplate, new Object[]{BlojsomUtils.urlEncode(tag),BlojsomUtils.escapeString(tag)}));
                     }
 
-                    entryMetaData.put(TECHNORATI_TAG_LINKS, tagLinks.toArray(new String[tagLinks.size()]));
+                    entryMetaData.put(TAG_LINKS, tagLinks.toArray(new String[tagLinks.size()]));
                 }
             }
         }
@@ -163,23 +163,23 @@ public class TechnoratiTagsPlugin extends StandaloneVelocityPlugin implements Li
         if (event instanceof ProcessEntryEvent) {
             ProcessEntryEvent processBlogEntryEvent = (ProcessEntryEvent) event;
 
-            String technoratiTags = BlojsomUtils.getRequestValue(METADATA_TECHNORATI_TAGS, processBlogEntryEvent.getHttpServletRequest());
+            String tags = BlojsomUtils.getRequestValue(METADATA_TAGS, processBlogEntryEvent.getHttpServletRequest());
             if (processBlogEntryEvent.getEntry() != null) {
-                String savedTechnoratiTags = (String) processBlogEntryEvent.getEntry().getMetaData().get(METADATA_TECHNORATI_TAGS);
-                if (savedTechnoratiTags != null) {
-                    if (technoratiTags == null) {
+                String savedTags = (String) processBlogEntryEvent.getEntry().getMetaData().get(METADATA_TAGS);
+                if (savedTags != null) {
+                    if (tags == null) {
                         // Request parameter not available, save old set of tags
-                        technoratiTags = savedTechnoratiTags;
+                        tags = savedTags;
                         // Request parameter blank, so throw away set of tags
-                    } else if ("".equals(technoratiTags.trim())) {
-                        technoratiTags = "";
+                    } else if ("".equals(tags.trim())) {
+                        tags = "";
                     }
                 }
 
-                if ("".equals(technoratiTags)) {
-                    processBlogEntryEvent.getEntry().getMetaData().remove(METADATA_TECHNORATI_TAGS);
+                if ("".equals(tags)) {
+                    processBlogEntryEvent.getEntry().getMetaData().remove(METADATA_TAGS);
                 } else {
-                    processBlogEntryEvent.getEntry().getMetaData().put(METADATA_TECHNORATI_TAGS, technoratiTags);
+                    processBlogEntryEvent.getEntry().getMetaData().put(METADATA_TAGS, tags);
                 }
             }
 
@@ -190,12 +190,12 @@ public class TechnoratiTagsPlugin extends StandaloneVelocityPlugin implements Li
                 templateAdditions = new TreeMap();
             }
 
-            templateAdditions.put(getClass().getName(), "#parse('" + TECHNORATI_TAGS_TEMPLATE + "')");
+            templateAdditions.put(getClass().getName(), "#parse('" + TAGS_TEMPLATE + "')");
             processBlogEntryEvent.getContext().put("BLOJSOM_TEMPLATE_ADDITIONS", templateAdditions);
 
-            context.put(TECHNORATI_TAGS, technoratiTags);
+            context.put(TAGS, tags);
 
-            processBlogEntryEvent.getContext().put(TECHNORATI_TAGS, technoratiTags);
+            processBlogEntryEvent.getContext().put(TAGS, tags);
         }
     }
 }

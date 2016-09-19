@@ -1,0 +1,7 @@
+                    <tr>
+                        <th colspan="2">#adminResource('tags.text' '')</th>
+                    </tr>
+                    <tr>
+                        <td>#adminResource('tags.text' '') #adminResource('tags.help.text' '')</td>
+                        <td><input type="text" name="tags" size="50" value="$!TAGS"></td>
+                    </tr>

@@ -7,6 +7,8 @@
     <version>3.5-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
+        <module>blojsom-addon-core</module>
+        <module>blojsom-addon-plugins</module>
         <module>blojsom-metrics</module>
         <module>blojsom-library</module>
         <module>blojsom-plugins-templates</module>
@@ -17,6 +19,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <targetJdk>1.6</targetJdk>
+        <velocity.version>1.6.2</velocity.version>
+        <groovy.version>1.6.0</groovy.version>
+        <commons-logging.version>1.0.4</commons-logging.version>
+        <org.slf4j.version>1.3.0</org.slf4j.version>
+        <servlet-api.version>3.1.0</servlet-api.version>
     </properties>
     <!-- Build Settings -->
     <build>
