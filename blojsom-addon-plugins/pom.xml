@@ -31,16 +31,15 @@
             <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
-        <!-- needs to be installed in local repos -->
         <dependency>
-            <groupId>net.sf.akismet-java</groupId>
+            <groupId>net.sourceforge</groupId>
             <artifactId>akismet-java</artifactId>
-            <version>1.02</version>
+            <version>1.02</version>        
         </dependency>
         <dependency>
             <groupId>net.sf.delicious-java</groupId>
             <artifactId>delicious</artifactId>
-            <version>1.13</version>
+            <version>1.14</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
@@ -59,7 +58,7 @@
         <dependency>
             <groupId>org.markdownj</groupId>
             <artifactId>markdownj</artifactId>
-            <version>0.3.0-1.0.2b4</version>
+            <version>0.4</version>
         </dependency>
         <dependency>
             <groupId>groovy</groupId>
@@ -229,7 +228,7 @@
         <dependency>
             <groupId>commons-jxpath</groupId>
             <artifactId>commons-jxpath</artifactId>
-            <version>1.1</version>
+            <version>1.3</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-beanutils</groupId>
