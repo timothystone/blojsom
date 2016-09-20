@@ -53,9 +53,9 @@ public interface Blojsom extends Module {
 
     public void setPostSlug(String postSlug);
 
-    public String getTechnoratiTags();
+    public String getTags();
 
-    public void setTechnoratiTags(String technoratiTags);
+    public void setTags(String tags);
 
     public boolean getAllowsComments();
 

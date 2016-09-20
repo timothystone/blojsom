@@ -327,7 +327,7 @@ END;
 -- Dumping data for table Blojsom_Plugin
 --
 
-INSERT INTO Blojsom_Plugin VALUES (Blojsom_plugin_id_Seq.nextval, Blojsom_id_Seq.currval,'html','meta, tag-cloud, date-format, referer-log, calendar-gui, calendar-filter, comment, trackback, simple-search, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, technorati-tags');
+INSERT INTO Blojsom_Plugin VALUES (Blojsom_plugin_id_Seq.nextval, Blojsom_id_Seq.currval,'html','meta, tag-cloud, date-format, referer-log, calendar-gui, calendar-filter, comment, trackback, simple-search, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, tags');
 INSERT INTO Blojsom_Plugin VALUES (Blojsom_plugin_id_Seq.nextval, Blojsom_id_Seq.currval,'default','conditional-get, meta, nofollow, rss-enclosure');
 INSERT INTO Blojsom_Plugin VALUES (Blojsom_plugin_id_Seq.nextval, Blojsom_id_Seq.currval,'admin','admin');
 

@@ -309,13 +309,13 @@
     </bean>
     <bean id="string-utilities" class="org.blojsom.plugin.common.StringUtilitiesPlugin" init-method="init"
           destroy-method="destroy"/>
-    <bean id="tag-cloud" class="org.blojsom.plugin.technorati.TagCloudPlugin" init-method="init"
+    <bean id="tag-cloud" class="org.blojsom.plugin.tags.TagCloudPlugin" init-method="init"
           destroy-method="destroy">
         <property name="fetcher">
             <ref bean="fetcher"/>
         </property>
     </bean>
-    <bean id="technorati-tags" class="org.blojsom.plugin.technorati.TechnoratiTagsPlugin" init-method="init"
+    <bean id="tags" class="org.blojsom.plugin.tags.TagsPlugin" init-method="init"
           destroy-method="destroy">
         <property name="eventBroadcaster">
             <ref bean="eventBroadcaster"/>
@@ -703,7 +703,7 @@
                 <entry key="atom" value=""/>
                 <entry key="default" value="conditional-get, meta, limiter, nofollow, rss-enclosure"/>
                 <entry key="html"
-                       value="meta, tag-cloud, date-format, calendar-gui, calendar-filter, comment, trackback, simple-search, limiter, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, technorati-tags"/>
+                       value="meta, tag-cloud, date-format, calendar-gui, calendar-filter, comment, trackback, simple-search, limiter, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, tags"/>
                 <entry key="rdf" value=""/>
                 <entry key="rsd" value=""/>
                 <entry key="rss" value=""/>

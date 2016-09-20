@@ -45,7 +45,7 @@ import java.util.List;
 public class BlojsomImplementation extends ModuleImpl implements Blojsom {
 
     private String _author;
-    private String _technoratiTags;
+    private String _tags;
     private String _postSlug;
     private boolean _allowsComments;
     private boolean _allowsTrackbacks;
@@ -67,7 +67,7 @@ public class BlojsomImplementation extends ModuleImpl implements Blojsom {
         Blojsom blojsom = (Blojsom) object;
 
         setAuthor(blojsom.getAuthor());
-        setTechnoratiTags(blojsom.getTechnoratiTags());
+        setTags(blojsom.getTags());
         setPostSlug(blojsom.getPostSlug());
         setAllowsComments(blojsom.getAllowsComments());
         setAllowsTrackbacks(blojsom.getAllowsTrackbacks());
@@ -154,12 +154,12 @@ public class BlojsomImplementation extends ModuleImpl implements Blojsom {
         _author = author;
     }
 
-    public String getTechnoratiTags() {
-        return _technoratiTags;
+    public String getTags() {
+        return _tags;
     }
 
-    public void setTechnoratiTags(String technoratiTags) {
-        _technoratiTags = technoratiTags;
+    public void setTags(String tags) {
+        _tags = tags;
     }
 
     public String getPostSlug() {

@@ -28,7 +28,7 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package org.blojsom.plugin.technorati;
+package org.blojsom.plugin.tags;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -107,7 +107,7 @@ public class TagCloudPlugin implements Plugin {
 
         if (!BlojsomUtils.checkNullOrBlank(tagQuery)) {
             try {
-                entriesMatchingTag = _fetcher.findEntriesByMetadataKeyValue(blog, TechnoratiTagsPlugin.METADATA_TECHNORATI_TAGS,
+                entriesMatchingTag = _fetcher.findEntriesByMetadataKeyValue(blog, TagsPlugin.METADATA_TAGS,
                     tagQuery, true, true);
                 if (_logger.isDebugEnabled()) {
                     _logger.debug("Entries matching tag: " + entriesMatchingTag.length);
@@ -121,13 +121,13 @@ public class TagCloudPlugin implements Plugin {
 
         Entry[] entriesForTagMap;
         try {
-            entriesForTagMap = _fetcher.findEntriesWithMetadataKey(blog, TechnoratiTagsPlugin.METADATA_TECHNORATI_TAGS);
+            entriesForTagMap = _fetcher.findEntriesWithMetadataKey(blog, TagsPlugin.METADATA_TAGS);
 
             for (int i = 0; i < entriesForTagMap.length; i++) {
                 Entry entry = entriesForTagMap[i];
 
-                if (BlojsomUtils.checkMapForKey(entry.getMetaData(), TechnoratiTagsPlugin.METADATA_TECHNORATI_TAGS)) {
-                    String[] tags = BlojsomUtils.parseOnlyCommaList((String) entry.getMetaData().get(TechnoratiTagsPlugin.METADATA_TECHNORATI_TAGS));
+                if (BlojsomUtils.checkMapForKey(entry.getMetaData(), TagsPlugin.METADATA_TAGS)) {
+                    String[] tags = BlojsomUtils.parseOnlyCommaList((String) entry.getMetaData().get(TagsPlugin.METADATA_TAGS));
                     String tag;
                     if (tags != null && tags.length > 0) {
                         for (int j = 0; j < tags.length; j++) {
