@@ -1,11 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>${parent.groupId}</groupId>
     <artifactId>blojsom-addon-core</artifactId>
     <packaging>jar</packaging>
-    <version>${parent.version}</version>
-    <name>blojsom-addon-core</name>
+    <name>blojsom Addon Core</name>
     <url>http://sourceforge.net/projects/blojsom/</url>
     <parent>
         <groupId>org.blojsom</groupId>
@@ -15,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
+            <artifactId>javax.servlet-api</artifactId>
             <version>${servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
@@ -36,16 +34,15 @@
             <artifactId>commons-logging</artifactId>
             <version>${commons-logging.version}</version>
         </dependency>
-        <!-- needs to be installed in local repos -->
         <dependency>
             <groupId>netscape-ldapjdk</groupId>
             <artifactId>netscape-ldapjdk</artifactId>
             <version>4.17</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.bsf</groupId>
-            <artifactId>bsf-api</artifactId>
-            <version>3.1</version>
+            <groupId>bsf</groupId>
+            <artifactId>bsf</artifactId>
+            <version>2.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.freemarker</groupId>
@@ -58,11 +55,10 @@
             <version>${org.slf4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>groovy</groupId>
+            <groupId>org.codehaus.groovy</groupId>
             <artifactId>groovy</artifactId>
             <version>${groovy.version}</version>
         </dependency>
-        <!-- needs to be installed in local repos -->
         <dependency>
             <groupId>webmacro</groupId>
             <artifactId>webmacro</artifactId>
