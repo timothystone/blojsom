@@ -65,10 +65,10 @@ public class BlojsomParser implements ModuleParser {
             blojsomModule.setAuthor(e.getText());
         }
 
-        e = element.getChild("technoratiTags", BLOJSOM_NS);
+        e = element.getChild("tags", BLOJSOM_NS);
         if (e != null) {
             foundSomething = true;
-            blojsomModule.setTechnoratiTags(e.getText());
+            blojsomModule.setTags(e.getText());
         }
 
         e = element.getChild("postSlug", BLOJSOM_NS);

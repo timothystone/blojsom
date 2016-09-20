@@ -270,7 +270,7 @@ CREATE TABLE Plugin (
 -- Dumping data for table Plugin
 --
 
-INSERT INTO Plugin VALUES (1,'html','meta, tag-cloud, date-format, referer-log, calendar-gui, calendar-filter, comment, trackback, simple-search, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, technorati-tags');
+INSERT INTO Plugin VALUES (1,'html','meta, tag-cloud, date-format, referer-log, calendar-gui, calendar-filter, comment, trackback, simple-search, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, tags');
 INSERT INTO Plugin VALUES (1,'default','conditional-get, meta, nofollow, rss-enclosure');
 INSERT INTO Plugin VALUES (1,'admin','admin');
 

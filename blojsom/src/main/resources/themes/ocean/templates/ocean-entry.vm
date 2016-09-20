@@ -14,7 +14,7 @@
 
                                 <div class="post">
                                     $entry.getDescription()
-                                    #TechnoratiTags($entry)
+                                    #Tags($entry)
                                 </div>
 
                                 <p class="info">
