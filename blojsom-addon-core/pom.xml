@@ -1,9 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>${parent.groupId}</groupId>
     <artifactId>blojsom-addon-core</artifactId>
     <packaging>jar</packaging>
-    <name>blojsom Add-ons Core</name>
+    <version>${parent.version}</version>
+    <name>blojsom-addon-core</name>
     <url>http://sourceforge.net/projects/blojsom/</url>
     <parent>
         <groupId>org.blojsom</groupId>
@@ -13,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <artifactId>servlet-api</artifactId>
             <version>${servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
@@ -36,8 +38,8 @@
         </dependency>
         <!-- needs to be installed in local repos -->
         <dependency>
-            <groupId>netscape</groupId>
-            <artifactId>ldapjdk</artifactId>
+            <groupId>netscape-ldapjdk</groupId>
+            <artifactId>netscape-ldapjdk</artifactId>
             <version>4.17</version>
         </dependency>
         <dependency>
@@ -56,7 +58,7 @@
             <version>${org.slf4j.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
+            <groupId>groovy</groupId>
             <artifactId>groovy</artifactId>
             <version>${groovy.version}</version>
         </dependency>

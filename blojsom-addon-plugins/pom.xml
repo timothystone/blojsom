@@ -1,9 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <groupId>${parent.groupId}</groupId>
     <artifactId>blojsom-addon-plugins</artifactId>
     <packaging>jar</packaging>
-    <name>blojsom Add-on Plugins</name>
+    <version>${parent.version}</version>
+    <name>blojsom-addon-plugins</name>
     <url>http://sourceforge.net/projects/blojsom/</url>
     <parent>
         <groupId>org.blojsom</groupId>
@@ -13,7 +15,7 @@
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
+            <artifactId>servlet-api</artifactId>
             <version>${servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
@@ -29,8 +31,9 @@
             <version>${project.version}</version>
             <scope>provided</scope>
         </dependency>
+        <!-- needs to be installed in local repos -->
         <dependency>
-            <groupId>net.sourceforge</groupId>
+            <groupId>net.sf.akismet-java</groupId>
             <artifactId>akismet-java</artifactId>
             <version>1.02</version>
         </dependency>
@@ -59,7 +62,7 @@
             <version>0.3.0-1.0.2b4</version>
         </dependency>
         <dependency>
-            <groupId>org.codehaus.groovy</groupId>
+            <groupId>groovy</groupId>
             <artifactId>groovy</artifactId>
             <version>${groovy.version}</version>
             <exclusions>
@@ -284,7 +287,7 @@
             <version>1.0-b2</version>
         </dependency>
     </dependencies>
-    <!-- TODO markdownj, https://issues.sonatype.org/browse/OSSRH-391 -->
+    <!-- TODO markdownj, https://issues.sonatype.org/browse/OSSRH-391 -->                                                                   -->
     <repositories>
         <repository>
             <id>java.net</id>
