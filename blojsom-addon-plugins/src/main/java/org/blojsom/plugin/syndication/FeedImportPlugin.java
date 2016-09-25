@@ -44,7 +44,7 @@ import org.blojsom.blog.*;
 import org.blojsom.fetcher.Fetcher;
 import org.blojsom.fetcher.FetcherException;
 import org.blojsom.plugin.PluginException;
-import org.blojsom.plugin.technorati.TechnoratiTagsPlugin;
+import org.blojsom.plugin.tags.TagsPlugin;
 import org.blojsom.plugin.syndication.module.*;
 import org.blojsom.plugin.admin.WebAdminPlugin;
 import org.blojsom.util.BlojsomConstants;
@@ -233,9 +233,9 @@ public class FeedImportPlugin extends WebAdminPlugin {
                                     newEntry.setAuthor(blojsomImplementation.getAuthor());
                                 }
 
-                                if (blojsomImplementation.getTechnoratiTags() != null) {
+                                if (blojsomImplementation.getTags() != null) {
                                     Map metadata = newEntry.getMetaData();
-                                    metadata.put(TechnoratiTagsPlugin.METADATA_TECHNORATI_TAGS, blojsomImplementation.getTechnoratiTags());
+                                    metadata.put(TagsPlugin.METADATA_TAGS, blojsomImplementation.getTags());
                                     newEntry.setMetaData(metadata);
                                 }
 

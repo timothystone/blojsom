@@ -14,7 +14,7 @@
 								<div class="post">
                                                                         #parse( "photo-album.vm" )
 									$entry.getDescription()
-                                    #TechnoratiTags($entry)
+                                    #Tags($entry)
 								</div>
 								<div class="links">
 									#if($BLOJSOM_COMMENTS_ENABLED.booleanValue() && $entry.supportsComments() && ($entry.getMetaData() && !$entry.getMetaData().containsKey("blog-entry-comments-disabled")))<span class="commentslink"><a href="$permalink?page=comments" title="Click here to see the comments on &quot;$entry.getTitle()&quot;"><span></span>[$entry.getNumComments() comments]</a></span>#end #if ($BLOJSOM_TRACKBACK_PLUGIN_ENABLED.booleanValue() && $entry.supportsTrackbacks() && ($entry.getMetaData() && !$entry.getMetaData().containsKey("blog-entry-trackbacks-disabled")))<span class="trackbackslink"><a href="$permalink?page=trackback" title="Click here to see the trackbacks of &quot;$entry.getTitle()&quot;"><span></span>[$entry.getNumTrackbacks() trackbacks]</a></span>#end

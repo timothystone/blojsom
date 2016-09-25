@@ -532,32 +532,32 @@
 #macro(RSSEnclosure $entry)$!entry.getMetaData().get("rss-enclosure")#end
 
 #**
- * Output the Technorati tag links for a blog entry
+ * Output the tag links for a blog entry
  *
  * @param $entry Blog entry
  *#
-#macro(TechnoratiTags $entry)
-#if ($entry.getMetaData().get("TECHNORATI_TAG_LINKS"))
-#set($technoratiTags = $entry.getMetaData().get("TECHNORATI_TAG_LINKS"))
-<!-- technorati tags start --><p style="text-align:right;font-size:10px;">Technorati Tags:
-#foreach($technoratiTag in $technoratiTags)
-$technoratiTag
+#macro(Tags $entry)
+#if ($entry.getMetaData().get("TAG_LINKS"))
+#set($tags = $entry.getMetaData().get("TAG_LINKS"))
+<!-- tags start --><p style="text-align:right;font-size:10px;">Tags:
+#foreach($tag in $tags)
+$tag
 #end
-</p><!-- technorati tags end -->
+</p><!-- tags end -->
 #end
 #end
 
 #**
- * Output the Technorati tag links for a blog entry
+ * Output the tag links for a blog entry
  *
  * @param $entry Blog entry
  *#
-#macro(EscapedTechnoratiTags $entry)
-#if ($entry.getMetaData().get("TECHNORATI_TAG_LINKS"))
-#set($technoratiTags = $entry.getMetaData().get("TECHNORATI_TAG_LINKS"))
-&lt;p style="text-align:right;font-size:10px;"&gt;Technorati Tags:
-#foreach($technoratiTag in $technoratiTags)
-$BLOJSOM_PLUGIN_STRING_UTILITIES.escapeString($technoratiTag)
+#macro(EscapedTags $entry)
+#if ($entry.getMetaData().get("TAG_LINKS"))
+#set($ags = $entry.getMetaData().get("TAG_LINKS"))
+&lt;p style="text-align:right;font-size:10px;"&gt;Tags:
+#foreach($tag in $tags)
+$BLOJSOM_PLUGIN_STRING_UTILITIES.escapeString($tag)
 #end
 &lt;/p&gt;
 #end

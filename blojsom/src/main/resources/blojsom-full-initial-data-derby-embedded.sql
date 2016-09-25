@@ -106,7 +106,7 @@ CREATE TABLE Plugin (
   CONSTRAINT plugin_blog_blogidfk FOREIGN KEY (blog_id) REFERENCES Blog (id) ON DELETE CASCADE
 ) ;
 
-INSERT INTO Plugin VALUES (1,'html','meta, tag-cloud, date-format, referer-log, calendar-gui, calendar-filter, comment, trackback, simple-search, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, technorati-tags'),(1,'default','conditional-get, meta, nofollow, rss-enclosure'),(1,'admin','admin');
+INSERT INTO Plugin VALUES (1,'html','meta, tag-cloud, date-format, referer-log, calendar-gui, calendar-filter, comment, trackback, simple-search, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, tags'),(1,'default','conditional-get, meta, nofollow, rss-enclosure'),(1,'admin','admin');
 
 CREATE TABLE Properties (
   blog_id int NOT NULL,

@@ -45,7 +45,6 @@ import java.util.Map;
 
 /**
  * MarkdownPlugin
- * <p/>
  * To use the Markdown plugin, you will need to download the Markdown tool from
  * <a href="http://daringfireball.net/projects/markdown/">John Gruber's Markdown site</a>.
  *

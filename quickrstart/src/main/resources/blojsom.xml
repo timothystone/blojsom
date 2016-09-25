@@ -52,13 +52,13 @@
         <property name="sessionFactory">
             <ref bean="hibernateSessionFactory"/>
         </property>
-        <property name="dbScript" value="/WEB-INF/classes/blojsom-full-initial-data-hsqldb.sql"/>
+        <property name="dbScript" value="/WEB-INF/classes/blojsom-full-initial-data-h2.sql"/>
         <property name="upgrading" value="false"/>
         <property name="servletConfig">
             <ref bean="servletConfigFactoryBean"/>
         </property>
         <property name="detectBlojsomSQL">
-            <value>select table_name from information_schema.system_tables where table_name = 'BLOG';</value>
+            <value>select table_name from information_schema.TABLES where table_name = 'BLOG';</value>
         </property>
 
     </bean>
@@ -73,7 +73,7 @@
         </property>
     </bean>
 
-    <bean id="eventBroadcaster" class="org.blojsom.event.SimpleEventBroadcaster">
+    <bean id="eventBroadcaster" class="org.blojsom.event.pojo.BasicEventBroadcaster">
     </bean>
 
     <!-- Fetcher (for database interaction) -->

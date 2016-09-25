@@ -350,7 +350,7 @@ CREATE TABLE `Plugin` (
 
 /*!40000 ALTER TABLE `Plugin` DISABLE KEYS */;
 LOCK TABLES `Plugin` WRITE;
-INSERT INTO `Plugin` VALUES (1,'html','meta, tag-cloud, date-format, referer-log, calendar-gui, calendar-filter, comment, trackback, simple-search, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, technorati-tags',1),(1,'default','conditional-get, meta, nofollow, rss-enclosure',2),(1,'admin','admin',3);
+INSERT INTO `Plugin` VALUES (1,'html','meta, tag-cloud, date-format, referer-log, calendar-gui, calendar-filter, comment, trackback, simple-search, emoticons, macro-expansion, days-since-posted, word-count, simple-obfuscation, nofollow, rss-enclosure, tags',1),(1,'default','conditional-get, meta, nofollow, rss-enclosure',2),(1,'admin','admin',3);
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Plugin` ENABLE KEYS */;
 
