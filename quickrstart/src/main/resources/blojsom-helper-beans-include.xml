@@ -11,8 +11,8 @@
     </bean>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
-        <property name="url" value="jdbc:hsqldb:mem:blojsom"/>
+        <property name="driverClassName" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:mem:blojsom"/>
         <property name="username" value="sa"/>
         <property name="password" value=""/>
     </bean>
@@ -36,7 +36,6 @@
                 <prop key="c3p0.max_size">50</prop>
                 <prop key="c3p0.timeout">1800</prop>
                 <prop key="c3p0.max_statements">100</prop>
-                <prop key="show_sql">false</prop>
                 <prop key="show_sql">true</prop>
                 <prop key="hbm2ddl.auto">create-drop</prop>
                 <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
