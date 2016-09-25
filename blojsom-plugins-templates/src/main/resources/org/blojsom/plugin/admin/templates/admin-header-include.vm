@@ -58,55 +58,58 @@
             }
 
         </style>
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/yahoo-dom-event/yahoo-dom-event.js"></script>
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/animation/animation-min.js"></script>
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/element/element-min.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/utilities/utilities.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/button/button-min.js"></script>
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/container/container-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/cookie/cookie-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/menu/menu-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/editor/editor-min.js"></script>
-        <script type="text/javascript">
-            var Y = YAHOO, E = YAHOO.util.Event, Dom = YAHOO.util.Dom, Button = YAHOO.widget.Button;
-            Y.namespace("blojsom");
+        <script type="text/javascript">     
+            (function(Y) { 
+                var E = Y.util.Event, 
+                    Dom = Y.util.Dom, 
+                    Button = Y.widget.Button;
 
-            E.onContentReady("entry-options", function() {
-                var pingBlogURLsCheckbox = new Button("ping-blog-urls", {label:"#adminResource('blog.entry.pingURLs.text' 'Ping blog notification URLs?')"});
-                var sendPingbacksCheckbox = new Button("send-pingbacks", {label:"#adminResource('blog.entry.send.pingbacks.text' 'Send pingbacks to URLs?')"});
-                var disableComments = new Button("blog-entry-comments-disabled", {label:"#adminResource('blog.disable.comments.text' 'Disable comments?')"});
-                var disableTrackbacks = new Button("blog-entry-trackbacks-disabled", {label:"#adminResource('blog.disable.trackbacks.text' 'Disable trackbacks?')"});
-                var disablePingbacks = new Button("blog-entry-pingbacks-disabled", {label:"#adminResource('blog.disable.pingbacks.text' 'Disable pingbacks?')"});
-#if($!params.action.get(0) != "new-blog-entry")
-#if (!$!BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.allowsComments())
-                disableComments.set("checked", true, true);
-#end
-#if (!$!BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.allowsTrackbacks())
-                disableTrackbacks.set("checked", true, true);
-#end
-#if (!$!BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.allowsPingbacks())
-                disablePingbacks.set("checked", true, true);
-#end
-#end
-            });
+                Y.namespace("blojsom");
 
-            Y.blojsom.init = function() {
-                var navmenu = new Y.widget.MenuBar("navmenu", { autosubmenudisplay: true, shadow:false });
-                navmenu.render();
-
-                var login = new Button("submit-login");
-                var editEntriesInCategory = new Button("editEntriesInCategory");
-                var addEntryToCategory = new Button("addEntryToCategory");
-
-                var entryEditor = new YAHOO.widget.Editor('blog-entry-description', {
-                    height: '300px',
-                    width: '522px',
-                    dompath: true,
-                    animate: true,
-                    handleSubmit: true
+                E.onContentReady("entry-options", function() {
+                    var pingBlogURLsCheckbox = new Button("ping-blog-urls", {label:"#adminResource('blog.entry.pingURLs.text' 'Ping blog notification URLs?')"});
+                    var sendPingbacksCheckbox = new Button("send-pingbacks", {label:"#adminResource('blog.entry.send.pingbacks.text' 'Send pingbacks to URLs?')"});
+                    var disableComments = new Button("blog-entry-comments-disabled", {label:"#adminResource('blog.disable.comments.text' 'Disable comments?')"});
+                    var disableTrackbacks = new Button("blog-entry-trackbacks-disabled", {label:"#adminResource('blog.disable.trackbacks.text' 'Disable trackbacks?')"});
+                    var disablePingbacks = new Button("blog-entry-pingbacks-disabled", {label:"#adminResource('blog.disable.pingbacks.text' 'Disable pingbacks?')"});
+    #if($!params.action.get(0) != "new-blog-entry")
+        #if (!$!BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.allowsComments())
+                    disableComments.set("checked", true, true);
+        #end
+        #if (!$!BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.allowsTrackbacks())
+                    disableTrackbacks.set("checked", true, true);
+        #end
+        #if (!$!BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY.allowsPingbacks())
+                    disablePingbacks.set("checked", true, true);
+        #end
+    #end
                 });
-                entryEditor.render();
-            };
-            E.onDOMReady(Y.blojsom.init);
+
+                Y.blojsom.init = function() {
+                    var navmenu = new Y.widget.MenuBar("navmenu", { autosubmenudisplay: true, shadow:false });
+                    navmenu.render();
+
+                    var login = new Button("submit-login");
+                    var editEntriesInCategory = new Button("editEntriesInCategory");
+                    var addEntryToCategory = new Button("addEntryToCategory");
+
+                    var entryEditor = new YAHOO.widget.Editor('blog-entry-description', {
+                        height: '300px',
+                        width: '522px',
+                        dompath: true,
+                        animate: true,
+                        ptags: true,
+                        handleSubmit: true
+                    });
+                    entryEditor.render();
+                };
+                E.onDOMReady(Y.blojsom.init);
+            })(YAHOO);
 
         </script>
     </head>
