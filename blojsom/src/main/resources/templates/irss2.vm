@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+                   xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" >
+    <channel>
+        <title>#EscapedBlogName()</title>
+        <itunes:subtitle>#EscapedBlogDescription()</itunes:subtitle>
+        <itunes:summary></itunes:summary>
+        <itunes:author></itunes:author>
+        <itunes:complete>false</itunes:complete>
+        <link>#BlogURL()</link>
+        <description>#EscapedBlogDescription()</description>
+        <language>#BlogLanguage()</language>
+        <copyright>&#x2117; &amp; &#xA9; #EscapedBlogName()</copyright>
+        <image>
+            <url>#BlogBaseURL()/favicon.ico</url>
+            <title>#EscapedBlogName()</title>
+            <link>#BlogURL()</link>
+        </image>
+        <itunes:category text="">
+            <itunes:category text=""/>
+        </itunes:category>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>$BLOJSOM_VERSION</generator>
+        <managingEditor>#BlogOwnerEmail()</managingEditor>
+        <webMaster>#BlogOwnerEmail()</webMaster>
+        <itunes:owner>
+            <itunes:name>#BlogOwnerEmail()</itunes:name>
+            <itunes:email>#BlogOwnerEmail()</itunes:email>            
+        </itunes:owner>
+        <itunes:explicit>explicit</itunes:explicit>
+       
+        <itunes:image href="#BlogBaseURL()/rss/podcast_art.png"/>
+        <pubDate>$BLOJSOM_DATE</pubDate>
+
+        #foreach ($entry in $BLOJSOM_ENTRIES)
+        #SimpleFriendlyPermalink($entry)
+        <item>
+            <title>$entry.getEscapedTitle()</title>
+            <itunes:subtitle></itunes:subtitle>
+            <link>$entryLink</link>
+            <description>$entry.getEscapedDescription()</description>
+            <itunes:summary>$entry.getEscapedDescription()</itunes:summary>
+            <guid>$entryLink</guid>
+	    <pubDate>$entry.getRFC822Date()</pubDate>
+            <category>$entry.getEncodedCategory()</category>
+            <itunes:block>No</itunes:block>
+            <itunes:duration></itunes:duration>
+            <itunes:isClosedCaptioned></itunes:isClosedCaptioned>
+            <itunes:order>$entry.getRFC822Date()</itunes:order>
+
+            #if ($entry.allowsComments())
+            #XMLRPCLink($entry 'commentapi')
+            <wfw:comment>$xmlrpcLink</wfw:comment>
+            <wfw:commentRss>$entryLink?page=comments&amp;flavor=rss2</wfw:commentRss>
+            #end
+            #RSSEnclosure($entry)
+        </item>
+        #end
+    </channel>
+</rss>
