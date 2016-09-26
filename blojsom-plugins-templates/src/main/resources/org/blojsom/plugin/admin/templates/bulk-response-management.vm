@@ -111,17 +111,12 @@
                             <input type="hidden" name="plugins" value="bulk-response-management">
                         </div>
                         <div>
-                            <input type="text" id="searchresponses" name="query" value="#if ($query) $query #else #adminResource('search.responses.text' '')&#8230;"#end size="20"> <input type="submit" name="submitresponsequery" value="#adminResource('submit.text' '')">
+                            <input type="text" id="searchresponses" name="query" placeholder="#adminResource('search.responses.text' '')" value="$!query" size="20"> <input type="submit" name="submitresponsequery" value="#adminResource('submit.text' '')">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        Y.blojsom.query = Dom.get("searchresponses");
-        E.on(Y.blojsom.query, "focus", function() { Y.blojsom.query.value = ""; });
-    </script>
-
 
 #parse("org/blojsom/plugin/admin/templates/admin-footer-include.vm")

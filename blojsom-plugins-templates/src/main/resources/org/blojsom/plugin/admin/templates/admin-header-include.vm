@@ -59,9 +59,10 @@
 
         </style>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/utilities/utilities.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/container/container-min.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/menu/menu-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/button/button-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/cookie/cookie-min.js"></script>
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/menu/menu-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/editor/editor-min.js"></script>
         <script type="text/javascript">     
             (function(Y) { 
@@ -88,6 +89,9 @@
                     disablePingbacks.set("checked", true, true);
         #end
     #end
+
+                    Y.blojsom.query = Dom.get("searchresponses");
+                    E.on(Y.blojsom.query, "focus", function() { Y.blojsom.query.value = ""; });
                 });
 
                 Y.blojsom.init = function() {
@@ -109,6 +113,7 @@
                     entryEditor.render();
                 };
                 E.onDOMReady(Y.blojsom.init);
+                return Y;
             })(YAHOO);
 
         </script>
