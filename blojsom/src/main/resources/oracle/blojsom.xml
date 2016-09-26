@@ -72,7 +72,7 @@
         </property>
     </bean>
 
-    <bean id="eventBroadcaster" class="org.blojsom.event.SimpleEventBroadcaster">
+    <bean id="eventBroadcaster" class="org.blojsom.event.pojo.BasicEventBroadcaster">
     </bean>
 
     <!-- Fetcher (for database interaction) -->

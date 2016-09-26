@@ -38,7 +38,7 @@
         </property>
     </bean>
 
-    <bean id="eventBroadcaster" class="org.blojsom.event.SimpleEventBroadcaster">
+    <bean id="eventBroadcaster" class="org.blojsom.event.pojo.BasicEventBroadcaster">
     </bean>
 
     <bean id="fetcher" class="org.blojsom.fetcher.database.DatabaseFetcher" init-method="init" destroy-method="destroy">
