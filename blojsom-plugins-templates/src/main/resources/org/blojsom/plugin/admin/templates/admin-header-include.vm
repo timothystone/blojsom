@@ -57,6 +57,9 @@
                 margin-top: 0;
             }
 
+            a span.on { color:inherit; }
+            span.off { color: #cccccc; }
+
         </style>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/utilities/utilities.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/container/container-min.js"></script>
