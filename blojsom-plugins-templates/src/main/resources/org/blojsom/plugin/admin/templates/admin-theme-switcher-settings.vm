@@ -1,5 +1,6 @@
 #AdminPageTitle('theme.switcher.settings.text' 'Theme Switcher Settings')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- theme-switcher-plugin -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">

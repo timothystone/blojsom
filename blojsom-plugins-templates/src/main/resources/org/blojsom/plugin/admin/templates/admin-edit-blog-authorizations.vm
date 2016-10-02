@@ -1,5 +1,6 @@
 #AdminPageTitle('users.text' '')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- edit-blog-authorizations -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">

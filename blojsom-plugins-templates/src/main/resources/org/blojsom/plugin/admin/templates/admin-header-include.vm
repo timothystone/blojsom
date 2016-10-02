@@ -94,7 +94,6 @@
     #end
 
                     Y.blojsom.query = Dom.get("searchresponses");
-                    E.on(Y.blojsom.query, "focus", function() { Y.blojsom.query.value = ""; });
                 });
 
                 Y.blojsom.init = function() {
@@ -116,7 +115,6 @@
                     entryEditor.render();
                 };
                 E.onDOMReady(Y.blojsom.init);
-                return Y;
             })(YAHOO);
 
         </script>

@@ -168,6 +168,23 @@ h3 {
     font-weight: normal;
 }
 
+div.bulk-actions {
+    margin:10px 0;
+    color:#3C657B;
+    font-size: 131%;
+    font-weight: normal;
+}
+
+div.bulk-actions-top {
+    border-bottom: 1px dashed #A4AEB2;
+    padding:0 0 2em 0;
+}
+
+div.bulk-actions-bottom {
+    border-top: 1px dashed #A4AEB2;
+    padding:2em 0 0 0;
+}
+
 h3 span.add-new-entry {
     padding-left: 24px;
     background: url(images/add.png) no-repeat left center;

@@ -1,5 +1,6 @@
 #AdminPageTitle('permissions.page.header' 'Permissions')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- edit-blog-permissions -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">

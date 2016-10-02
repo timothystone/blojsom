@@ -1,5 +1,6 @@
 #AdminPageTitle('manage.entries.header' 'Manage Entries')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- manage-blog-entries -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">

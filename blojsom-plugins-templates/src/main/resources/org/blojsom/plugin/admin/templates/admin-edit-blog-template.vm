@@ -1,5 +1,6 @@
 #AdminPageTitle('update.blog.template.page.header' 'Update Blog Template')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- edit-blog-template -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">

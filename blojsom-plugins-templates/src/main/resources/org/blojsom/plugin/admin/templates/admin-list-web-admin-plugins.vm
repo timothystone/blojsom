@@ -1,5 +1,6 @@
 #AdminPageTitle('administer.plugins.page.header' 'Configurable Available Plugins')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- list-web-admin-plugins -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">
