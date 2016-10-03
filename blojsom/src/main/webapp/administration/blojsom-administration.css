@@ -273,3 +273,36 @@ form input.small {
     background-color: #F5F9DE;
     padding: 10px;
 }
+
+div.blojsom-accordion-container dl {
+    counter-reset: response-index;
+}
+
+div.blojsom-accordion-container dd { 
+    margin-left: 0px;
+}
+
+div.blojsom-accordion-container dt { 
+    position: relative;
+    font-weight: normal;
+}
+
+div.blojsom-accordion-container dt:before {
+    content: counter(response-index)".\0000a0";
+    counter-increment: response-index;
+    text-align: right;
+    position: absolute;
+    top: 0px;
+    left: -2em;
+    display: block;
+    width: 2em;
+    font-weight: bold;
+}
+
+dd.blojsom-accordian-content {
+    margin: 0 0 1em;
+}
+dd.blojsom-accordion-closed {
+    height: 0px;
+    overflow: hidden;
+}

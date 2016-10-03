@@ -34,65 +34,54 @@
                             <input type="submit" name="submit" value="#adminResource('submit.text' '')"> <input type="reset" name="reset" value="#adminResource('reset.text' '')">
                         </div>
                         #set($displayResponseText = ("true" == $BLOJSOM_USER_OBJECT.getMetaData().get("display-response-text")))
-                        #foreach ($response in $BULK_RESPONSES)
-<!--    
-        <a href="#" 
-           title="Show" 
-           onclick="Element.show('response$responseCounter'); return false;">
-            +
-        </a> 
-        <a href="#" 
-           title="Hide"
-           onclick="Element.hide('response$responseCounter'); return false;">
-            -
-        </a>
- -->
-
                         <div class="blojsom-accordion-container">
-                            <strong>$responseCounter.</strong> $response.getDateAsFormat("yyyy-M-d @ hh:mm:ss a", $BLOJSOM_BLOG.getBlogAdministrationLocale()) ( <strong>$response.getType()</strong> ) ( IP: $!response.getIp() )<br>
+                            <dl>
+                        #foreach ($response in $BULK_RESPONSES)
+                                <dt>$response.getDateAsFormat("MMMM d, yyyy 'at' hh:mm:ss", $BLOJSOM_BLOG.getBlogAdministrationLocale()) ( <strong>$response.getType()</strong> ) ( IP: $!response.getIp() )</dt>
                             #if ($response.getType().equals("comment"))
                                 #set ($delete = "delete_comments")
                                 #set ($approve = "approve_comments")
                                 #set ($markspam = "mark_spam_comments")
 
-                            <strong><a href="mailto:$!response.getEscapedAuthor()">$response.getEscapedAuthorEmail()</a></strong> [<a href="$!response.getEscapedAuthorURL()">$!response.getEscapedAuthorURL()</a>]<br>
-                            <div id="response$responseCounter" class="blojsom-accordion blojsom-accordian-content blojsom-accordion-closed">
-                            $response.getEscapedComment()
-                            </div>
+                                <dd><a href="mailto:$!response.getEscapedAuthorEmail()">$!response.getEscapedAuthor()</a> [<a href="$!response.getEscapedAuthorURL()">$!response.getEscapedAuthorURL()</a>]</dd>
+                                <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
+                                $response.getEscapedComment()
+                                </dd>
 
                             #elseif ($response.getType().equals("trackback"))
                                 #set ($delete = "delete_trackbacks")
                                 #set ($approve = "approve_trackbacks")
                                 #set ($markspam = "mark_spam_trackbacks")
 
-                            <strong>From: </strong><a href="$!response.getEscapedUrl()">$!response.getEscapedTitle()</a> [$!response.getEscapedBlogName()]<br>
-                            <div id="response$responseCounter" class="blojsom-accordion blojsom-accordian-content blojsom-accordion-closed">
-                            $response.getEscapedExcerpt()
-                            </div>
+                                <dd>From: <a href="$!response.getEscapedUrl()">$!response.getEscapedTitle()</a> [$!response.getEscapedBlogName()]</dd>
+                                <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
+                                $response.getEscapedExcerpt()
+                                </dd>
 
                             #elseif ($response.getType().equals("pingback"))
                                 #set ($delete = "delete_pingbacks")
                                 #set ($approve = "approve_pingbacks")
                                 #set ($markspam = "mark_spam_pingbacks")
 
-                            <strong>From: </strong><a href="$!response.getEscapedSourceURI()">$!response.getEscapedSourceURI()</a><br>
-                            <strong>  To: </strong><a href="$!response.getEscapedTargetURI()">$!response.getEscapedTargetURI()</a><br>
-                            <div id="response$responseCounter" class="blojsom-accordion blojsom-accordian-content blojsom-accordion-closed">
-                            $response.getEscapedExcerpt()
-                            </div>
+                                <dd>From: <a href="$!response.getEscapedSourceURI()">$!response.getEscapedSourceURI()</a></dd>
+                                <dd>To: </strong><a href="$!response.getEscapedTargetURI()">$!response.getEscapedTargetURI()</a></dd>
+                                <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
+                                $response.getEscapedExcerpt()
+                                </dd>
 
                             #end
-                            <div style="text-align:right">[ 
-                                <input type="checkbox" name="$delete" value="$response.getId()" id="delete-$responseCounter" class="deleteResponse" onclick="checkSingle(document.getElementById('approve-$responseCounter'),false)"> #adminResource('delete.text' '') - 
-                                <input type="checkbox" name="$approve" value="$response.getId()" id="approve-$responseCounter" class=approveResponse" onclick="checkSingle(document.getElementById('delete-$responseCounter'),false)"> #adminResource('approve.text' '') - 
-                                <input type="checkbox" name="$markspam" value="$response.getId()" id="markspam-$responseCounter"> #adminResource('mark.spam.text' '')] 
-                            </div>
+                                <div style="text-align:right"> 
+                                    [<input type="checkbox" name="$delete" value="$response.getId()" id="delete-$responseCounter" class="deleteResponse" onclick="checkSingle(document.getElementById('approve-$responseCounter'),false)"> #adminResource('delete.text' '') - 
+                                     <input type="checkbox" name="$approve" value="$response.getId()" id="approve-$responseCounter" class="approveResponse" onclick="checkSingle(document.getElementById('delete-$responseCounter'),false)"> #adminResource('approve.text' '') - 
+                                     <input type="checkbox" name="$markspam" value="$response.getId()" id="markspam-$responseCounter"> #adminResource('mark.spam.text' '')] 
+                                </div>
                             #set ($delete = "")
                             #set ($approve = "")
                             #set ($markspam = "")
-                        </div>
                         #set($responseCounter = $responseCounter + 1)
                         #end
+                            </dl>
+                        </div>
 
                         #if ($responseCounter > 1)
                         <div class="bulk-actions bulk-actions-bottom">
