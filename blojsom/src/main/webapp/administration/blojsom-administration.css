@@ -299,10 +299,23 @@ div.blojsom-accordion-container dt:before {
     font-weight: bold;
 }
 
-dd.blojsom-accordian-content {
+dd.blojsom-accordion-content-meta.blojsom-accordion-closed:before {
+    content: "\002b\0000a0";
+}
+
+dd.blojsom-accordion-content-meta.blojsom-accordion-open:before {
+    content: "\2212\0000a0";
+}
+
+dd.blojsom-accordion-content {
     margin: 0 0 1em;
 }
-dd.blojsom-accordion-closed {
+
+dd.blojsom-accordion-content.blojsom-accordion-closed {
     height: 0px;
     overflow: hidden;
+}
+
+dd.blojsom-accordion-content.blojsom-accordion-open {
+    height: auto;
 }
