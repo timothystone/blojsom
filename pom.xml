@@ -96,7 +96,10 @@
         <system>GitHub Issues</system>
         <url>https://github.com/timothystone/blojsom/issues</url>
     </issueManagement>
-    <!-- TODO insert CI details -->
+    <ciManagement>
+        <system>CircleCI</system>
+        <url>https://circleci.com/gh/timothystone/blojsom</url>
+    </ciManagement>
     <mailingLists>
         <mailingList>
             <name>blojsom-developers</name>
