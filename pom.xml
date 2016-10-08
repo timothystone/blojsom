@@ -62,48 +62,37 @@
         <developer>
             <id>czarneckid</id>
             <name>David A. Czarnecki</name>
-            <email>czarneckid@users.sourceforge.net</email>
-            <url>http://www.blojsom.com/</url>
-            <organization>blojsom</organization>
-            <organizationUrl>http://sourceforge.net/projects/blojsom/</organizationUrl>
+            <url>https://github.com/czarneckid</url>
             <roles>
                 <role>developer</role>
             </roles>
-            <timezone>-5</timezone>
+            <timezone>America/New_York</timezone>
         </developer>
         <developer>
             <id>intabulas</id>
             <name>Mark Lussier</name>
-            <email>intabulas@users.sourceforge.net</email>
-            <organization>blojsom</organization>
-            <organizationUrl>http://sourceforge.net/projects/blojsom/</organizationUrl>
+            <url>https://github.com/intabulas</url>
             <roles>
                 <role>developer</role>
             </roles>
         </developer>
         <developer>
-            <id>gefahrmaus</id>
+            <id>timothystone</id>
             <name>Timothy Stone</name>
-            <email>gefahrmaus@users.sourceforge.net</email>
-            <url>http://www.code-henge.com/</url>
-            <organization>blojsom</organization>
-            <organizationUrl>http://sourceforge.net/projects/blojsom/</organizationUrl>
+            <url>https://github.com/timothystone</url>
             <roles>
                 <role>developer</role>
             </roles>
-            <timezone>-5</timezone>
+            <timezone>America/New_York</timezone>
         </developer>
         <developer>
             <id>owenfarrell</id>
             <name>Owen Farrell</name>
-            <email>owenfarrell@users.sourceforge.net</email>
-            <url>http://owenfarrell.users.sourceforge.net/</url>
-            <organization>blojsom</organization>
-            <organizationUrl>http://sourceforge.net/projects/blojsom/</organizationUrl>
+            <url>https://github.com/owenfarrell</url>
             <roles>
                 <role>developer</role>
             </roles>
-            <timezone>-5</timezone>
+            <timezone>America/New_York</timezone>
         </developer>
     </developers>
     <!-- Environment Settings -->
