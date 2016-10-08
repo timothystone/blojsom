@@ -42,7 +42,7 @@
     <!-- More Project Information -->
     <name>blojsom Maven Parent POM</name>
     <description>A full-featured, multi-user, multi-blog platform.</description>
-    <url>http://wiki.blojsom.com/wiki/display/BLOJSOM/Home</url>
+    <url>https://github.com/timothystone/blojsom/wiki</url>
     <inceptionYear>2003</inceptionYear>
     <licenses>
         <license>
@@ -54,10 +54,6 @@
             </comments>
         </license>
     </licenses>
-    <organization>
-        <name>blojsom</name>
-        <url>http://www.sourceforge.net/projects/blojsom/</url>
-    </organization>
     <developers>
         <developer>
             <id>czarneckid</id>
@@ -96,7 +92,10 @@
         </developer>
     </developers>
     <!-- Environment Settings -->
-    <!-- TODO insert JIRA details -->
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/timothystone/blojsom/issues</url>
+    </issueManagement>
     <!-- TODO insert CI details -->
     <mailingLists>
         <mailingList>
@@ -111,9 +110,9 @@
         </mailingList>
     </mailingLists>
     <scm>
-        <connection>scm:svn:https://blojsom.svn.sourceforge.net/svnroot/blojsom/branches/maven-spike</connection>
-        <developerConnection>scm:svn:https://blojsom.svn.sourceforge.net/svnroot/blojsom/branches/maven-spike</developerConnection>
-        <url>http://blojsom.svn.sourceforge.net/viewvc/blojsom/branches/maven-spike</url>
+        <connection>scm:git:https://github.com/timothystone/blojsom.git</connection>
+        <developerConnection>scm:git:https://github.com/timothystone/blojsom.git</developerConnection>
+        <url>https://github.com/timothystone/blojsom</url>
     </scm>
     <repositories>
         <repository>
@@ -136,7 +135,7 @@
         <snapshotRepository>
             <id>sonatype-nexus-snapshots</id>
             <name>Sonatype Nexus Snapshots</name>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <url>http://oss.sonatype.org/content/repositories/snapshots/</url>
         </snapshotRepository>
         <repository>
             <id>sonatype-nexus-staging</id>
