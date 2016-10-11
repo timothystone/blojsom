@@ -19,7 +19,7 @@ If you like what you see, you might also want help out.
 ### Fork this!
 
 I need help with the following tasks:
-* Porting the wiki from the [http://bit.ly/blojsom3-wiki-archive](blojsom archive at archive.org). The original wiki was lost too many years ago in a system crash.
+* Porting the wiki from the [blojsom archive at archive.org](http://bit.ly/blojsom3-wiki-archive). The original wiki was lost too many years ago in a system crash.
 * Spring Core update
 * Unit Tests
 * YUI 3.x or Vanilla JS porting (read: almost anything that's not some bad concoction of `npm`, `bower`, `nodejs`, JQuery or JQuery-built)[1]
