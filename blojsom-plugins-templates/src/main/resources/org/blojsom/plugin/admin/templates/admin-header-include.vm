@@ -67,12 +67,15 @@
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/cookie/cookie-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/editor/editor-min.js"></script>
         <script type="text/javascript">     
-            (function(Y) { 
-                var E = Y.util.Event, 
-                    Dom = Y.util.Dom, 
-                    Button = Y.widget.Button;
+            (function() { 
+                YAHOO.namespace("blojsom");
 
-                Y.namespace("blojsom");
+                var E = YAHOO.util.Event, 
+                    Dom = YAHOO.util.Dom, 
+                    Button = YAHOO.widget.Button,
+                    MenuBar = YAHOO.widget.MenuBar,
+                    Editor = YAHOO.widget.Editor,
+                    blojsom = YAHOO.blojsom;
 
                 E.onContentReady("entry-options", function() {
                     var pingBlogURLsCheckbox = new Button("ping-blog-urls", {label:"#adminResource('blog.entry.pingURLs.text' 'Ping blog notification URLs?')"});
@@ -91,19 +94,17 @@
                     disablePingbacks.set("checked", true, true);
         #end
     #end
-
-                    Y.blojsom.query = Dom.get("searchresponses");
                 });
 
-                Y.blojsom.init = function() {
-                    var navmenu = new Y.widget.MenuBar("navmenu", { autosubmenudisplay: true, shadow:false });
+                blojsom.init = function() {
+                    var navmenu = new MenuBar("navmenu", { autosubmenudisplay: true, shadow:false });
                     navmenu.render();
 
                     var login = new Button("submit-login");
                     var editEntriesInCategory = new Button("editEntriesInCategory");
                     var addEntryToCategory = new Button("addEntryToCategory");
 
-                    var entryEditor = new YAHOO.widget.Editor('blog-entry-description', {
+                    var entryEditor = new Editor('blog-entry-description', {
                         height: '300px',
                         width: '522px',
                         dompath: true,
@@ -113,8 +114,9 @@
                     });
                     entryEditor.render();
                 };
-                E.onDOMReady(Y.blojsom.init);
-            })(YAHOO);
+                E.onDOMReady(blojsom.init);
 
+            })();
         </script>
+        #RenderAdminScriptAdditions($scripts)
     </head>
