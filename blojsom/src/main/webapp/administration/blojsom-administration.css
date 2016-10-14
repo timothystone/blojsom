@@ -299,11 +299,11 @@ div.blojsom-accordion-container dt:before {
     font-weight: bold;
 }
 
-dd.blojsom-accordion-content-meta.blojsom-accordion-closed:before {
+dd.blojsom-accordion-content-meta.blojsom-accordion-closed::before {
     content: "\002b\0000a0";
 }
 
-dd.blojsom-accordion-content-meta.blojsom-accordion-open:before {
+dd.blojsom-accordion-content-meta.blojsom-accordion-open::before {
     content: "\2212\0000a0";
 }
 
