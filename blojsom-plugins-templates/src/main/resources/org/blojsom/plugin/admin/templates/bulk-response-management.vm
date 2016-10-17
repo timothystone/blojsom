@@ -1,5 +1,5 @@
 #AdminPageTitle('console.header' '')
-#AdminScriptAdditions(['response-accordion.js'])
+#AdminScriptAdditions(['bulk-response-utilities.js'])
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
 <!-- bulk-response-management -->
 

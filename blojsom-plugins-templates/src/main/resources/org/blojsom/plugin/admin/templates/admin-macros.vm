@@ -64,24 +64,6 @@
 #macro(showErrorMessage)
     #if ($BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT)
         <div id="operation_result">$BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT</div>
-        <script type="text/javascript">
-            (function(Y) {
-                var Dom = Y.util.Dom,
-                    Anim = Y.util.Anim,
-                    errStatus = Dom.get("errStatus"),
-                    show = new Anim(errStatus, {height:{to:errStatus.scrollHeight}}, .5),
-                    hide = new Anim(errStatus, {height:{to:0}}, 1.5);
-                show.onComplete.subscribe(hideStatus, hide);
-                show.animate();
-
-                function hideStatus(ev, args, obj) {
-                    var animate = function() {
-                        return obj.animate();
-                    };                  
-                    window.setTimeout(animate, 4000);
-                }
-            })(YAHOO);
-        </script>
     #end
 #end
 
