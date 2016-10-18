@@ -44,7 +44,7 @@
                                 #set ($approve = "approve_comments")
                                 #set ($markspam = "mark_spam_comments")
 
-                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed"><a href="mailto:$!response.getEscapedAuthorEmail()">$!response.getEscapedAuthor()</a> [<a href="$!response.getEscapedAuthorURL()">$!response.getEscapedAuthorURL()</a>]</dd>
+                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed"><a href="mailto:$!response.getEscapedAuthorEmail()" class="response_meta">$!response.getEscapedAuthor()</a> [<a href="$!response.getEscapedAuthorURL()" class="response_meta">$!response.getEscapedAuthorURL()</a>]</dd>
                                 <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
                                 $response.getEscapedComment()
                                 </dd>
@@ -54,7 +54,7 @@
                                 #set ($approve = "approve_trackbacks")
                                 #set ($markspam = "mark_spam_trackbacks")
 
-                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed">From: <a href="$!response.getEscapedUrl()">$!response.getEscapedTitle()</a> [$!response.getEscapedBlogName()]</dd>
+                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed">From: <a href="$!response.getEscapedUrl()" class="response_meta">$!response.getEscapedTitle()</a> [$!response.getEscapedBlogName()]</dd>
                                 <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
                                 $response.getEscapedExcerpt()
                                 </dd>
@@ -64,8 +64,8 @@
                                 #set ($approve = "approve_pingbacks")
                                 #set ($markspam = "mark_spam_pingbacks")
 
-                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed">From: <a href="$!response.getEscapedSourceURI()">$!response.getEscapedSourceURI()</a></dd>
-                                <dd>To: </strong><a href="$!response.getEscapedTargetURI()">$!response.getEscapedTargetURI()</a></dd>
+                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed">From: <a href="$!response.getEscapedSourceURI()" class="response_meta">$!response.getEscapedSourceURI()</a></dd>
+                                <dd>To: </strong><a href="$!response.getEscapedTargetURI()" class="response_meta">$!response.getEscapedTargetURI()</a></dd>
                                 <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
                                 $response.getEscapedExcerpt()
                                 </dd>
