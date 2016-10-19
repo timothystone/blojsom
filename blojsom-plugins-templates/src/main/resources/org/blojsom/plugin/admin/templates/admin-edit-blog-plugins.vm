@@ -1,5 +1,6 @@
 #AdminPageTitle('configure.plugin.mappings.text' '')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- edit-blog-plugins -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">

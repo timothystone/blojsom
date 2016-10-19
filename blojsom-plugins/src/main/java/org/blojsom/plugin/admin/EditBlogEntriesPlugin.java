@@ -715,8 +715,10 @@ public class EditBlogEntriesPlugin extends BaseAdminPlugin {
                 sendTrackbackPings(blog, entry, blogTrackbackURLs);
             }
 
-            httpServletRequest.setAttribute(BlojsomConstants.PAGE_PARAM, EDIT_BLOG_ENTRY_ACTION);
-            context.put(BLOJSOM_PLUGIN_EDIT_BLOG_ENTRIES_ENTRY, entry);
+            httpServletRequest.setAttribute(BlojsomConstants.PAGE_PARAM, MANAGE_BLOG_ENTRIES_PAGE);
+            httpServletRequest.getSession().setAttribute(BlojsomConstants.REDIRECT_TO_PARAM, "?flavor=admin&action=edit-entries-list&pg_num=1&plugins=edit-blog-entries");
+            entries = super.process(httpServletRequest, httpServletResponse, blog, context, entries);
+            return entries;
         } else if (EDIT_ENTRIES_LIST.equals(action)) {
             if (_logger.isDebugEnabled()) {
                 _logger.debug("User requested edit entries list action");

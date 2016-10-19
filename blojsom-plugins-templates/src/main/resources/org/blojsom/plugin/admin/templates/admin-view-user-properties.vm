@@ -1,5 +1,6 @@
 #AdminPageTitle('user.properties.page.header' 'Properties')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- view-user-properties -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">

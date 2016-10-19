@@ -1,5 +1,7 @@
 #AdminPageTitle('console.header' '')
+#AdminScriptAdditions(['bulk-response-utilities.js'])
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- bulk-response-management -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">
@@ -9,92 +11,81 @@
             #parse("org/blojsom/plugin/admin/templates/admin-navigation-include.vm")
         </div>
         <div id="errStatus">
-            #showErrorMessage()
+    #showErrorMessage()
         </div>
 
         <div id="bd">
             <div id="yui-main">
                 <div class="yui-b stdotcom">
 
-                    <h3>#adminResource('manage.responses.text' '')</h3>
-
-                    <script type="text/javascript">
-                        function checkAll(form, type, state) {
-                            for (i = 0, n = form.elements.length; i < n; i++) {
-                                if(form.elements[i].type == "checkbox" && form.elements[i].name.indexOf(type) != -1) {
-                                    form.elements[i].checked = state;
-                                }
-                            }
-                        }
-
-                        function checkSingle(item, state) {
-                            item.checked = state;
-                        }
-                    </script>
+                    <h2>#adminResource('manage.responses.text' '')</h2>
 
                     #set ($responseCounter = 1)
                     <form name="brm" id="brm" action="." method="post" accept-charset="UTF-8">
-
-                        <p style="text-align:right">
+                        <div style="text-align:right">
                             #adminResource('select.all.responses.text' '') <a href="javascript:;" onclick="checkAll(document.getElementById('brm'),'approve',false);checkAll(document.getElementById('brm'),'delete',true);">#adminResource('deletion.text' '')</a> #adminResource('or.text' '') <a href="javascript:;" onclick="checkAll(document.getElementById('brm'),'approve',true);checkAll(document.getElementById('brm'),'delete',false);">#adminResource('approval.text' '')</a> #adminResource('or.text' '') <a href="javascript:;" onclick="checkAll(document.getElementById('brm'),'mark_spam',true);">#adminResource('spam.text' '')</a><br>
                             #adminResource('unselect.all.responses.text' '') <a href="javascript:;" onclick="checkAll(document.getElementById('brm'),'delete',false);">#adminResource('deletion.text' '')</a> #adminResource('or.text' '') <a href="javascript:;" onclick="checkAll(document.getElementById('brm'),'approve',false);">#adminResource('approval.text' '')</a> #adminResource('or.text' '') <a href="javascript:;" onclick="checkAll(document.getElementById('brm'),'mark_spam',false);">#adminResource('spam.text' '')</a>
-                        </p>
-                        <p>
-                            <input type="submit" name="submit" value="#adminResource('submit.text' '')"> <input type="reset" name="reset" value="#adminResource('reset.text' '')">
-                        </p>
+                        </div>
                         <div style="display:none">
                             <input type="hidden" name="action" value="bulk-response-management">
                             <input type="hidden" name="flavor" value="admin">
                             <input type="hidden" name="plugins" value="bulk-response-management">
                         </div>
-
+                        <div class="bulk-actions bulk-actions-top">
+                            <input type="submit" name="submit" value="#adminResource('submit.text' '')"> <input type="reset" name="reset" value="#adminResource('reset.text' '')">
+                        </div>
                         #set($displayResponseText = ("true" == $BLOJSOM_USER_OBJECT.getMetaData().get("display-response-text")))
-
+                        <div class="blojsom-accordion-container">
+                            <dl>
                         #foreach ($response in $BULK_RESPONSES)
-                        <h3>&nbsp;</h3>
-                        <div>
-                            <strong>$responseCounter. ( <a href="#" title="Show" onclick="Element.show('response$responseCounter'); return false;">+</a> <a href="#" title="Hide" onclick="Element.hide('response$responseCounter'); return false;">-</a> ) </strong> $response.getDateAsFormat("yyyy-M-d @ hh:mm:ss a", $BLOJSOM_BLOG.getBlogAdministrationLocale()) ( <strong>$response.getType()</strong> ) ( IP: $!response.getIp() )<br>
+                                <dt>$response.getDateAsFormat("MMMM d, yyyy 'at' hh:mm:ss", $BLOJSOM_BLOG.getBlogAdministrationLocale()) ( <strong>$response.getType()</strong> ) ( IP: $!response.getIp() )</dt>
                             #if ($response.getType().equals("comment"))
-                            #set ($delete = "delete_comments")
-                            #set ($approve = "approve_comments")
-                            #set ($markspam = "mark_spam_comments")
-                            <strong>$!response.getEscapedAuthor()</strong> ( <a href="mailto:$!response.getEscapedAuthorEmail()">$response.getEscapedAuthorEmail()</a> / <a href="$!response.getEscapedAuthorURL()">$!response.getEscapedAuthorURL()</a> )<br>
-                            <div id="response$responseCounter" #if (!$displayResponseText)style="display: none"#end>
-                            $response.getEscapedComment()
-                            </div>
+                                #set ($delete = "delete_comments")
+                                #set ($approve = "approve_comments")
+                                #set ($markspam = "mark_spam_comments")
+
+                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed"><a href="mailto:$!response.getEscapedAuthorEmail()" class="response_meta">$!response.getEscapedAuthor()</a> [<a href="$!response.getEscapedAuthorURL()" class="response_meta">$!response.getEscapedAuthorURL()</a>]</dd>
+                                <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
+                                $response.getEscapedComment()
+                                </dd>
+
                             #elseif ($response.getType().equals("trackback"))
-                            #set ($delete = "delete_trackbacks")
-                            #set ($approve = "approve_trackbacks")
-                            #set ($markspam = "mark_spam_trackbacks")
-                            <strong>From: </strong><a href="$!response.getEscapedUrl()">$!response.getEscapedTitle()</a> ( $!response.getEscapedBlogName() )<br>
-                            <div id="response$responseCounter" #if (!$displayResponseText)style="display: none"#end>
-                            $response.getEscapedExcerpt()
-                            </div>
+                                #set ($delete = "delete_trackbacks")
+                                #set ($approve = "approve_trackbacks")
+                                #set ($markspam = "mark_spam_trackbacks")
+
+                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed">From: <a href="$!response.getEscapedUrl()" class="response_meta">$!response.getEscapedTitle()</a> [$!response.getEscapedBlogName()]</dd>
+                                <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
+                                $response.getEscapedExcerpt()
+                                </dd>
+
                             #elseif ($response.getType().equals("pingback"))
-                            #set ($delete = "delete_pingbacks")
-                            #set ($approve = "approve_pingbacks")
-                            #set ($markspam = "mark_spam_pingbacks")
-                            <strong>From: </strong><a href="$!response.getEscapedSourceURI()">$!response.getEscapedSourceURI()</a><br>
-                            <strong>  To: </strong><a href="$!response.getEscapedTargetURI()">$!response.getEscapedTargetURI()</a><br>
-                            <div id="response$responseCounter" #if (!$displayResponseText)style="display: none"#end>
-                            $response.getEscapedExcerpt()
-                            </div>
+                                #set ($delete = "delete_pingbacks")
+                                #set ($approve = "approve_pingbacks")
+                                #set ($markspam = "mark_spam_pingbacks")
+
+                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed">From: <a href="$!response.getEscapedSourceURI()" class="response_meta">$!response.getEscapedSourceURI()</a></dd>
+                                <dd>To: </strong><a href="$!response.getEscapedTargetURI()" class="response_meta">$!response.getEscapedTargetURI()</a></dd>
+                                <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
+                                $response.getEscapedExcerpt()
+                                </dd>
+
                             #end
-                            <div style="text-align:right">[ 
-                                <input type="checkbox" name="$delete" value="$response.getId()" id="delete-$responseCounter" class="deleteResponse" onclick="checkSingle(document.getElementById('approve-$responseCounter'),false)"> #adminResource('delete.text' '') - 
-                                <input type="checkbox" name="$approve" value="$response.getId()" id="approve-$responseCounter" class=approveResponse" onclick="checkSingle(document.getElementById('delete-$responseCounter'),false)"> #adminResource('approve.text' '') - 
-                                <input type="checkbox" name="$markspam" value="$response.getId()" id="markspam-$responseCounter"> #adminResource('mark.spam.text' '')] 
-                            </div>
+                                <div style="text-align:right"> 
+                                    [<input type="checkbox" name="$delete" value="$response.getId()" id="delete-$responseCounter" class="deleteResponse" onclick="checkSingle(document.getElementById('approve-$responseCounter'),false)"> #adminResource('delete.text' '') - 
+                                     <input type="checkbox" name="$approve" value="$response.getId()" id="approve-$responseCounter" class="approveResponse" onclick="checkSingle(document.getElementById('delete-$responseCounter'),false)"> #adminResource('approve.text' '') - 
+                                     <input type="checkbox" name="$markspam" value="$response.getId()" id="markspam-$responseCounter"> #adminResource('mark.spam.text' '')] 
+                                </div>
                             #set ($delete = "")
                             #set ($approve = "")
                             #set ($markspam = "")
-                        </div>
                         #set($responseCounter = $responseCounter + 1)
                         #end
+                            </dl>
+                        </div>
 
                         #if ($responseCounter > 1)
-                        <h3>&nbsp;</h3>
-                        <div>
+                        <div class="bulk-actions bulk-actions-bottom">
                             <input type="submit" name="submit" value="#adminResource('submit.text' '')"> <input type="reset" name="reset" value="#adminResource('reset.text' '')">
                         </div>
                         #end
@@ -111,7 +102,7 @@
                             <input type="hidden" name="plugins" value="bulk-response-management">
                         </div>
                         <div>
-                            <input type="text" id="searchresponses" name="query" value="#if ($query) $query #else #adminResource('search.responses.text' '')&#8230;"#end size="20"> <input type="submit" name="submitresponsequery" value="#adminResource('submit.text' '')">
+                            <input type="text" id="searchresponses" name="query" placeholder="#adminResource('search.responses.text' '')" value="$!query" size="20"> <input type="submit" name="submitresponsequery" value="#adminResource('submit.text' '')">
                         </div>
                     </form>
                 </div>
@@ -119,9 +110,17 @@
         </div>
     </div>
     <script type="text/javascript">
-        Y.blojsom.query = Dom.get("searchresponses");
-        E.on(Y.blojsom.query, "focus", function() { Y.blojsom.query.value = ""; });
-    </script>
+        function checkAll(form, type, state) {
+            for (i = 0, n = form.elements.length; i < n; i++) {
+                if(form.elements[i].type == "checkbox" && form.elements[i].name.indexOf(type) != -1) {
+                    form.elements[i].checked = state;
+                }
+            }
+        }
 
+        function checkSingle(item, state) {
+            item.checked = state;
+        }
+    </script>
 
 #parse("org/blojsom/plugin/admin/templates/admin-footer-include.vm")

@@ -64,14 +64,6 @@
 #macro(showErrorMessage)
     #if ($BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT)
         <div id="operation_result">$BLOJSOM_ADMIN_PLUGIN_OPERATION_RESULT</div>
-        <script type="text/javascript">
-            var errStatus = Dom.get("errStatus");
-            var showStat = new Y.util.Anim('errStatus', {height:{to:errStatus.scrollHeight}}, .5);
-            showStat.animate();
-            showStat.onComplete.subscribe( function() {
-                    window.setTimeout('new Y.util.Anim(errStatus, {height:{to:0}}, 1).animate()','4000');
-                });
-        </script>
     #end
 #end
 
@@ -109,7 +101,9 @@
 
 #macro(adminResource $resourceID $fallback )$!BLOJSOM_RESOURCE_MANAGER.getString($resourceID, "org.blojsom.plugin.admin.resources.messages", $fallback, $BLOJSOM_BLOG.getBlogAdministrationLocale())#end
         
-#macro(AdminPageTitle $resourceID $fallback)#set ($page = $!BLOJSOM_RESOURCE_MANAGER.getString($resourceID, "org.blojsom.plugin.admin.resources.messages", $fallback, $BLOJSOM_BLOG.getBlogAdministrationLocale()))#end
+#macro(AdminPageTitle $resourceID $fallback)
+#set ($page = $!BLOJSOM_RESOURCE_MANAGER.getString($resourceID, "org.blojsom.plugin.admin.resources.messages", $fallback, $BLOJSOM_BLOG.getBlogAdministrationLocale()))
+#end
 
 #macro(LocalizedText $bundle $resourceID $fallback)$!BLOJSOM_RESOURCE_MANAGER.getString($resourceID, $bundle, $fallback, $BLOJSOM_BLOG.getBlogAdministrationLocale())#end
 
@@ -124,6 +118,19 @@
 $BLOJSOM_RENDER_TOOL.evaluate($templateAddition)
 #end
 #end
+
+#macro(AdminScriptAdditions $scriptAdditions)
+#set ($scripts = $scriptAdditions)
+#end
+
+#macro(RenderAdminScriptAdditions $scripts)
+#if ($scripts.size() > 0)
+#foreach ($script in $scripts)
+<script src="#BlogBaseAdminURL()/administration/javascript/$script"></script>
+#end
+#end
+#end
+
 
 #macro(DeleteConfirmationPrompt $specific $confirmationText)
     <script type="text/javascript">

@@ -1,5 +1,6 @@
 #AdminPageTitle('file.upload.header' 'File Upload')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- file-upload -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">

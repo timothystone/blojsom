@@ -1,6 +1,6 @@
 #AdminPageTitle('console.header' '')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
-
+<!-- add-blog-entry -->
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">
         <div id="hd">

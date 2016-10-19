@@ -1,6 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
-        "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!doctype html>
+<html class="no-js">
     <head>
         <title>#BlogName() - $page</title>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -57,19 +56,36 @@
                 margin-top: 0;
             }
 
+            a span.on { color:inherit; }
+            span.off { color: #cccccc; }
+
         </style>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/utilities/utilities.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/selector/selector-min.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/container/container-min.js"></script>
+        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/menu/menu-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/button/button-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/cookie/cookie-min.js"></script>
-        <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/menu/menu-min.js"></script>
         <script type="text/javascript" src="#BlogBaseAdminURL()/administration/javascript/yui/editor/editor-min.js"></script>
         <script type="text/javascript">     
-            (function(Y) { 
-                var E = Y.util.Event, 
-                    Dom = Y.util.Dom, 
-                    Button = Y.widget.Button;
+            (function() { 
+                YAHOO.namespace("blojsom");
 
-                Y.namespace("blojsom");
+                var E = YAHOO.util.Event, 
+                    Dom = YAHOO.util.Dom, 
+                    Button = YAHOO.widget.Button,
+                    MenuBar = YAHOO.widget.MenuBar,
+                    Editor = YAHOO.widget.Editor,
+                    blojsom = YAHOO.blojsom,
+                    Anim = Y.util.Anim,
+                    errStatus, show, hide;
+
+                function hideStatus(ev, args, obj) {
+                    var animate = function() {
+                        return obj.animate();
+                    };                  
+                    window.setTimeout(animate, 4000);
+                }
 
                 E.onContentReady("entry-options", function() {
                     var pingBlogURLsCheckbox = new Button("ping-blog-urls", {label:"#adminResource('blog.entry.pingURLs.text' 'Ping blog notification URLs?')"});
@@ -90,15 +106,23 @@
     #end
                 });
 
-                Y.blojsom.init = function() {
-                    var navmenu = new Y.widget.MenuBar("navmenu", { autosubmenudisplay: true, shadow:false });
+                blojsom.init = function() {
+                    
+                    var errStatus = Dom.get("errStatus"),
+                    show = new Anim(errStatus, {height:{to:errStatus.scrollHeight}}, .5),
+                    hide = new Anim(errStatus, {height:{to:0}}, 1.5);
+
+                    show.onComplete.subscribe(hideStatus, hide);
+                    show.animate();
+
+                    navmenu = new MenuBar("navmenu", { autosubmenudisplay: true, shadow:false });
                     navmenu.render();
 
                     var login = new Button("submit-login");
-                    var editEntriesInCategory = new Button("editEntriesInCategory");
-                    var addEntryToCategory = new Button("addEntryToCategory");
+                    var editEntriesInCategory = new Button("editEntriesInCategory"),
+                        addEntryToCategory = new Button("addEntryToCategory");
 
-                    var entryEditor = new YAHOO.widget.Editor('blog-entry-description', {
+                    var entryEditor = new Editor('blog-entry-description', {
                         height: '300px',
                         width: '522px',
                         dompath: true,
@@ -108,8 +132,9 @@
                     });
                     entryEditor.render();
                 };
-                E.onDOMReady(Y.blojsom.init);
-            })(YAHOO);
+                E.onDOMReady(blojsom.init);
 
+            })();
         </script>
+        #RenderAdminScriptAdditions($scripts)
     </head>

@@ -327,7 +327,9 @@ public class BaseAdminPlugin implements Plugin, PermissionedPlugin {
 
                 try {
                     httpServletRequest.getSession().removeAttribute(BlojsomConstants.REDIRECT_TO_PARAM);
-                    httpServletResponse.sendRedirect(redirectURL);
+                    httpServletResponse.setStatus(HttpServletResponse.SC_SEE_OTHER);
+                    httpServletResponse.setHeader("Location", redirectURL);
+                    httpServletResponse.flushBuffer();
                 } catch (IOException e) {
                     _logger.error(e);
                 }

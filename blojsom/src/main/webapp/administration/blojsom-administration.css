@@ -168,6 +168,23 @@ h3 {
     font-weight: normal;
 }
 
+div.bulk-actions {
+    margin:10px 0;
+    color:#3C657B;
+    font-size: 131%;
+    font-weight: normal;
+}
+
+div.bulk-actions-top {
+    border-bottom: 1px dashed #A4AEB2;
+    padding:0 0 2em 0;
+}
+
+div.bulk-actions-bottom {
+    border-top: 1px dashed #A4AEB2;
+    padding:2em 0 0 0;
+}
+
 h3 span.add-new-entry {
     padding-left: 24px;
     background: url(images/add.png) no-repeat left center;
@@ -255,4 +272,52 @@ form input.small {
     border: 1px solid #ADAE8C;
     background-color: #F5F9DE;
     padding: 10px;
+}
+
+div.blojsom-accordion-container dl {
+    counter-reset: response-index;
+}
+
+div.blojsom-accordion-container dd { 
+    margin-left: 0px;
+}
+
+div.blojsom-accordion-container dt { 
+    position: relative;
+    font-weight: normal;
+}
+
+div.blojsom-accordion-container dt:before {
+    content: counter(response-index)".\0000a0";
+    counter-increment: response-index;
+    text-align: right;
+    position: absolute;
+    top: 0px;
+    left: -2em;
+    display: block;
+    width: 2em;
+    font-weight: bold;
+}
+
+dd.blojsom-accordion-content-meta.blojsom-accordion-closed::before {
+    content: "\002b\0000a0";
+}
+
+dd.blojsom-accordion-content-meta.blojsom-accordion-open::before {
+    content: "\2212\0000a0";
+}
+
+dd.blojsom-accordion-content {
+    margin: 0 0 1em;
+}
+
+dd.blojsom-accordion-content.blojsom-accordion-closed {
+    height: 0px;
+    overflow: hidden;
+    margin: 0 0 0 1em;
+}
+
+dd.blojsom-accordion-content.blojsom-accordion-open {
+    height: auto;
+    margin: 0 0 0 1em;
 }

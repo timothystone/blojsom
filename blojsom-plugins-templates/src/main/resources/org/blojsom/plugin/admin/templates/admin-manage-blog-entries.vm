@@ -1,5 +1,6 @@
 #AdminPageTitle('manage.entries.header' 'Manage Entries')
 #parse("org/blojsom/plugin/admin/templates/admin-header-include.vm")
+<!-- manage-blog-entries -->
 
 <body class="yui-skin-sam">
     <div id="doc3" class="yui-t6">
@@ -46,9 +47,9 @@
                             <td>$entry.getResponses().size()</td>
                             <td>$!entry.getAuthor()</td>
                             #if($!entry.getStatus() == "published")
-                            <td><img src="#BlogBaseAdminURL()/administration/images/page_white_world.png" alt="$!entry.getStatus()"></td>
+                            <td><img src="#BlogBaseAdminURL()/administration/images/page_white_world.png" title="$!entry.getStatus()" alt="$!entry.getStatus()"></td>
                             #else
-                            <td><img src="#BlogBaseAdminURL()/administration/images/page_white_edit.png" alt="$!entry.getStatus()"></td>
+                            <td><img src="#BlogBaseAdminURL()/administration/images/page_white_edit.png" title="$!entry.getStatus()" alt="$!entry.getStatus()"></td>
                             #end
                             <td>
                                 <a href="#BlogURL()$entry.getBlogCategory().getName()$entry.getPostSlug()">View</a>&nbsp;
@@ -58,12 +59,25 @@
                         </tr>
                         #end
                     </table>
-
+                    
+                    #set($previous_page = 'off')
+                    #set($next_page = 'off')
                     #if ($page_number > 1)
-                    <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-entries&amp;action=edit-entries-list&amp;pg_num=$previous_page">&laquo; #adminResource('previous.page.text' '')</a>
+                    #set($previous_page = 'on')
+                    <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-entries&amp;action=edit-entries-list&amp;pg_num=$previous_page">
                     #end
+                    <span class="$previous_page">#adminResource('previous.page.text' '')</span>
+                    #if ($page_number > 1)
+                    </a>
+                    #end
+                    <span class="off">&nbsp;|&nbsp;</span>
                     #if ($page_number < $total_pages)
-                    <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-entries&amp;action=edit-entries-list&amp;pg_num=$next_page">#adminResource('next.page.text' '') &raquo;</a>
+                    #set($next_page = 'on')
+                    <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-entries&amp;action=edit-entries-list&amp;pg_num=$next_page">
+                    #end
+                    <span class="$next_page">#adminResource('next.page.text' '')</span>
+                    #if ($page_number < $total_pages)
+                    </a>
                     #end
                 </div>
             </div>
@@ -76,15 +90,11 @@
                             <input type="hidden" name="plugins" value="edit-blog-entries">
                         </div>
                         <div>
-                            <input type="text" name="query" id="searchquery"  value="#if ($query) $query #else #adminResource('search.posts.text' '')&#8230;" #end size="20"> <input type="submit" name="submitsearch" value="#adminResource('submit.text' '')" >
+                            <input type="text" name="query" id="searchquery" placeholder="#adminResource('search.posts.text' '')" value="$!query" size="20"> <input type="submit" name="submitsearch" value="#adminResource('submit.text' '')" >
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        Y.blojsom.query = Dom.get("searchquery");
-        E.on(Y.blojsom.query, "focus", function() { Y.blojsom.query.value = ""; });
-    </script>
 #parse("org/blojsom/plugin/admin/templates/admin-footer-include.vm")
