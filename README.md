@@ -5,6 +5,8 @@ blojsom is ...
 
 A Java-based, full-featured, multi-blog, multi-user software package.
 
+Originally developed by David Czarnecki and others, blojsom is the answer to the question: where's the Java version of blossom? blojsom first leveraged the file-system for entry creation and management. By version 3, blojsom had graduated to an Spring enabled, lean-JEE, platform backed by a database.
+
 In 2004, blojsom was the software behind Apple's Mac OS X Tiger Server Weblog Server. [Apple's Press Release](http://www.apple.com/pr/library/2004/06/28Apple-Previews-Mac-OS-X-Server-Tiger.html).
 
 Want to try blojsom?
