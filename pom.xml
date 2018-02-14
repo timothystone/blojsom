@@ -16,8 +16,8 @@
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
         <velocity.version>1.6.2</velocity.version>
         <groovy.version>1.6.0</groovy.version>
         <commons-logging.version>1.0.4</commons-logging.version>

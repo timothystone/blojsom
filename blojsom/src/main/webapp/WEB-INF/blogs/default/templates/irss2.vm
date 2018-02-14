@@ -16,8 +16,8 @@
             <title>#EscapedBlogName()</title>
             <link>#BlogURL()</link>
         </image>
-        <itunes:category text="#BlogPodcastCategory">
-            <itunes:category text="#BlogPodcastSubcategory"/>
+        <itunes:category text="Games &amp; Hobbies">
+            <itunes:category text="Other Games"></itunes:category>
         </itunes:category>
         <docs>https://cyber.harvard.edu/rss/rss.html</docs>
         <generator>$BLOJSOM_VERSION</generator>
@@ -34,6 +34,7 @@
         
         #set ($includedCategories = $BLOJSOM_BLOG.getProperty("irss.blog-default-category-mapping").split(","))
         #foreach ($entry in $BLOJSOM_ENTRIES)
+        #SimpleFriendlyPermalink($entry)
         #if ($includedCategories.contains($entry.getCategory()))
         <item>
             <title>$entry.getEscapedTitle()</title>
