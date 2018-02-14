@@ -386,7 +386,7 @@ public class RSSEnclosurePlugin implements Plugin, Listener {
         String[] enclosureProperties = new String[]{"", ""};
 
         try {
-            if (!rssEnclosureURL.toLowerCase().startsWith("http://")) {
+            if (!rssEnclosureURL.toLowerCase().matches("^https?://.*")) {
                 if (_logger.isDebugEnabled()) {
                     _logger.debug("RSS enclosure URL not an HTTP-accessible resource");
                 }
@@ -396,8 +396,8 @@ public class RSSEnclosurePlugin implements Plugin, Listener {
                 httpURLConnection.setRequestMethod("HEAD");
                 httpURLConnection.connect();
 
-                enclosureProperties[0] = Integer.toString(httpURLConnection.getContentLength());
-                enclosureProperties[1] = httpURLConnection.getContentType();
+                enclosureProperties[0] = Integer.toString(httpURLConnection.getContentLength()); 
+               enclosureProperties[1] = httpURLConnection.getContentType();
 
                 httpURLConnection.disconnect();
             }
