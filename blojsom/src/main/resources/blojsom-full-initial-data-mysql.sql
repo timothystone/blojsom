@@ -402,7 +402,7 @@ CREATE TABLE `Template` (
 
 /*!40000 ALTER TABLE `Template` DISABLE KEYS */;
 LOCK TABLES `Template` WRITE;
-INSERT INTO `Template` VALUES (1,'rss','rss.vm, text/xml;charset=UTF-8',1),(1,'rsd','rsd.vm, application/rsd+xml;charset=UTF-8',2),(1,'html','asual.vm, text/html;charset=UTF-8',3),(1,'atom','atom.vm, application/atom+xml;charset=UTF-8',4),(1,'rss2','rss2.vm, text/xml;charset=UTF-8',5),(1,'rdf','rdf.vm, text/xml;charset=UTF-8',6),(1,'admin','org/blojsom/plugin/admin/templates/admin.vm, text/html;charset=UTF-8',7);
+INSERT INTO `Template` VALUES (1,'rss','rss.vm, text/xml;charset=UTF-8',1),(1,'rsd','rsd.vm, application/rsd+xml;charset=UTF-8',2),(1,'html','asual.vm, text/html;charset=UTF-8',3),(1,'atom','atom.vm, application/atom+xml;charset=UTF-8',4),(1,'rss2','rss2.vm, text/xml;charset=UTF-8',5),(1,'irss','irss.vm, text/xml;charset=UTF-8',6),(1,'rdf','rdf.vm, text/xml;charset=UTF-8',7),(1,'admin','org/blojsom/plugin/admin/templates/admin.vm, text/html;charset=UTF-8',8);
 UNLOCK TABLES;
 /*!40000 ALTER TABLE `Template` ENABLE KEYS */;
 

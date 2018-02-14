@@ -124,7 +124,7 @@ CREATE TABLE Template (
   CONSTRAINT template_blog_blogidfk FOREIGN KEY (blog_id) REFERENCES Blog (id) ON DELETE CASCADE
 ) ;
 
-INSERT INTO Template VALUES (1,'rss','rss.vm, text/xml;charset=UTF-8'),(1,'rsd','rsd.vm, application/rsd+xml;charset=UTF-8'),(1,'html','asual.vm, text/html;charset=UTF-8'),(1,'atom','atom.vm, application/atom+xml;charset=UTF-8'),(1,'rss2','rss2.vm, text/xml;charset=UTF-8'),(1,'rdf','rdf.vm, text/xml;charset=UTF-8'),(1,'admin','org/blojsom/plugin/admin/templates/admin.vm, text/html;charset=UTF-8');
+INSERT INTO Template VALUES (1,'rss','rss.vm, text/xml;charset=UTF-8'),(1,'rsd','rsd.vm, application/rsd+xml;charset=UTF-8'),(1,'html','asual.vm, text/html;charset=UTF-8'),(1,'atom','atom.vm, application/atom+xml;charset=UTF-8'),(1,'rss2','rss2.vm, text/xml;charset=UTF-8'),(1,'irss','irss.vm, text/xml;charset=UTF-8'),(1,'rdf','rdf.vm, text/xml;charset=UTF-8'),(1,'admin','org/blojsom/plugin/admin/templates/admin.vm, text/html;charset=UTF-8');
 
 CREATE TABLE Trackback (
   trackback_id int NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),

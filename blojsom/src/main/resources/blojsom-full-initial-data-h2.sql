@@ -165,7 +165,7 @@ CREATE TABLE `Template` (
   CONSTRAINT `template_blog_blogidfk` FOREIGN KEY (`blog_id`) REFERENCES `Blog` (`id`) ON DELETE CASCADE
 ) ;
 
-INSERT INTO `Template` VALUES (1,'rss','rss.vm, text/xml;charset=UTF-8',1),(1,'rsd','rsd.vm, application/rsd+xml;charset=UTF-8',2),(1,'html','asual.vm, text/html;charset=UTF-8',3),(1,'atom','atom.vm, application/atom+xml;charset=UTF-8',4),(1,'rss2','rss2.vm, text/xml;charset=UTF-8',5),(1,'rdf','rdf.vm, text/xml;charset=UTF-8',6),(1,'admin','org/blojsom/plugin/admin/templates/admin.vm, text/html;charset=UTF-8',7);
+INSERT INTO `Template` VALUES (1,'rss','rss.vm, text/xml;charset=UTF-8',1),(1,'rsd','rsd.vm, application/rsd+xml;charset=UTF-8',2),(1,'html','asual.vm, text/html;charset=UTF-8',3),(1,'atom','atom.vm, application/atom+xml;charset=UTF-8',4),(1,'rss2','rss2.vm, text/xml;charset=UTF-8',5),(1,'rss2','rss2.vm, text/xml;charset=UTF-8',6),(1,'rdf','rdf.vm, text/xml;charset=UTF-8',7),(1,'admin','org/blojsom/plugin/admin/templates/admin.vm, text/html;charset=UTF-8',8);
 
 CREATE TABLE `Trackback` (
   `trackback_id` int(11) NOT NULL auto_increment,
