@@ -3,11 +3,14 @@
                     </tr>
                     <tr>
                         <td>#adminResource('rss.enclosure.text' '')</td>
-                        <td><select name="rss-enclosure"><option value="">#adminResource('enclosure.selection.text' '')</option>
+                        <td>
+                            <select name="rss-enclosure">
+                                <option value="">#adminResource('enclosure.selection.text' '')</option>
                             #foreach ($filename in $PLUGIN_RSS_ENCLOSURE_FILES.keySet())
-                                <option value="$filename" #if($filename.equals($RSS_ENCLOSURE_ATTACHMENT)) SELECTED #end>$filename</option>
+                                <option value="$filename" #if($filename.equals($RSS_ENCLOSURE_ATTACHMENT)) selected #end>$filename</option>
                             #end
-                        </select></td>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2">#adminResource('rss.enclosure.explicit.text' '')</td>

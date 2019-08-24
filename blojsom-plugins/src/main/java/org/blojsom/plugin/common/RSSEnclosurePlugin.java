@@ -397,7 +397,7 @@ public class RSSEnclosurePlugin implements Plugin, Listener {
                 httpURLConnection.connect();
 
                 enclosureProperties[0] = Integer.toString(httpURLConnection.getContentLength()); 
-               enclosureProperties[1] = httpURLConnection.getContentType();
+                enclosureProperties[1] = httpURLConnection.getContentType();
 
                 httpURLConnection.disconnect();
             }

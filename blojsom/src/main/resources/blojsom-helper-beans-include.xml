@@ -23,7 +23,7 @@
         <property name="driverClassName" value="org.postgresql.Driver"/>
         <property name="url" value="jdbc:postgresql://localhost:5432/blojsom?charset=utf-8"/>
         <property name="username" value="blojsom"/>
-        <property name="password" value="blojsom"/>
+        <property name="password" value="bl0js0m-3"/>
     </bean>
 
 
