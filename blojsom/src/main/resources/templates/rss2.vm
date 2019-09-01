@@ -17,8 +17,10 @@
 		<webMaster>#BlogOwnerEmail()</webMaster>
 		<pubDate>$BLOJSOM_DATE</pubDate>
 
+        #set ($feedCatagories = $BLOJSOM_PLUGIN_STRING_UTILITIES.parseDelimitedList($BLOJSOM_BLOG.getProperty("blog-default-category-exclusion-mapping"), ","))
         #foreach ($entry in $BLOJSOM_ENTRIES)
-        #SimpleFriendlyPermalink($entry)
+          #if (!$feedCatagories.contains($entry.getCategory()))
+          #SimpleFriendlyPermalink($entry)
         <item>
             <title>$entry.getEscapedTitle()</title>
             <link>$entryLink</link>
@@ -33,6 +35,7 @@
             #end
             #RSSEnclosure($entry)
         </item>
+          #end
         #end
     </channel>
 </rss>
