@@ -31,7 +31,8 @@
 package org.blojsom.plugin.notification;
 
 import org.apache.commons.mail.Email;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.VelocityEngine;
 import org.springframework.web.context.ServletContextAware;
@@ -54,7 +55,7 @@ public abstract class AbstractVelocityEmailNotification extends AbstractNotifica
 
     private String velocityPropsPath;
 
-    private static final Logger logger = Logger.getLogger(AbstractVelocityEmailNotification.class);
+    private static final Logger logger = LogManager.getLogger(AbstractVelocityEmailNotification.class);
 
     /**
      * Construct a new abstract velocity e-mail notification
