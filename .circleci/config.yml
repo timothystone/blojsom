@@ -33,6 +33,9 @@ jobs:
     # Machine Setup
     #   If you break your build into multiple jobs with workflows, you will probably want to do the parts of this that are relevant in each
     # The following `checkout` command checks out your code to your working directory. In 1.0 we did this implicitly. In 2.0 you can choose where in the course of a job your code should be checked out.
+    - add_ssh_keys:
+      fingerprints:
+        - "93:57:06:37:3c:05:e7:3d:09:d8:04:99:a6:35:fe:dd"
     - checkout
     # Prepare for artifact and test results  collection equivalent to how it was done on 1.0.
     # In many cases you can simplify this from what is generated here.
