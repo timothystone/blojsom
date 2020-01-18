@@ -1,0 +1,4 @@
+## Circle CI YAML.
+dependencies:
+    override:
+        - mvn package dependency:go-offline
