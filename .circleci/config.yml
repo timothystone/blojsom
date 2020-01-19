@@ -49,6 +49,7 @@ jobs:
     # project. In 2.0 you need to be explicit about which commands should be run. In some cases you can discard inferred 
     # commands if they are not relevant to your project.
     - run: mvn integration-test
+    - run: mvn deploy
     # Teardown
     #   If you break your build into multiple jobs with workflows, you will probably want to do the parts of this that are 
     # relevant in each
