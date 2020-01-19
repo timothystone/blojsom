@@ -43,6 +43,8 @@ public interface ResourceManager {
 
     /**
      * Initialize the ResourceManager.
+     * 
+     * @throws org.blojsom.util.resources.ResourceException
      */
     void init() throws ResourceException;
 

@@ -88,7 +88,7 @@ public interface Entry {
 
     /**
      * Date of the blog entry
-     * <p/>
+     * 
      * This value is constructed from the lastModified value of the file
      *
      * @return Date of the blog entry
