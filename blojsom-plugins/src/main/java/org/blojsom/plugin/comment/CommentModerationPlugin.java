@@ -93,12 +93,11 @@ public class CommentModerationPlugin implements Plugin {
 
     /**
      * Simple check to see if comment moderation is enabled
-     * <p/>
      *
-     * @param httpServletRequest  Request
-     * @param httpServletResponse Response
-     * @param user                {@link org.blojsom.blog.BlogUser} instance
+     * @param httpServletRequest  {@link HttpServletRequest}
+     * @param httpServletResponse {@link HttpServletResponse}
      * @param context             Context
+     * @param blog                {@link Blog}
      * @param entries             Blog entries retrieved for the particular request
      * @throws PluginException If there is an error in moderating a comment
      */

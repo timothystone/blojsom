@@ -45,7 +45,7 @@ import java.util.regex.Pattern;
 /**
  * The GoogleHighlightPlugin will highlight words on your blog if the referer came from a Google
  * query.
- * <p/>
+ * 
  * Based on work from http://www.textism.com/
  *
  * @author Mark Lussier

@@ -48,7 +48,7 @@ import java.util.Map;
  * To see the preview items along with normal entries add the parameter
  * preview="true"
  *
- * @author <a href="http://nick.chalko.com"/>Nick Chalko</a>
+ * @author <a href="http://nick.chalko.com">Nick Chalko</a>
  * @author David Czarnecki
  * @version $Id: PreviewPlugin.java,v 1.3 2008-07-07 19:54:22 czarneckid Exp $
  * @since blojsom 3.0

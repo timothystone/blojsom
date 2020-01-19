@@ -98,7 +98,7 @@ public class PingbackHandler extends APIHandler {
     }
 
     /**
-     * Try to find the &lt;title&gt;&lt/title&gt; tags from the source text
+     * Try to find the &lt;title&gt;&lt;/title&gt; tags from the source text
      *
      * @param source Source URI text
      * @return Title of text or <code>null</code> if title tags are not found
@@ -153,7 +153,8 @@ public class PingbackHandler extends APIHandler {
      *
      * @param sourceURI The absolute URI of the post on the source page containing the link to the target site.
      * @param targetURI The absolute URI of the target of the link, as given on the source page.
-     * @return
+     * @return String pingback registration message
+     * @throws org.apache.xmlrpc.XmlRpcException pingback error
      */
     public String ping(String sourceURI, String targetURI) throws XmlRpcException {
         if (_logger.isDebugEnabled()) {
@@ -314,6 +315,7 @@ public class PingbackHandler extends APIHandler {
      * @param pingbackMetaData Pingback meta-data
      * @param pingback         {@link Pingback}
      * @return <code>0</code> if the pingback was registered, otherwise a fault code is returned
+     * @throws org.apache.xmlrpc.XmlRpcException fault exception of pingback
      */
     protected Integer addPingback(String title, String excerpt, String url, String blogName, Map pingbackMetaData, Pingback pingback) throws XmlRpcException {
         title = BlojsomUtils.escapeStringSimple(title);

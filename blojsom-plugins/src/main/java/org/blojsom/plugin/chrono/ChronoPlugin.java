@@ -43,7 +43,7 @@ import java.util.Map;
 
 /**
  * ChronoPlugin
- * <p/>
+ * 
  * This plugin sorts the entries in ascending order. The oldest entry will be first and the
  * most recent entry will be last.
  *

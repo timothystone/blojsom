@@ -66,7 +66,7 @@ public class ResourceBundleResourceManager implements ResourceManager {
 
     /**
      * Initialize the resource bundle manager.
-     * <p/>
+     * 
      * Resource bundles to pre-load are specified in a comma-separated list under the key
      * <code>blojsom-resource-manager-bundles</code>.
      */

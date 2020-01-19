@@ -93,7 +93,7 @@ public class PermalinkFilter implements Filter {
 
     /**
      * Process the request.
-     * <p/>
+     * 
      * Processes requests of the form
      * <ul>
      * <li>/YYYY/MM/DD/permalink</li>

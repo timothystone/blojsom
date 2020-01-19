@@ -48,7 +48,7 @@ import org.eclipse.mylyn.wikitext.core.parser.builder.HtmlDocumentBuilder;
 
 /**
  * Textile Plugin
- * <p/>
+ * 
  * An implementation of the Textism's Textile. See http://www.textism.com/tools/textile
  *
  * @author David Czarnecki

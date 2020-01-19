@@ -37,7 +37,7 @@ import java.util.Map;
 
 /**
  * Mailbox.
- * <p/>
+ * 
  * This file is a container for everything the thread will need to connect to and to store into.
  *
  * @author David Czarnecki

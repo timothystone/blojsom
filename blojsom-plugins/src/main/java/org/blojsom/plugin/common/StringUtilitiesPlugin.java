@@ -113,10 +113,10 @@ public class StringUtilitiesPlugin implements Plugin {
         }
 
         /**
-         * Return an escaped string where &amp;, &lt;, &gt;, &quot;, and &apos; are converted to their HTML equivalents
+         * Return an escaped string where &amp;, &lt;, &gt;, &quot;, and &rsquo; are converted to their HTML equivalents
          *
          * @param input Unescaped string
-         * @return Escaped string containing HTML equivalents for &amp;, &lt;, &gt;, &quot;, and &apos;
+         * @return Escaped string containing HTML equivalents for &amp;, &lt;, &gt;, &quot;, and &rsquo;
          */
         public String escapeString(String input) {
             return BlojsomUtils.escapeString(input);

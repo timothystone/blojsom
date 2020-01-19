@@ -79,9 +79,9 @@ public class PermissionCheckPlugin implements Plugin {
     /**
      * Process the blog entries
      *
-     * @param httpServletRequest  Request
-     * @param httpServletResponse Response
-     * @param user                {@link org.blojsom.blog.BlogUser} instance
+     * @param httpServletRequest  {@link HttpServletRequest}
+     * @param httpServletResponse {@link HttpServletResponse}
+     * @param blog                {@link org.blojsom.blog.Blog} instance
      * @param context             Context
      * @param entries             Blog entries retrieved for the particular request
      * @return Modified set of blog entries

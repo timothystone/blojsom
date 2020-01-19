@@ -46,7 +46,7 @@ public interface PermissionedPlugin {
     /**
      * Check the permission for a given username and permission
      *
-     * @param blog              {@link blog} information
+     * @param blog              {@link Blog} information
      * @param permissionContext {@link Map} containing context information for checking permission
      * @param username          Username
      * @param permission        Permission

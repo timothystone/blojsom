@@ -316,7 +316,7 @@ public class DatabaseComment implements Comment, Serializable {
      *
      * @param format Date format
      * @return <code>null</code> if the comment date or format is null, otherwise returns the comment date
-     *         formatted to the specified format. If the format is invalid, returns <tt>commentDate.toString()</tt>
+     *         formatted to the specified format. If the format is invalid, returns <code>commentDate.toString()</code>
      */
     public String getDateAsFormat(String format) {
         return getDateAsFormat(format, null);
@@ -327,7 +327,8 @@ public class DatabaseComment implements Comment, Serializable {
      *
      * @param format Date format
      * @param locale Locale for date formatting
-     * @return <code>null</code> if the entry date or format is null, otherwise returns the entry date formatted to the specified format. If the format is invalid, returns <tt>commentDate.toString()</tt>
+     * @return <code>null</code> if the entry date or format is null, otherwise returns the entry date formatted to the 
+     *         specified format. If the format is invalid, returns <code>commentDate.toString()</code>
      */
     public String getDateAsFormat(String format, Locale locale) {
         if (_commentDate == null || format == null) {

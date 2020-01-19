@@ -124,11 +124,11 @@ public class SkipEntriesFilter implements Filter {
         private String pathInfo;
 
         /**
-         * @param httpServletRequest
-         * @param params
-         * @param uri
-         * @param url
-         * @param pathInfo
+         * @param httpServletRequest {@link javax.servlet.http.HttpServletRequest}
+         * @param params Request parameters
+         * @param uri URI
+         * @param url URL
+         * @param pathInfo Path Information
          */
         public SkipEntriesPermalinkRequest(HttpServletRequest httpServletRequest, Map params, String uri, String url, String pathInfo) {
             super(httpServletRequest);

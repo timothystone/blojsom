@@ -60,6 +60,7 @@ public class MoblogPluginUtils {
     /**
      * Read in the mailbox settings for a given blog
      *
+     * @param servletConfig {@link ServletConfig}
      * @param blog {@link Blog}
      * @return {@link Mailbox} populated with settings and authorized e-mail addresses or <code>null</code> if there
      *         was an error reading any configuration information

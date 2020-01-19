@@ -156,7 +156,6 @@ public class MathCommentAuthenticationPlugin extends CommentModerationPlugin imp
 
     /**
      * Simple check to see if comment moderation is enabled
-     * <p/>
      *
      * @param httpServletRequest  Request
      * @param httpServletResponse Response

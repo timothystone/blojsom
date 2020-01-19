@@ -62,10 +62,9 @@ public abstract class AbstractVisualCalendarPlugin extends AbstractCalendarPlugi
     /**
      * Process the blog entries
      *
-     * @param httpServletRequest  Request
-     * @param httpServletResponse Response
-     * @param user                {@link BlogUser} instance
-     * @param context             Context
+     * @param httpServletRequest  {@link HttpServletRequest}
+     * @param httpServletResponse {@link HttpServletResponse}
+     * @param context             {@link Map}
      * @param entries             Blog entries retrieved for the particular request
      * @return Modified set of blog entries
      * @throws PluginException If there is an error processing the blog entries

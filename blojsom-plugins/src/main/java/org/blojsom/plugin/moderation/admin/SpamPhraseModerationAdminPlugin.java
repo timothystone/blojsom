@@ -202,7 +202,7 @@ public class SpamPhraseModerationAdminPlugin extends WebAdminPlugin {
     /**
      * Load the list of spam phrases from the blog
      *
-     * @param blog {@link blog}
+     * @param blog {@link Blog}
      * @return List of spam phrases
      */
     protected List loadSpamPhrases(Blog blog) {

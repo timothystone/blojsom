@@ -111,7 +111,7 @@ public class EditBlogPropertiesPlugin extends BaseAdminPlugin {
     /**
      * Set the default properties
      *
-     * @param properties Default properties
+     * @param blojsomProperties Default properties
      */
     public void setBlojsomProperties(Properties blojsomProperties) {
         _blojsomProperties = blojsomProperties;

@@ -464,10 +464,10 @@ public final class BlojsomUtils implements BlojsomConstants {
     }
 
     /**
-     * Return an escaped string where &amp;, &lt;, &gt;, &quot;, and &apos; are converted to their HTML equivalents
+     * Return an escaped string where &amp;, &lt;, &gt;, &quot;, and &rsquo; are converted to their HTML equivalents
      *
      * @param input Unescaped string
-     * @return Escaped string containing HTML equivalents for &amp;, &lt;, &gt;, &quot;, and &apos;
+     * @return Escaped string containing HTML equivalents for &amp;, &lt;, &gt;, &quot;, and &rsquo;
      */
     public static String escapeString(String input) {
         if (input == null) {

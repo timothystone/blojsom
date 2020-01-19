@@ -46,9 +46,8 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * * View custom properties for a Blog user. Useful for collecting various
+ * View custom properties for a Blog user. Useful for collecting various
  * information from a user upon registration.
- * </p>
  *
  * @author Eric Broyles
  * @version $Id: ViewBlogUserPropertiesPlugin.java,v 1.3 2008-07-07 19:54:12 czarneckid Exp $

@@ -107,10 +107,8 @@ public class FeedFilter implements Filter {
 
     /**
      * Process the request.
-     * <p/>
+     *
      * Processes requests of the form
-     * <ul>
-     * </ul>
      *
      * @param request  {@link ServletRequest}
      * @param response {@link ServletResponse}
@@ -215,11 +213,11 @@ public class FeedFilter implements Filter {
         private String pathInfo;
 
         /**
-         * @param httpServletRequest
-         * @param params
-         * @param uri
-         * @param url
-         * @param pathInfo
+         * @param httpServletRequest {@link HttpServletRequest}
+         * @param params Parameters on request 
+         * @param uri URI
+         * @param url URL
+         * @param pathInfo Path Information
          */
         public FeedPermalinkRequst(HttpServletRequest httpServletRequest, Map params, String uri, String url, String pathInfo) {
             super(httpServletRequest);

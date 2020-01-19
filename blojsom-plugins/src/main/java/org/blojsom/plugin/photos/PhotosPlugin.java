@@ -223,7 +223,7 @@ public class PhotosPlugin implements Plugin, Listener {
     }
 
     /**
-     * @param servletContext the _servletContext to set
+     * @param servletConfig the _servletConfig to set
      */
     public void setServletConfig(ServletConfig servletConfig) {
         this._servletConfig = servletConfig;

@@ -62,8 +62,6 @@ public abstract class StandaloneVelocityPlugin implements Plugin {
     /**
      * Initialize this plugin. This method only called when the plugin is instantiated.
      *
-     * @param servletConfig        Servlet config object for the plugin to retrieve any initialization parameters
-     * @param blojsomConfiguration {@link org.blojsom.blog.BlojsomConfiguration} information
      * @throws org.blojsom.plugin.PluginException
      *          If there is an error initializing the plugin
      */

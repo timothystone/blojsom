@@ -52,7 +52,7 @@ public class PingbackEvent extends EntryEvent {
      *
      * @param source    Source of the event
      * @param timestamp Event timestamp
-     * @param trackback {@link Pingback}
+     * @param pingback {@link Pingback}
      * @param blog      {@link Blog}
      */
     public PingbackEvent(Object source, Date timestamp, Pingback pingback, Blog blog) {

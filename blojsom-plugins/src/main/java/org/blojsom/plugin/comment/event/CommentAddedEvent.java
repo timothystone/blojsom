@@ -36,7 +36,7 @@ import org.blojsom.blog.Blog;
 import java.util.Date;
 
 /**
- * Comment Added Event indicates an event where a {@link BlogComment} has been added to the system.
+ * Comment Added Event indicates an event where a {@link Comment} has been added to the system.
  *
  * @author David Czarnecki
  * @author Mark Lussier

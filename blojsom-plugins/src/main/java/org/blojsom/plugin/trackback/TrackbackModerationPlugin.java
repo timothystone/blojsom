@@ -93,7 +93,6 @@ public class TrackbackModerationPlugin implements Plugin {
 
     /**
      * Simple check to see if trackback moderation is enabled
-     * <p/>
      *
      * @param httpServletRequest  Request
      * @param httpServletResponse Response

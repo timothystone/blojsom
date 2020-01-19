@@ -51,7 +51,8 @@ public class RegisterWidgetEvent extends BasicEvent {
      *
      * @param source    Source
      * @param timestamp Timestamp
-     * @param widget    Widget Widget display name
+     * @param widget    Widget 
+     * @param displayName Widget display name
      */
     public RegisterWidgetEvent(Object source, Date timestamp, String widget, String displayName) {
         super(source, timestamp);

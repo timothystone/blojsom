@@ -52,7 +52,7 @@ public class PermissionChecker {
     /**
      * Create a new permission checker for a given blog
      *
-     * @param blogUser              {@link Blog}
+     * @param blog              {@link Blog}
      * @param authorizationProvider {@link AuthorizationProvider}
      * @param permissionContext     Context for permissions to be evaulated in (not-used)
      */

@@ -59,7 +59,7 @@ import java.util.Properties;
 
 /**
  * Blojsom XML-RPC Servlet
- * <p/>
+ * 
  * This servlet uses the Jakarta XML-RPC Library (http://ws.apache.org/xmlrpc)
  *
  * @author Mark Lussier

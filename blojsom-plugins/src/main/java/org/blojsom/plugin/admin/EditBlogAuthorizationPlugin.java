@@ -122,9 +122,9 @@ public class EditBlogAuthorizationPlugin extends BaseAdminPlugin {
     }
 
     /**
-     * Set the {@link EventBroadcaster}
+     * Set the {@link BasicEventBroadcaster}
      *
-     * @param eventBroadcaster {@link EventBroadcaster}
+     * @param eventBroadcaster {@link BasicEventBroadcaster}
      */
     public void setEventBroadcaster(BasicEventBroadcaster eventBroadcaster) {
         _eventBroadcaster = eventBroadcaster;
@@ -133,8 +133,8 @@ public class EditBlogAuthorizationPlugin extends BaseAdminPlugin {
     /**
      * Process the blog entries
      *
-     * @param httpServletRequest  Request
-     * @param httpServletResponse Response
+     * @param httpServletRequest  {@link HttpServletRequest}
+     * @param httpServletResponse {@link HttpServletResponse}
      * @param blog                {@link Blog} instance
      * @param context             Context
      * @param entries             Blog entries retrieved for the particular request

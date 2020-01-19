@@ -138,7 +138,7 @@ public class DatabaseEntry implements Entry, Serializable {
 
     /**
      * Date of the blog entry
-     * <p/>
+     * 
      * This value is constructed from the lastModified value of the file
      *
      * @return Date of the blog entry
@@ -206,7 +206,8 @@ public class DatabaseEntry implements Entry, Serializable {
      * Return the blog entry date formatted with a specified date format
      *
      * @param format Date format
-     * @return <code>null</code> if the entry date or format is null, otherwise returns the entry date formatted to the specified format. If the format is invalid, returns <tt>entryDate.toString()</tt>
+     * @return <code>null</code> if the entry date or format is null, otherwise returns the entry date formatted to the 
+     *         specified format. If the format is invalid, returns <code>entryDate.toString()</code>
      */
     public String getDateAsFormat(String format) {
         return getDateAsFormat(format, null);
@@ -217,7 +218,8 @@ public class DatabaseEntry implements Entry, Serializable {
      *
      * @param format Date format
      * @param locale Locale for date formatting
-     * @return <code>null</code> if the entry date or format is null, otherwise returns the entry date formatted to the specified format. If the format is invalid, returns <tt>entryDate.toString()</tt>
+     * @return <code>null</code> if the entry date or format is null, otherwise returns the entry date formatted to the 
+     *         specified format. If the format is invalid, returns <code>entryDate.toString()</code>
      */
     public String getDateAsFormat(String format, Locale locale) {
         if (_entryDate == null || format == null) {

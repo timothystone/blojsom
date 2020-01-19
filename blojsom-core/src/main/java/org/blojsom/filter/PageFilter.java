@@ -55,24 +55,24 @@ import org.blojsom.util.BlojsomUtils;
  * Page filter supports URLs of the form <code>/[blojsom context]/[blojsom servlet mapping]/[blog ID]/[page name]/page/</code>. For example,
  * <code>/blojsom/blog/default/about/page/</code> would try and pull the <code>about.vm</code> template from the <code>default</code> blog's
  * <code>templates</code> directory.
- * <p></p>
- * Usage:<br/>
+ * 
+ * Usage:<br>
  * <pre>
- * <filter>
- *     <filter-name>PageFilter</filter-name>
- *     <filter-class>org.blojsom.filter.PageFilter</filter-class>
- *     <init-param>
- *         <param-name>use-root-blog-compatability</param-name>
- *         <param-value>false</param-value>
- *     </init-param>
- * </filter>
- * <p/>
- * <filter-mapping>
- *     <filter-name>PageFilter</filter-name></pre>
- * <servlet-name>blojsom</servlet-name>
- * </filter-mapping>
+ * &lt;filter&gt;
+ *     &lt;filter-name&gt;PageFilter&lt;/filter-name&gt;
+ *     &lt;filter-class&gt;org.blojsom.filter.PageFilter&lt;/filter-class&gt;
+ *     &lt;init-param&gt;
+ *         &lt;param-name&gt;use-root-blog-compatability&lt;/param-name&gt;
+ *         &lt;param-value&gt;false&lt;/param-value&gt;
+ *     &lt;/init-param&gt;
+ * &lt;/filter&gt;
+ * 
+ * &lt;filter-mapping&gt;
+ *     &lt;filter-name&gt;PageFilter&lt;/filter-name&gt;&lt;/pre&gt;
+ * &lt;servlet-name&gt;blojsom&lt;/servlet-name&gt;
+ * &lt;/filter-mapping&gt;
  * </pre>
- * <p/>
+ * 
  * For the page filter to be used, it must be mapped before the permalink filter.
  *
  * @author David Czarnecki
@@ -115,11 +115,9 @@ public class PageFilter implements Filter {
 
     /**
      * Process the request.
-     * <p/>
+     * 
      * Processes requests of the form
-     * <ul>
-     * </ul>
-     *
+     * 
      * @param request  {@link ServletRequest}
      * @param response {@link ServletResponse}
      * @param chain    {@link FilterChain} to execute
@@ -185,11 +183,11 @@ public class PageFilter implements Filter {
         private String pathInfo;
 
         /**
-         * @param httpServletRequest
-         * @param params
-         * @param uri
-         * @param url
-         * @param pathInfo
+         * @param httpServletRequest {@link HttpServletRequest}
+         * @param params Parameters on request
+         * @param uri URI
+         * @param url URL
+         * @param pathInfo Path Information
          */
         public PagePermalinkRequst(HttpServletRequest httpServletRequest, Map params, String uri, String url, String pathInfo) {
             super(httpServletRequest);

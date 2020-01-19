@@ -46,7 +46,7 @@ public interface BlojsomMetaDataConstants {
 
     /**
      * Extended entry meta-data key for poster
-     * <p/>
+     * 
      * Used to store private meta-data so that the default templates wont render it, like an email address
      */
     String BLOG_ENTRY_METADATA_AUTHOR_EXT = "blog-entry-author-ext";

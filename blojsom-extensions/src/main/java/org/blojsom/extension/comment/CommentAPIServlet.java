@@ -70,9 +70,9 @@ import java.util.HashMap;
 
 /**
  * blojsom Comment API Implementation
- * <p/>
+ * 
  * <a href="http://wellformedweb.org/story/9">Comment API specification</a>.
- * <p/>
+ *
  * For more information on the &lt;item/&gt; fragment and its content, check the <a href="http://blogs.law.harvard.edu/tech/rss">RSS 2.0 specification</a>.
  *
  * @author David Czarnecki

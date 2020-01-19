@@ -574,7 +574,8 @@ public class BloggerAPIHandler extends APIHandler {
      * @param blogid       Unique identifier of the blog the post will be added to
      * @param userid       Login for a Blogger user who has permission to post to the blog
      * @param password     Password for said username
-     * @param template     The text for the new template (usually mostly HTML). Must contain opening and closing <Blogger> tags, since they're needed to publish
+     * @param template     The text for the new template (usually mostly HTML). Must contain opening and closing 
+     *                     &lt;Blogger&gt; tags, since they're needed to publish
      * @param templateType Determines which of the blog's templates will be returned. Currently, either "main" or "archiveIndex"
      * @return Not supported
      * @throws XmlRpcException Not supported

@@ -216,6 +216,7 @@ public class PingbackPlugin extends StandaloneVelocityPlugin implements Plugin, 
      * Setup the pingback e-mail
      *
      * @param blog  {@link org.blojsom.blog.Blog} information
+     * @param entry {@link org.blojsom.blog.Entry} 
      * @param email Email message
      * @throws org.apache.commons.mail.EmailException
      *          If there is an error preparing the e-mail message

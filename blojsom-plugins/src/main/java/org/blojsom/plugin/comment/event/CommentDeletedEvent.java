@@ -36,7 +36,7 @@ import org.blojsom.blog.Blog;
 import java.util.Date;
 
 /**
- * Comment Deleted Event indicates an event where a {@link BlogComment} has been deleted from the system.
+ * Comment Deleted Event indicates an event where a {@link Comment} has been deleted from the system.
  *
  * @author David Czarnecki
  * @version $Id: CommentDeletedEvent.java,v 1.3 2008-07-07 19:54:11 czarneckid Exp $

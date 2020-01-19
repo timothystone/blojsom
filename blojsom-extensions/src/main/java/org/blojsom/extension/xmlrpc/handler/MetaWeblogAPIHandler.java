@@ -537,7 +537,7 @@ public class MetaWeblogAPIHandler extends APIHandler {
      * @param password Password for said username
      * @param publish  Ignored
      * @return <code>true</code> if the entry was delete, <code>false</code> otherwise
-     * @throws XmlRpcException
+     * @throws XmlRpcException on authorization failure
      */
     public boolean deletePost(String appkey, String postid, String userid, String password, boolean publish) throws Exception {
         _logger.debug("deletePost() Called =====[ SUPPORTED ]=====");
@@ -586,7 +586,8 @@ public class MetaWeblogAPIHandler extends APIHandler {
      * @param userid        Login for a MetaWeblog user who has permission to post to the blog
      * @param password      Password for said username
      * @param numberOfPosts Number of posts to be retrieved from the blog
-     * @return Array of structures containing the minimal attributes for the MetaWeblog API getPost() method: title, link, and description
+     * @return Array of structures containing the minimal attributes for the MetaWeblog API getPost() method: title, link, 
+     *         and description
      * @throws Exception If the user was not authenticated correctly
      */
     public Object getRecentPosts(String blogid, String userid, String password, int numberOfPosts) throws Exception {
@@ -717,10 +718,11 @@ public class MetaWeblogAPIHandler extends APIHandler {
      * @param blogid       Unique identifier of the blog the post will be added to
      * @param userid       Login for a Blogger user who has permission to post to the blog
      * @param password     Password for said username
-     * @param template     The text for the new template (usually mostly HTML). Must contain opening and closing <Blogger> tags, since they're needed to publish
+     * @param template     The text for the new template (usually mostly HTML). Must contain opening and closing 
+     *                     &lt;Blogger&gt; tags, since they're needed to publish
      * @param templateType Determines which of the blog's templates will be returned. Currently, either "main" or "archiveIndex"
-     * @return
-     * @throws XmlRpcException
+     * @return String a template if supported
+     * @throws XmlRpcException an unsupported exception
      */
     public boolean setTemplate(String appkey, String blogid, String userid, String password, String template, String templateType) throws Exception {
         _logger.debug("setTemplate() Called =====[ UNSUPPORTED ]=====");
@@ -742,8 +744,8 @@ public class MetaWeblogAPIHandler extends APIHandler {
      * @param userid       Login for a Blogger user who has permission to post to the blog
      * @param password     Password for said username
      * @param templateType Determines which of the blog's templates will be returned. Currently, either "main" or "archiveIndex"
-     * @return
-     * @throws XmlRpcException
+     * @return String a template if supported
+     * @throws XmlRpcException an unsupported exception
      */
     public String getTemplate(String appkey, String blogid, String userid, String password, String templateType) throws Exception {
         _logger.debug("getTemplate() Called =====[ UNSUPPORTED ]=====");
