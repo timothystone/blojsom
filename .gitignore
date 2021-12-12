@@ -1,8 +1,8 @@
 # Maven
-/target/
+**/target/
 
 # Mac OS
-.DS_Store
+**/.DS_Store
 
 ## IDEA
 **/*.iml
