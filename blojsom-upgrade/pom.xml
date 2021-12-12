@@ -5,11 +5,11 @@
     <parent>
         <artifactId>blojsom-maven</artifactId>
         <groupId>org.blojsom</groupId>
-        <version>3.5-SNAPSHOT</version>
+        <version>3.5.1-SNAPSHOT</version>
     </parent>
     <groupId>org.blojsom</groupId>
     <artifactId>blojsom-upgrade</artifactId>
-    <version>3.5-SNAPSHOT</version>
+    <version>3.5.1-SNAPSHOT</version>
     <name>blojsom-upgrade</name>
     <url>http://maven.apache.org</url>
     <dependencies>
@@ -21,12 +21,12 @@
         <dependency>
             <groupId>org.blojsom</groupId>
             <artifactId>blojsom-core</artifactId>
-            <version>3.5-SNAPSHOT</version>
+            <version>3.5.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.blojsom</groupId>
             <artifactId>blojsom-plugins</artifactId>
-            <version>3.5-SNAPSHOT</version>
+            <version>3.5.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>

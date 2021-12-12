@@ -4,7 +4,7 @@
     <!-- The Basics -->
     <groupId>org.blojsom</groupId>
     <artifactId>blojsom-library</artifactId>
-    <version>3.5-SNAPSHOT</version>
+    <version>3.5.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>../blojsom-api</module>
@@ -16,7 +16,7 @@
     <parent>
         <groupId>org.blojsom</groupId>
         <artifactId>blojsom-maven</artifactId>
-        <version>3.5-SNAPSHOT</version>
+        <version>3.5.1-SNAPSHOT</version>
     </parent>
     <dependencyManagement>
         <dependencies>
