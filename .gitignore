@@ -1,9 +1,12 @@
-target/
+# Maven
+/target/
+
+# Mac OS
 .DS_Store
 
 ## IDEA
 **/*.iml
-**/.idea
+**/.idea/
 
 ## Netbeans
 
