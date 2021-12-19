@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.blojsom</groupId>
         <artifactId>blojsom-maven</artifactId>
-        <version>3.5.1-SNAPSHOT</version>
+        <version>3.5.2-SNAPSHOT</version>
     </parent>
     <dependencies>
         <dependency>

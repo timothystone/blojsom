@@ -22,9 +22,9 @@
     <parent>
         <groupId>org.blojsom</groupId>
         <artifactId>blojsom-maven</artifactId>
-        <version>3.5.1-SNAPSHOT</version>
+        <version>3.5.2-SNAPSHOT</version>
     </parent>
-    <properties></properties>
+    <properties />
     <!-- More Project Information -->
     <name>blojsom Web Application Quick Start</name>
     <description>A blojsom web application instance capable of running completely in memory with no external resources necessary.</description>
