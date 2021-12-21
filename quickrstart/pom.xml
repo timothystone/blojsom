@@ -29,7 +29,7 @@
     <parent>
         <groupId>org.blojsom</groupId>
         <artifactId>blojsom-maven</artifactId>
-        <version>3.5.3-SNAPSHOT</version>
+        <version>3.5.4-SNAPSHOT</version>
     </parent>
     <properties />
     <!-- More Project Information -->
