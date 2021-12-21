@@ -64,22 +64,34 @@
                                 #set ($approve = "approve_pingbacks")
                                 #set ($markspam = "mark_spam_pingbacks")
 
-                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed">From: <a href="$!response.getEscapedSourceURI()" class="response_meta">$!response.getEscapedSourceURI()</a></dd>
-                                <dd>To: </strong><a href="$!response.getEscapedTargetURI()" class="response_meta">$!response.getEscapedTargetURI()</a></dd>
-                                <dd id="response$responseCounter" class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
-                                $response.getEscapedExcerpt()
+                                <dd class="blojsom-accordion blojsom-accordion-content-meta blojsom-accordion-closed">
+                                    From: <a href="$!response.getEscapedSourceURI()"
+                                             class="response_meta">$!response.getEscapedSourceURI()</a></dd>
+                                <dd>To: </strong><a href="$!response.getEscapedTargetURI()"
+                                                    class="response_meta">$!response.getEscapedTargetURI()</a></dd>
+                                <dd id="response$responseCounter"
+                                    class="blojsom-accordion blojsom-accordion-content blojsom-accordion-closed">
+                                    $response.getEscapedExcerpt()
                                 </dd>
 
                             #end
-                                <div style="text-align:right"> 
-                                    [<input type="checkbox" name="$delete" value="$response.getId()" id="delete-$responseCounter" class="deleteResponse" onclick="checkSingle(document.getElementById('approve-$responseCounter'),false)"> #adminResource('delete.text' '') - 
-                                     <input type="checkbox" name="$approve" value="$response.getId()" id="approve-$responseCounter" class="approveResponse" onclick="checkSingle(document.getElementById('delete-$responseCounter'),false)"> #adminResource('approve.text' '') - 
-                                     <input type="checkbox" name="$markspam" value="$response.getId()" id="markspam-$responseCounter"> #adminResource('mark.spam.text' '')] 
-                                </div>
+                            <div style="text-align:right">
+                                [<input type="checkbox" name="$delete" value="$response.getId()"
+                                        id="delete-$responseCounter" class="deleteResponse"
+                                        onclick="checkSingle(document.getElementById('approve-$responseCounter'),false)">
+                                <label for="delete-$responseCounter">#adminResource('delete.text' '')</label> -
+                                <input type="checkbox" name="$approve" value="$response.getId()"
+                                       id="approve-$responseCounter" class="approveResponse"
+                                       onclick="checkSingle(document.getElementById('delete-$responseCounter'),false)">
+                                <label for="approve-$responseCounter">#adminResource('approve.text' '')</label> -
+                                <input type="checkbox" name="$markspam" value="$response.getId()"
+                                       id="markspam-$responseCounter"> <label
+                                    for="markspam-$responseCounter">#adminResource('mark.spam.text' '')</label>]
+                            </div>
                             #set ($delete = "")
                             #set ($approve = "")
                             #set ($markspam = "")
-                        #set($responseCounter = $responseCounter + 1)
+                            #set($responseCounter = $responseCounter + 1)
                         #end
                             </dl>
                         </div>

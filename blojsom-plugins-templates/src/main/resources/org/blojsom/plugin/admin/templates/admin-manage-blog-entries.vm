@@ -60,22 +60,22 @@
                         #end
                     </table>
                     
-                    #set($previous_page = 'off')
-                    #set($next_page = 'off')
+                    #set($previous = 'off')
+                    #set($next = 'off')
                     #if ($page_number > 1)
-                    #set($previous_page = 'on')
+                    #set($previous = 'on')
                     <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-entries&amp;action=edit-entries-list&amp;pg_num=$previous_page">
                     #end
-                    <span class="$previous_page">#adminResource('previous.page.text' '')</span>
+                    <span class="$previous">#adminResource('previous.page.text' '')</span>
                     #if ($page_number > 1)
                     </a>
                     #end
                     <span class="off">&nbsp;|&nbsp;</span>
                     #if ($page_number < $total_pages)
-                    #set($next_page = 'on')
+                    #set($next = 'on')
                     <a href="#BlogAdminURL()/?flavor=admin&amp;plugins=edit-blog-entries&amp;action=edit-entries-list&amp;pg_num=$next_page">
                     #end
-                    <span class="$next_page">#adminResource('next.page.text' '')</span>
+                    <span class="$next">#adminResource('next.page.text' '')</span>
                     #if ($page_number < $total_pages)
                     </a>
                     #end

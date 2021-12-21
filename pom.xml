@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0     http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <!-- The Basics -->
     <groupId>org.blojsom</groupId>
     <artifactId>blojsom-maven</artifactId>
-    <version>3.5-SNAPSHOT</version>
+    <version>3.5.4-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>blojsom-metrics</module>
@@ -111,7 +111,12 @@
         <repository>
             <id>legacy-jars</id>
             <name>Local Repository of Legacy JARs</name>
-            <url>file://legacy-jar-repo</url>
+            <url>file://${project.basedir}/legacy-jar-repo</url>
+        </repository>
+        <repository>
+            <id>runtime-jars</id>
+            <name>Local Repository of Runtime JARs</name>
+            <url>file://${project.basedir}/quickrstart/runtime-repo</url>
         </repository>
     </repositories>
     <distributionManagement>
@@ -128,12 +133,46 @@
     </distributionManagement>
     <profiles>
         <profile>
+            <id>build</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>de.qaware.maven</groupId>
+                        <artifactId>go-offline-maven-plugin</artifactId>
+                        <version>1.2.4</version>
+                        <configuration>
+                            <dynamicDependencies>
+                                <DynamicDependency>
+                                    <groupId>org.apache.maven.surefire</groupId>
+                                    <artifactId>surefire-junit4</artifactId>
+                                    <version>2.20.1</version>
+                                    <repositoryType>PLUGIN</repositoryType>
+                                </DynamicDependency>
+                                <DynamicDependency>
+                                    <groupId>com.querydsl</groupId>
+                                    <artifactId>querydsl-apt</artifactId>
+                                    <version>4.2.1</version>
+                                    <classifier>jpa</classifier>
+                                    <repositoryType>MAIN</repositoryType>
+                                </DynamicDependency>
+                            </dynamicDependencies>
+                        </configuration>
+                    </plugin>
+                </plugins>
+
+            </build>
+        </profile>
+        <profile>
             <id>release</id>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-release-plugin</artifactId>
+                        <version>3.0.0-M4</version>
                         <configuration>
                             <tagBase>https://blojsom.svn.sourceforge.net/svnroot/blojsom/</tagBase>
                             <mavenExecutorId>forked-path</mavenExecutorId>

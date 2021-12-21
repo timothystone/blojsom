@@ -6,9 +6,9 @@
     <packaging>war</packaging>
     <dependencies>
         <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-            <version>1.4.192</version>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb-jdk8</artifactId>
+            <version>2.6.1</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
@@ -19,12 +19,19 @@
             <scope>runtime</scope>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <id>runtime-jars</id>
+            <name>Local Repository of Runtime JARs</name>
+            <url>file://${project.basedir}/runtime-repo</url>
+        </repository>
+    </repositories>
     <parent>
         <groupId>org.blojsom</groupId>
         <artifactId>blojsom-maven</artifactId>
-        <version>3.5-SNAPSHOT</version>
+        <version>3.5.4-SNAPSHOT</version>
     </parent>
-    <properties></properties>
+    <properties />
     <!-- More Project Information -->
     <name>blojsom Web Application Quick Start</name>
     <description>A blojsom web application instance capable of running completely in memory with no external resources necessary.</description>

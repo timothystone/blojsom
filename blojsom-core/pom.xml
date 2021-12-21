@@ -54,7 +54,7 @@
     <parent>
         <groupId>org.blojsom</groupId>
         <artifactId>blojsom-library</artifactId>
-        <version>3.5-SNAPSHOT</version>
+        <version>3.5.4-SNAPSHOT</version>
         <relativePath>../blojsom-library/pom.xml</relativePath>
     </parent>
     <properties>
