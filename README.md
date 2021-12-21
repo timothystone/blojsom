@@ -1,4 +1,4 @@
-3.5.2-SNAPSHOT [![CircleCI](https://circleci.com/gh/timothystone/blojsom/tree/master.svg?style=shield)](https://circleci.com/gh/timothystone/blojsom/tree/master)
+3.5.4-SNAPSHOT [![CircleCI](https://circleci.com/gh/timothystone/blojsom/tree/master.svg?style=shield)](https://circleci.com/gh/timothystone/blojsom/tree/master)
 
 blojsom is ...
 ==============
