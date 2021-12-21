@@ -4,7 +4,7 @@
     <!-- The Basics -->
     <groupId>org.blojsom</groupId>
     <artifactId>blojsom-maven</artifactId>
-    <version>3.5.2-SNAPSHOT</version>
+    <version>3.5.3-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
         <module>blojsom-metrics</module>
@@ -111,7 +111,12 @@
         <repository>
             <id>legacy-jars</id>
             <name>Local Repository of Legacy JARs</name>
-            <url>file://legacy-jar-repo</url>
+            <url>file://${project.basedir}/legacy-jar-repo</url>
+        </repository>
+        <repository>
+            <id>runtime-jars</id>
+            <name>Local Repository of Runtime JARs</name>
+            <url>file://${project.basedir}/quickrstart/runtime-repo</url>
         </repository>
     </repositories>
     <distributionManagement>

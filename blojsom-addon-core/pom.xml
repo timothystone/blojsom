@@ -8,8 +8,15 @@
     <parent>
         <groupId>org.blojsom</groupId>
         <artifactId>blojsom-maven</artifactId>
-        <version>3.5.2-SNAPSHOT</version>
+        <version>3.5.3-SNAPSHOT</version>
     </parent>
+    <repositories>
+        <repository>
+            <id>legacy-jars</id>
+            <name>Local Repository for Legacy JARs</name>
+            <url>file://${project.basedir}/../legacy-jar-repo/</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
