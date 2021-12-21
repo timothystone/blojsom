@@ -23,7 +23,7 @@
         <repository>
             <id>runtime-jars</id>
             <name>Local Repository of Runtime JARs</name>
-            <url>file:runtime-repo</url>
+            <url>file://${project.basedir}/runtime-repo</url>
         </repository>
     </repositories>
     <parent>

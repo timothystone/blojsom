@@ -12,9 +12,9 @@
     </parent>
     <repositories>
         <repository>
-            <id>legacy-jar-repo</id>
+            <id>legacy-jars</id>
             <name>Local Repository for Legacy JARs</name>
-            <url>file:../legacy-jar-repo/</url>
+            <url>file://${project.basedir}/../legacy-jar-repo/</url>
         </repository>
     </repositories>
     <dependencies>
