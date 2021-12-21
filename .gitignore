@@ -1,3 +1,12 @@
-target/
-.DS_Store
+# Maven
+**/target/
 
+# Mac OS
+**/.DS_Store
+
+## IDEA
+**/*.iml
+**/.idea/
+
+## Netbeans
+**/nb-configuration.xml

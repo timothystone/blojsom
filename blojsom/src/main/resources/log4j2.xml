@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <Console name="STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZZZZ} %-5p [%t] %c{1.}:%L - %m%n" />
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Logger name="net.sf.ehcache" level="error" />
+    <Logger name="org.hibernate" level="error" />
+    <Logger name="org.springframework" level="error" />
+    <Logger name="org.apache.commons.digester.Digester" level="info" />
+    <Logger name="org.blojsom" level="debug" />
+    <Root level="debug">
+      <AppenderRef ref="STDOUT" />
+    </Root>
+  </Loggers>
+</Configuration>
