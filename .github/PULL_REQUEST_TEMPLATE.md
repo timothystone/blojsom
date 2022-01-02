@@ -2,10 +2,10 @@
 
 - [ ] The commit message follows our guidelines
 
-1. The subject is in an imperative voice, "*This commit will...* <commit subject>," e.g., `Change the default IMAP port number`, or spoken, `[This commit will] change the default IMAP port number`<br>
+1. The subject is in an imperative voice, "*This commit will...* <commit subject>," e.g., `Change the default IMAP port number`<br>
     Or more explicitly,<br>
-    **Right** `Change the default IMAP port number`<br>
-    **Wrong** `This commit will change the default IMAP port number`
+    &#x2705; **Right** `Change the default IMAP port number`<br>
+    &#x274C; **Wrong** `This commit will change the default IMAP port number`
 1. The subject is 55 characters or less
 1. The body contains context of all changes made. A body is required and PRs without a body are subject to feedback.
 1. If an ISSUE was opened, the body of the PR contains `closes #nnnn` to automatically close the ISSUE.
