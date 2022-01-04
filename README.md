@@ -1,4 +1,4 @@
-3.5.4-SNAPSHOT [![CircleCI](https://circleci.com/gh/timothystone/blojsom/tree/master.svg?style=shield)](https://circleci.com/gh/timothystone/blojsom/tree/master)
+3.5.4-SNAPSHOT [![CircleCI](https://circleci.com/gh/timothystone/blojsom/tree/master.svg?style=shield)](https://circleci.com/gh/timothystone/blojsom/tree/master) [![Join the chat at https://gitter.im/blojsom/community](https://badges.gitter.im/blojsom/community.svg)](https://gitter.im/blojsom/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 blojsom is ...
 ==============
